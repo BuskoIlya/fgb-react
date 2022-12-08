@@ -19,6 +19,8 @@ html, a {
   cursor: default;
 }
 
+a { text-decoration: none }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -28,5 +30,7 @@ code {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 360px;
   height: 100%;
+  overflow-x: hidden;
 }

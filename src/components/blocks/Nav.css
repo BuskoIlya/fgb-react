@@ -162,6 +162,7 @@
   visibility: hidden;
   position: absolute;
   background-color: white;
+  z-index: 1;
   border-radius: 2px;
   box-shadow: 1px 1px 1px 1px #dadce0;
   opacity: 0;
@@ -205,5 +206,28 @@
 }
 .nav__sub-item:hover:after {
   left: -50%;
+}
+.nav__mobile {
+  display: none;
+  font-size: 1.2rem;
+  padding: 16px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+@media screen and (max-width: calc(3 * 360px + 2 * 20px)) {
+  .nav {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .nav {
+    width: fit-content;
+  }
+  .nav__ul {
+    flex-direction: column;
+  }
+  .nav__mobile {
+    display: block;
+  }
 }
 /*# sourceMappingURL=Nav.css.map */

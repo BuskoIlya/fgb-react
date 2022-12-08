@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './Nav.css';
@@ -5,9 +6,29 @@ import './Nav.css';
 const setClass = ({ isActive }) => isActive ? "nav__item nav__item_active" : "nav__item";
 
 function Nav() {
+
+  const [navUlDisplay, setNavUlDisplay] = React.useState({ display: "" });
+
+  window.matchMedia('(max-width: 900px)').onchange = (e) => {
+    if (e.matches) {
+      setNavUlDisplay({ display: "none" });
+    } else {
+      setNavUlDisplay({ display: "flex" });
+    }
+  }
+
+  function dropDownMobil() {
+    if (navUlDisplay.display === "none") {
+      setNavUlDisplay({ display: "flex" });
+    } else {
+      setNavUlDisplay({ display: "none" });
+    }
+  }
+
   return (
       <nav className = "nav">
-        <ul className = "nav__ul">
+        <div className = "nav__mobile" onClick = { dropDownMobil }>Меню</div>
+        <ul className = "nav__ul" style = { navUlDisplay }>
           <li><NavLink className = { setClass } to = "/">Главная</NavLink></li>
           <li><NavLink className = { setClass } to = "/photos">Фото</NavLink></li>
           <li className = "nav__li">

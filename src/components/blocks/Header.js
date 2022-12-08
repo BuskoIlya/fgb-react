@@ -7,7 +7,7 @@ function Header() {
     <header className = "header">
       <img className = "header__logo logo"
            src = {config.imgFlagPath + 'by-round.jpg'} alt = "Флаг Беларуси" />
-      <h1 className = "title">Сообщество Го Беларуси</h1>
+      <h1 className = "header__title title">Сообщество Го Беларуси</h1>
     </header>
   );
 }

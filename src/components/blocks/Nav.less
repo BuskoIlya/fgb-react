@@ -32,6 +32,7 @@
     visibility: hidden;
     position: absolute;
     background-color: white;
+    z-index: 1;
     border-radius: 2px;
     box-shadow: 1px 1px 1px 1px @grey;
     opacity: 0;
@@ -53,5 +54,23 @@
     border-radius: 2px;
     text-align: left;
     cursor: pointer;
+  }
+
+  &__mobile {
+    display: none;
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: @desktop-width) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: fit-content;
+    &__ul { flex-direction: column }
+    &__mobile { display: block }
   }
 }

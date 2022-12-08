@@ -12,4 +12,18 @@
   &__logo {
     width: 80px;
   }
+
+  @media screen and (max-width: @desktop-width) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: @ipad-adaptive-width) {
+    &__title {font-size: 1rem}
+    &__logo {width: 40px}
+  }
+
+  @media screen and (max-width: @mobile-width) {
+    justify-content: center;
+    &__title { display: none }
+  }
 }
