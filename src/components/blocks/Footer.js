@@ -1,5 +1,3 @@
-import config from '../../js/config';
-
 import './Footer.css';
 
 function Footer() {
@@ -7,7 +5,7 @@ function Footer() {
     <footer className = "footer">
       <p>&copy; Бусько Илья Владимирович</p>
       <img className = "footer__logo logo"
-           src = {config.imgLogoPath + 'fgb-160.png'} alt = "Логотип сообщества 'Умный Аист'"/>
+           src = { process.env.REACT_APP_IMG_LOGO_PATH + 'fgb-160.png' } alt = "Логотип сообщества 'Умный Аист'"/>
     </footer>
   );
 }
