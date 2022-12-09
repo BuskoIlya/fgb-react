@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: calc(3 * 360px + 2 * 20px);
+  padding: 16px;
+  margin: 0 auto;
+}
+.header__logo {
+  width: 80px;
+}
+/*# sourceMappingURL=Header.css.map */
