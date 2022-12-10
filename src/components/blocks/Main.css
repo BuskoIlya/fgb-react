@@ -1,0 +1,6 @@
+.main {
+  display: flex;
+  width: calc(3 * 360px + 2 * 20px);
+  margin: 20px auto;
+}
+/*# sourceMappingURL=Main.css.map */

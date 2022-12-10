@@ -1,0 +1,176 @@
+/*
+  Фон "Волна"
+*/
+.bg-wave-blue {
+  position: relative;
+  overflow: hidden;
+  color: #2a2a2a;
+  z-index: 0;
+}
+.bg-wave-blue:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: -150%;
+  width: 150%;
+  height: 250%;
+  z-index: -1;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background: #3fb2e6;
+  transition: all 0.5s linear;
+}
+.bg-wave-blue:hover {
+  color: white;
+  background: rgba(63, 178, 230, 0.75);
+}
+.bg-wave-blue:hover:after {
+  left: -50%;
+}
+.bg-wave-green {
+  position: relative;
+  overflow: hidden;
+  color: #2a2a2a;
+  z-index: 0;
+}
+.bg-wave-green:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: -150%;
+  width: 150%;
+  height: 250%;
+  z-index: -1;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background: #3aaa35;
+  transition: all 0.5s linear;
+}
+.bg-wave-green:hover {
+  color: white;
+  background: rgba(58, 170, 53, 0.75);
+}
+.bg-wave-green:hover:after {
+  left: -50%;
+}
+.bg-wave-red {
+  position: relative;
+  overflow: hidden;
+  color: #2a2a2a;
+  z-index: 0;
+}
+.bg-wave-red:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: -150%;
+  width: 150%;
+  height: 250%;
+  z-index: -1;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background: #e41f1e;
+  transition: all 0.5s linear;
+}
+.bg-wave-red:hover {
+  color: white;
+  background: rgba(228, 31, 30, 0.75);
+}
+.bg-wave-red:hover:after {
+  left: -50%;
+}
+.bg-wave-yellow {
+  position: relative;
+  overflow: hidden;
+  color: #2a2a2a;
+  z-index: 0;
+}
+.bg-wave-yellow:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: -150%;
+  width: 150%;
+  height: 250%;
+  z-index: -1;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background: #ffde00;
+  transition: all 0.5s linear;
+}
+.bg-wave-yellow:hover {
+  color: white;
+  background: rgba(255, 222, 0, 0.75);
+}
+.bg-wave-yellow:hover:after {
+  left: -50%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 360px;
+  padding: 16px;
+  border-radius: 2px;
+  transition: box-shadow 0.3s linear;
+}
+.card:hover {
+  box-shadow: 2px 2px 2px 2px #bec2c9;
+}
+.card__photo {
+  width: 100%;
+  height: 192px;
+  cursor: pointer;
+}
+.card__ref {
+  text-decoration: none;
+  cursor: pointer;
+  color: #2a2a2a;
+}
+.card__title {
+  position: relative;
+  overflow: hidden;
+  color: #2a2a2a;
+  z-index: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color, background-color 0.5s linear;
+}
+.card__title:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: -150%;
+  width: 150%;
+  height: 250%;
+  z-index: -1;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background: #3aaa35;
+  transition: all 0.5s linear;
+}
+.card__title:hover {
+  color: white;
+  background: rgba(58, 170, 53, 0.75);
+}
+.card__title:hover:after {
+  left: -50%;
+}
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 1;
+}
+.card__author {
+  color: #878d9a;
+}
+/*# sourceMappingURL=Card.css.map */
