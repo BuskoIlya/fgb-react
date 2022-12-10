@@ -1,0 +1,38 @@
+/*
+  Фон "Волна"
+*/
+@import 'colors';
+
+.bg-wave-blue { .wave-background(@blue) }
+.bg-wave-green { .wave-background(@green) }
+.bg-wave-red { .wave-background(@red) }
+.bg-wave-yellow { .wave-background(@yellow) }
+
+.wave-background (@color) {
+  position: relative;
+  overflow: hidden;
+  color: @black;
+  z-index: 0;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: -150%;
+    width: 150%;
+    height: 250%;
+    z-index: -1;
+
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background: @color;
+    transition: all .5s linear;
+  }
+
+  &:hover {
+    color: white;
+    background: fade(@color, 75%);
+    &:after { left: -50% }
+  }
+}

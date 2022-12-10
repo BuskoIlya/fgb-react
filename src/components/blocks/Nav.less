@@ -1,0 +1,57 @@
+@import '../../css/colors';
+@import '../../css/sizes';
+@import '../../css/wave-background';
+
+.nav {
+  width: @desktop-width;
+  margin: 0 auto;
+
+  &__ul {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    .wave-background(@red);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &_active {
+      color: white;
+      background: fade(@red, 75%);
+      &:after { left: -50% }
+    }
+  }
+
+  &__sub-ul {
+    list-style: none;
+    visibility: hidden;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px @grey;
+    opacity: 0;
+    transition: opacity .5s linear;
+  }
+
+  &__li:hover .nav__sub-ul {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__sub-item {
+    .wave-background(@green);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    width: 100%;
+    padding: 16px 16px 16px 24px;
+    border-radius: 2px;
+    text-align: left;
+    cursor: pointer;
+  }
+}
