@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Contacts from './pages/Contacts';
+import Contacts from './pages/info/Contacts';
 import Home from './pages/Home';
+import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/blocks/Layout';
-import Ranks from './pages/Ranks';
+import Ranks from './pages/info/Ranks';
 
 import './css/logo.css';
 import './css/title.css';
@@ -19,7 +20,7 @@ function App() {
             <Route index element = { <div/> }/>
             <Route path = "contacts" element = { <Contacts/> }/>
             <Route path = "ranks" element = { <Ranks/> }/>
-            <Route path = "info-board" element = { <div/> }/>
+            <Route path = "info-board" element = { <InfoBoard/> }/>
             <Route path = "news" element = { <div/> }/>
           </Route>
           <Route path = "players" element = { <div/> }/>

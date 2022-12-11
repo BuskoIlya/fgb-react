@@ -1,0 +1,19 @@
+.info-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.info-board__item {
+  padding: 16px;
+  line-height: 1.5;
+}
+.info-board__item p {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0;
+}
+.info-board a {
+  color: #3fb2e6;
+}
+/*# sourceMappingURL=InfoBoard.css.map */

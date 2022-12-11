@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardContact from '../components/CardContact';
+import CardContact from '../../components/CardContact';
 
 import './Contacts.css';
 
