@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Contacts from './pages/Contacts';
 import Home from './pages/Home';
 import Layout from './components/blocks/Layout';
+import Ranks from './pages/Ranks';
 
 import './css/logo.css';
 import './css/title.css';
@@ -17,7 +18,7 @@ function App() {
           <Route path = "info/*">
             <Route index element = { <div/> }/>
             <Route path = "contacts" element = { <Contacts/> }/>
-            <Route path = "ranks" element = { <div/> }/>
+            <Route path = "ranks" element = { <Ranks/> }/>
             <Route path = "info-board" element = { <div/> }/>
             <Route path = "news" element = { <div/> }/>
           </Route>

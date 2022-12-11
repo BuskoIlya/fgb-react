@@ -1,0 +1,29 @@
+@import "colors";
+@import "sizes";
+
+.table-blue { .table(@blue) }
+
+.table(@color) {
+  min-width: 50%;
+
+  border: solid 1px @color;
+  border-radius: 2px;
+
+  &, tr, th, td {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  th, td {
+    padding: 8px;
+    border: solid 1px @color;
+
+    text-align: center;
+  }
+
+  tr {
+    &:nth-child(2n) {
+      background-color: lighten(@color, 40%);
+    }
+  }
+}

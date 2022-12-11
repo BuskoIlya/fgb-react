@@ -1,4 +1,9 @@
 .title {
   text-transform: uppercase;
+  padding: 0.5em 1em;
+}
+.title:not(h1) {
+  font-weight: 500;
+  text-transform: none;
 }
 /*# sourceMappingURL=title.css.map */
