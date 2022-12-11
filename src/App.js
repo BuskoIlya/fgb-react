@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
+import Contacts from './pages/Contacts';
 import Home from './pages/Home';
 import Layout from './components/blocks/Layout';
 
@@ -15,7 +16,7 @@ function App() {
           <Route path = "photos" element = { <div/> }/>
           <Route path = "info/*">
             <Route index element = { <div/> }/>
-            <Route path = "contacts" element = { <div/> }/>
+            <Route path = "contacts" element = { <Contacts/> }/>
             <Route path = "ranks" element = { <div/> }/>
             <Route path = "info-board" element = { <div/> }/>
             <Route path = "news" element = { <div/> }/>

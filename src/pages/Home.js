@@ -24,7 +24,7 @@ function Home() {
       <section className = "home">
         { tournaments.map(item => (
             <Card key = { item.date }
-                  photo = { imgPath + item.photo } title = { item.title } refname = { item.ref }
+                  photo = { imgPath + item.photo } title = { item.title } refto = { item.ref }
                   date = { item.date } address = { item.address } author = { item.author }/>
         )) }
       </section>
