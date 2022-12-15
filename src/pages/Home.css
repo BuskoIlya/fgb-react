@@ -1,6 +1,7 @@
 .home {
   display: flex;
-  gap: 20px;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 2%;
 }
 /*# sourceMappingURL=Home.css.map */

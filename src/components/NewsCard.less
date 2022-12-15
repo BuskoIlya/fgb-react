@@ -2,41 +2,59 @@
 @import "../css/sizes";
 @import '../css/wave-background';
 
-.card-contact {
+.news-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  width: 208px;
+
+  width: 32%;
   padding: 16px;
+
   border-radius: 2px;
-  line-height: 1.5;
   transition: box-shadow .3s linear;
 
   &:hover {
     box-shadow: 2px 2px 2px 2px darken(@grey, 10%);
   }
 
-  &__photo {
+  &__img {
     width: 100%;
-    height: 272px;
+
     border-radius: 2px;
+    cursor: pointer;
   }
 
-  &__name {
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__title {
+    .bg-wave-green();
+
+    padding: 8px 16px;
+
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
-    padding: 8px 16px;
+    cursor: pointer;
     transition: color, background-color .5s linear;
   }
 
-  &__info {
+  &__description {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    line-height: 1;
   }
 
-  &__phone { color: darken(@grey, 30%) }
-  &__email { color: darken(@grey, 30%) }
+  &__author { color: darken(@grey, 30%) }
+
+  @media screen and (max-width: @ipad-adaptive-width) {
+    width: 47%;
+  }
+  @media screen and (max-width: 496px) {
+    width: @mobile-width;
+  }
 }

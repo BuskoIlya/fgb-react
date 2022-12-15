@@ -4,21 +4,13 @@
   display: flex;
   justify-content: space-between;
 
-  width: @desktop-width;
-  padding: 16px;
-  margin: auto auto 0;
+  margin-top: auto;
 
-  &__logo {
-    width: 80px;
-  }
-
-  @media screen and (max-width: @desktop-width) {
-    width: 100%;
-  }
+  &__logo { width: 100px }
 
   @media screen and (max-width: @mobile-width) {
     flex-direction: column;
-    align-items: center;
     gap: @block-items-gap;
+    align-items: center;
   }
 }

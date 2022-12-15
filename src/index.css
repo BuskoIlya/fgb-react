@@ -5,9 +5,7 @@
   padding: 0;
 }
 
-html, body { height: 100% }
-
-html, a {
+html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -28,7 +26,16 @@ code {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  width: 1130px;
   min-width: 360px;
-  height: 100%;
-  overflow-x: hidden;
+  min-height: calc(100vh - 32px);
+  margin: 16px auto;
+  padding: 0 5px;
+}
+
+@media screen and (max-width: 1120px) {
+  .root {
+    width: 100%;
+  }
 }

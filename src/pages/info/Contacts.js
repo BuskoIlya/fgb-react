@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardContact from '../../components/CardContact';
+import ContactCard from '../../components/ContactCard';
 
 import './Contacts.css';
 
@@ -23,9 +23,9 @@ function Contacts() {
   return (
       <section className = "contacts">
         { contacts.map(item => (
-            <CardContact key = { item.name }
-                  photo = { imgPath + item.photo } name = { item.name } rank = { item.rank }
-                  description = { item.description } phone = { item.phone } email = { item.email }/>
+            <ContactCard key = { item.name }
+                         photo = { imgPath + item.photo } name = { item.name } rank = { item.rank }
+                         description = { item.description } phone = { item.phone } email = { item.email }/>
         )) }
       </section>
   );

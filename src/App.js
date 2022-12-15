@@ -4,6 +4,7 @@ import Contacts from './pages/info/Contacts';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/blocks/Layout';
+import News from './pages/info/News';
 import Ranks from './pages/info/Ranks';
 
 import './css/logo.css';
@@ -21,7 +22,7 @@ function App() {
             <Route path = "contacts" element = { <Contacts/> }/>
             <Route path = "ranks" element = { <Ranks/> }/>
             <Route path = "info-board" element = { <InfoBoard/> }/>
-            <Route path = "news" element = { <div/> }/>
+            <Route path = "news" element = { <News/> }/>
           </Route>
           <Route path = "players" element = { <div/> }/>
           <Route path = "tournaments/*">

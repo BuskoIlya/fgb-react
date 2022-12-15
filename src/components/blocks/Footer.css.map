@@ -1,1 +1,1 @@
-{"version":3,"sources":["Footer.less","C:/2022-04-24/IT/_repo/fgb-react/src/css/sizes.less"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,8BAAA;EAEA,OCHc,0BDGd;EACA,aAAA;EACA,mBAAA;;AAEA,OAAC;EACC,WAAA;;AAGF,mBAA8C,WCXhC;EDWd;IACE,WAAA;;;AAGF,mBAA6C;EAA7C;IACE,sBAAA;IACA,mBAAA;IACA,SAAA","file":"Footer.css"}
+{"version":3,"sources":["Footer.less"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,8BAAA;EAEA,gBAAA;;AAEA,OAAC;EAAS,YAAA;;AAEV,mBAA6C;EAA7C;IACE,sBAAA;IACA,SAAA;IACA,mBAAA","file":"Footer.css"}

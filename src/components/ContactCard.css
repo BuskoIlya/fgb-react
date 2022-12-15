@@ -3,19 +3,19 @@
 */
 .bg-wave-blue {
   position: relative;
+  z-index: 0;
   overflow: hidden;
   color: #2a2a2a;
-  z-index: 0;
 }
 .bg-wave-blue:after {
   content: '';
-  display: inline-block;
   position: absolute;
+  z-index: -1;
   top: 0px;
   left: -150%;
+  display: inline-block;
   width: 150%;
   height: 250%;
-  z-index: -1;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   background: #3fb2e6;
@@ -30,19 +30,19 @@
 }
 .bg-wave-green {
   position: relative;
+  z-index: 0;
   overflow: hidden;
   color: #2a2a2a;
-  z-index: 0;
 }
 .bg-wave-green:after {
   content: '';
-  display: inline-block;
   position: absolute;
+  z-index: -1;
   top: 0px;
   left: -150%;
+  display: inline-block;
   width: 150%;
   height: 250%;
-  z-index: -1;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   background: #3aaa35;
@@ -57,19 +57,19 @@
 }
 .bg-wave-red {
   position: relative;
+  z-index: 0;
   overflow: hidden;
   color: #2a2a2a;
-  z-index: 0;
 }
 .bg-wave-red:after {
   content: '';
-  display: inline-block;
   position: absolute;
+  z-index: -1;
   top: 0px;
   left: -150%;
+  display: inline-block;
   width: 150%;
   height: 250%;
-  z-index: -1;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   background: #e41f1e;
@@ -84,19 +84,19 @@
 }
 .bg-wave-yellow {
   position: relative;
+  z-index: 0;
   overflow: hidden;
   color: #2a2a2a;
-  z-index: 0;
 }
 .bg-wave-yellow:after {
   content: '';
-  display: inline-block;
   position: absolute;
+  z-index: -1;
   top: 0px;
   left: -150%;
+  display: inline-block;
   width: 150%;
   height: 250%;
-  z-index: -1;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   background: #ffde00;
@@ -109,69 +109,41 @@
 .bg-wave-yellow:hover:after {
   left: -50%;
 }
-.card {
+.contact-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  width: 360px;
+  width: 208px;
   padding: 16px;
   border-radius: 2px;
+  line-height: 1.5;
   transition: box-shadow 0.3s linear;
 }
-.card:hover {
+.contact-card:hover {
   box-shadow: 2px 2px 2px 2px #bec2c9;
 }
-.card__photo {
+.contact-card__photo {
   width: 100%;
-  height: 192px;
+  height: 272px;
   border-radius: 2px;
-  cursor: pointer;
 }
-.card__ref {
-  text-decoration: none;
-  cursor: pointer;
-  color: #2a2a2a;
-}
-.card__title {
-  position: relative;
-  overflow: hidden;
-  color: #2a2a2a;
-  z-index: 0;
+.contact-card__name {
+  padding: 8px 16px;
   text-transform: uppercase;
   font-size: 16px;
-  padding: 8px 16px;
-  cursor: pointer;
+  font-weight: 600;
   transition: color, background-color 0.5s linear;
 }
-.card__title:after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  top: 0px;
-  left: -150%;
-  width: 150%;
-  height: 250%;
-  z-index: -1;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  background: #3aaa35;
-  transition: all 0.5s linear;
-}
-.card__title:hover {
-  color: white;
-  background: rgba(58, 170, 53, 0.75);
-}
-.card__title:hover:after {
-  left: -50%;
-}
-.card__description {
+.contact-card__info {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  line-height: 1;
 }
-.card__author {
+.contact-card__phone {
   color: #878d9a;
 }
-/*# sourceMappingURL=Card.css.map */
+.contact-card__email {
+  color: #878d9a;
+}
+/*# sourceMappingURL=ContactCard.css.map */

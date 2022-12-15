@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "../components/Card";
+import NewsCard from "../components/NewsCard";
 
 import "./Home.css";
 
@@ -23,9 +23,9 @@ function Home() {
   return (
       <section className = "home">
         { tournaments.map(item => (
-            <Card key = { item.date }
-                  photo = { imgPath + item.photo } title = { item.title } refto = { item.ref }
-                  date = { item.date } address = { item.address } author = { item.author }/>
+            <NewsCard key = { item.date }
+                      img = { imgPath + item.photo } title = { item.title } refto = { item.ref }
+                      date = { item.date } address = { item.address } author = { item.author }/>
         )) }
       </section>
   );
