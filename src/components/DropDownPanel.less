@@ -1,0 +1,26 @@
+@import '../css/colors';
+@import '../css/sizes';
+@import '../css/wave-background';
+
+.dropdown-panel {
+  display: flex;
+  flex-direction: column;
+  gap: @block-items-gap;
+
+  &__title {
+    .wave-background(@yellow);
+
+    width: 80%;
+    margin: 0 auto;
+
+    border: solid 1px white;
+    box-shadow: 1px 1px 1px 1px darken(@grey, 10%);
+    cursor: pointer;
+  }
+
+  &__data {
+    display: none;
+    gap: @block-items-gap;
+    flex-wrap: wrap;
+  }
+}

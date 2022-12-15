@@ -1,0 +1,33 @@
+@import '../css/colors';
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  padding: 0.5em 1em;
+
+  border: solid 1px white;
+  border-radius: 0.125em;
+  background-color: white;
+  color: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color .3s linear;
+
+  &_blue { .mix-color(@blue) }
+  &_green { .mix-color(@green) }
+  &_red { .mix-color(@red) }
+  &_yellow { .mix-color(@yellow) }
+}
+
+.mix-color (@color) {
+  color: @color;
+  &:hover {
+    background: fade(@color, 20%);
+  }
+}
