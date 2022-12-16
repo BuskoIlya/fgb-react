@@ -5,12 +5,9 @@ import './Players.css';
 
 function Players() {
 
-  const apiPlayers = process.env.REACT_APP_SERVER_ADDRESS
-      + ':' + process.env.REACT_APP_SERVER_PORT
+  const apiPlayers = process.env.REACT_APP_SERVER_URL
       + process.env.REACT_APP_API_PLAYERS;
-
   const [players, setPlayers] = React.useState([]);
-
   React.useEffect(() => {
     fetch(apiPlayers)
         .then(response => response.json())
@@ -31,7 +28,8 @@ function Players() {
           </tr>
           </thead>
           <tbody>
-          { players.map((item, index) => (
+          {
+            players.map((item, index) =>
               <tr key = { index + 1 }>
                 <td>{ index + 1 }</td>
                 <td className = "players__col_left-align">{ item.name }</td>
@@ -39,7 +37,8 @@ function Players() {
                 <td>{ item.rank }</td>
                 <td>{ item.score }</td>
               </tr>
-          )) }
+            )
+          }
           </tbody>
         </table>
       </section>

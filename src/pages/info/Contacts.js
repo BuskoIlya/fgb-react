@@ -6,13 +6,10 @@ import './Contacts.css';
 
 function Contacts() {
 
-  const apiContactsUrl = process.env.REACT_APP_SERVER_ADDRESS
-      + ':' + process.env.REACT_APP_SERVER_PORT
+  const apiContactsUrl = process.env.REACT_APP_SERVER_URL
       + process.env.REACT_APP_API_CONTACTS;
   const imgPath = process.env.REACT_APP_IMG_CONTACTS_PATH;
-
   const [contacts, setContacts] = React.useState([]);
-
   React.useEffect(() => {
     fetch(apiContactsUrl)
         .then(response => response.json())
@@ -22,11 +19,13 @@ function Contacts() {
 
   return (
       <section className = "contacts">
-        { contacts.map(item => (
+        {
+          contacts.map(item =>
             <ContactCard key = { item.name }
                          photo = { imgPath + item.photo } name = { item.name } rank = { item.rank }
                          description = { item.description } phone = { item.phone } email = { item.email }/>
-        )) }
+          )
+        }
       </section>
   );
 }

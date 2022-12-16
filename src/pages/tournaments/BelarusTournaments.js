@@ -3,29 +3,29 @@ import React from 'react';
 import DropDownPanel from '../../components/DropDownPanel';
 import NewsCard from '../../components/NewsCard';
 
-import './News.css';
+import './BelarusTournaments.css';
 
-function News() {
+function BelarusTournaments() {
 
-  const newsApiUrl = process.env.REACT_APP_SERVER_URL
+  const apiTournamentsUrl = process.env.REACT_APP_SERVER_URL
       + process.env.REACT_APP_API_NEWS;
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
-  const [news, setNews] = React.useState([]);
+  const [tournaments, setTournaments] = React.useState([]);
   React.useEffect(() => {
-    fetch(newsApiUrl)
+    fetch(apiTournamentsUrl)
         .then(response => response.json())
-        .then(data => setNews(data))
+        .then(data => setTournaments(data))
         .catch(e =>  console.log(e));
   }, []);
 
   return (
-      <section className = "news">
-        <p className = "news__description">
-          *Прошедшие турниры и все остальные события Го Беларуси по годам:
+      <section className = "by-tournaments">
+        <p className = "by-tournaments__description">
+          *Прошедшие турниры с участием наших игроков по годам:
         </p>
-        <div className = "news__items">
+        <div className = "by-tournaments__items">
           {
-            news.map(year =>
+            tournaments.map(year =>
               <DropDownPanel key = { year.year } title = { year.year }>
                 {
                   year.items.map(item =>
@@ -42,4 +42,4 @@ function News() {
   );
 }
 
-export default News;
+export default BelarusTournaments;

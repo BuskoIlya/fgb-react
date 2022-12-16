@@ -7,7 +7,7 @@ import './DropDownPanel.css';
 
 function DropDownPanel({ title, children }) {
 
-  const [dataDisplay, setDataDisplay] = React.useState({ display: "" });
+  const [dataDisplay, setDataDisplay] = React.useState({ display: "none" });
 
   function dropDown() {
     if (dataDisplay.display === "none") {
@@ -21,8 +21,7 @@ function DropDownPanel({ title, children }) {
     <article className = "dropdown-panel">
       <Button classes = "btn dropdown-panel__title"
               onClickAction = { dropDown }
-              endIcon = { <FontAwesomeIcon icon = { faChevronDown } /> }
-      >
+              endIcon = { <FontAwesomeIcon icon = { faChevronDown } /> }>
         { title }
       </Button>
       <div className = "dropdown-panel__data" style = { dataDisplay }>{ children }</div>

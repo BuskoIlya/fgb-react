@@ -5,12 +5,9 @@ import './Ranks.css';
 
 function Ranks() {
 
-  const apiRanksUrl = process.env.REACT_APP_SERVER_ADDRESS
-      + ':' + process.env.REACT_APP_SERVER_PORT
+  const apiRanksUrl = process.env.REACT_APP_SERVER_URL
       + process.env.REACT_APP_API_RANKS;
-
   const [ranks, setRanks] = React.useState([]);
-
   React.useEffect(() => {
     fetch(apiRanksUrl)
         .then(response => response.json())
@@ -28,12 +25,14 @@ function Ranks() {
           </tr>
           </thead>
           <tbody>
-          { ranks.map((item, index) => (
+          {
+            ranks.map((item, index) =>
               <tr key = { index + 1 }>
                 <td>{ item.scores }</td>
                 <td>{ item.rank }</td>
               </tr>
-          )) }
+            )
+          }
           </tbody>
         </table>
       </section>

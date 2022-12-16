@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
+import BelarusTournaments from './pages/tournaments/BelarusTournaments';
 import Contacts from './pages/info/Contacts';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
@@ -28,7 +29,7 @@ function App() {
           <Route path = "players" element = { <Players/> }/>
           <Route path = "tournaments/*">
             <Route index element = { <div/> }/>
-            <Route path = "by-tournaments" element = { <div/> }/>
+            <Route path = "by-tournaments" element = { <BelarusTournaments/> }/>
             <Route path = "world-championships" element = { <div/> }/>
             <Route path = "euro-championships" element = { <div/> }/>
             <Route path = "eu-2019-2020" element = { <div/> }/>
