@@ -8,6 +8,7 @@ import Layout from './components/blocks/Layout';
 import News from './pages/info/News';
 import Players from './pages/Players';
 import Ranks from './pages/info/Ranks';
+import WAGC from './pages/tournaments/WAGC';
 
 import './css/logo.css';
 import './css/title.css';
@@ -30,7 +31,7 @@ function App() {
           <Route path = "tournaments/*">
             <Route index element = { <div/> }/>
             <Route path = "by-tournaments" element = { <BelarusTournaments/> }/>
-            <Route path = "world-championships" element = { <div/> }/>
+            <Route path = "world-championships" element = { <WAGC/> }/>
             <Route path = "euro-championships" element = { <div/> }/>
             <Route path = "eu-2019-2020" element = { <div/> }/>
             <Route path = "eu-2020-2021" element = { <div/> }/>
