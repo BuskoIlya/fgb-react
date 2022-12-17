@@ -17,19 +17,19 @@ function Ranks() {
 
   return (
       <section className = "ranks">
-        <table className = "table-blue">
+        <table className = "table table_blue table_size-50">
           <thead>
           <tr>
-            <th>Очки</th>
-            <th>Разряды кю / дан</th>
+            <th className = "table__cell">Очки</th>
+            <th className = "table__cell">Разряды кю / дан</th>
           </tr>
           </thead>
           <tbody>
           {
             ranks.map((item, index) =>
               <tr key = { index + 1 }>
-                <td>{ item.scores }</td>
-                <td>{ item.rank }</td>
+                <td className = "table__cell">{ item.scores }</td>
+                <td className = "table__cell">{ item.rank }</td>
               </tr>
             )
           }

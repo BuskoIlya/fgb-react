@@ -17,25 +17,25 @@ function Players() {
 
   return (
       <section className = "players">
-        <table className = "table-blue players__table">
+        <table className = "table table_blue">
           <thead>
           <tr>
-            <th>№</th>
-            <th>ФИО</th>
-            <th>Город</th>
-            <th>Разряд</th>
-            <th>Рейтинг</th>
+            <th className = "table__cell">№</th>
+            <th className = "table__cell">ФИО</th>
+            <th className = "table__cell">Город</th>
+            <th className = "table__cell">Разряд</th>
+            <th className = "table__cell">Рейтинг</th>
           </tr>
           </thead>
           <tbody>
           {
             players.map((item, index) =>
               <tr key = { index + 1 }>
-                <td>{ index + 1 }</td>
-                <td className = "players__col_left-align">{ item.name }</td>
-                <td>{ item.city }</td>
-                <td>{ item.rank }</td>
-                <td>{ item.score }</td>
+                <td className = "table__cell">{ index + 1 }</td>
+                <td className = "table__cell table__cell_left">{ item.name }</td>
+                <td className = "table__cell">{ item.city }</td>
+                <td className = "table__cell">{ item.rank }</td>
+                <td className = "table__cell">{ item.score }</td>
               </tr>
             )
           }
