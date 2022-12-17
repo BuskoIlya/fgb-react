@@ -21,7 +21,7 @@ function News() {
   return (
       <section className = "news">
         <p className = "news__description">
-          *Прошедшие турниры и все остальные события Го Беларуси по годам:
+          *Прошедшие турниры и другие события Го Беларуси по годам:
         </p>
         <div className = "news__items">
           {

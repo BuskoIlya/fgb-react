@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../../css/table.css';
 import './Ranks.css';
+import MainLayout from '../../components/blocks/MainLayout';
 
 function Ranks() {
 
@@ -16,26 +17,28 @@ function Ranks() {
   }, []);
 
   return (
-      <section className = "ranks">
-        <table className = "table table_blue table_size-50">
-          <thead>
-          <tr>
-            <th className = "table__cell">Очки</th>
-            <th className = "table__cell">Разряды кю / дан</th>
-          </tr>
-          </thead>
-          <tbody>
-          {
-            ranks.map((item, index) =>
-              <tr key = { index + 1 }>
-                <td className = "table__cell">{ item.scores }</td>
-                <td className = "table__cell">{ item.rank }</td>
-              </tr>
-            )
-          }
-          </tbody>
-        </table>
-      </section>
+      <MainLayout title = "Система разрядов в Го">
+        <section className = "ranks">
+          <table className = "table table_blue table_size-50">
+            <thead>
+            <tr>
+              <th className = "table__cell">Очки</th>
+              <th className = "table__cell">Разряды кю / дан</th>
+            </tr>
+            </thead>
+            <tbody>
+            {
+              ranks.map((item, index) =>
+                  <tr key = {index + 1}>
+                    <td className = "table__cell">{item.scores}</td>
+                    <td className = "table__cell">{item.rank}</td>
+                  </tr>
+              )
+            }
+            </tbody>
+          </table>
+        </section>
+      </MainLayout>
   );
 }
 
