@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../css/table.css';
 import './Ranks.css';
-import MainLayout from '../../components/blocks/MainLayout';
+import MainTitleLayout from '../../components/blocks/MainTitleLayout';
 
 function Ranks() {
 
@@ -17,7 +17,7 @@ function Ranks() {
   }, []);
 
   return (
-      <MainLayout title = "Система разрядов в Го">
+      <MainTitleLayout title = "Система разрядов в Го">
         <section className = "ranks">
           <table className = "table table_blue table_size-50">
             <thead>
@@ -38,7 +38,7 @@ function Ranks() {
             </tbody>
           </table>
         </section>
-      </MainLayout>
+      </MainTitleLayout>
   );
 }
 

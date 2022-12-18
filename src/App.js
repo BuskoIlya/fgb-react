@@ -12,6 +12,7 @@ import WAGC from './pages/tournaments/WAGC';
 
 import './css/logo.css';
 import './css/title.css';
+import GoEuChamps from './pages/tournaments/GoEuChamps';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
             <Route index element = { <div/> }/>
             <Route path = "by-tournaments" element = { <BelarusTournaments/> }/>
             <Route path = "world-championships" element = { <WAGC/> }/>
-            <Route path = "euro-championships" element = { <div/> }/>
+            <Route path = "euro-championships" element = { <GoEuChamps/> }/>
             <Route path = "eu-2019-2020" element = { <div/> }/>
             <Route path = "eu-2020-2021" element = { <div/> }/>
           </Route>

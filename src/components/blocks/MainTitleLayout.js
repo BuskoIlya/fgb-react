@@ -1,6 +1,6 @@
-import './MainLayout.css';
+import './MainTitleLayout.css';
 
-function MainLayout({ title, children }) {
+function MainTitleLayout({ title, children }) {
   return (
       <div className = "main-layout">
         <h2 className = "main-layout__title">{ title }</h2>
@@ -9,4 +9,4 @@ function MainLayout({ title, children }) {
   );
 }
 
-export default MainLayout;
+export default MainTitleLayout;

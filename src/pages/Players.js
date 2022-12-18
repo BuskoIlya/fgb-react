@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainLayout from '../components/blocks/MainLayout';
+import MainTitleLayout from '../components/blocks/MainTitleLayout';
 
 import '../css/table.css';
 import './Players.css';
@@ -18,7 +18,7 @@ function Players() {
   }, []);
 
   return (
-      <MainLayout title = "Игроки Беларуси">
+      <MainTitleLayout title = "Игроки Беларуси">
         <section className = "players">
           <table className = "table table_blue">
             <thead>
@@ -45,7 +45,7 @@ function Players() {
             </tbody>
           </table>
         </section>
-      </MainLayout>
+      </MainTitleLayout>
   );
 }
 
