@@ -50,7 +50,12 @@
     transition: opacity .5s linear;
   }
 
-  &__li:hover .nav__sub-ul {
+  &__sub-sub-ul {
+    top: 0;
+    left: 100%;
+  }
+
+  &__li:hover > .nav__sub-ul {
     opacity: 1;
     visibility: visible;
   }

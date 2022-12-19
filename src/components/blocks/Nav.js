@@ -45,8 +45,14 @@ function Nav() {
             <NavLink className = { setClass }  to = "/tournaments">Турниры</NavLink>
             <ul className = "nav__sub-ul">
               <li><NavLink className = "nav__sub-item" to = "/tournaments/by-tournaments">Наши турниры</NavLink></li>
-              <li><NavLink className = "nav__sub-item" to = "/tournaments/world-championships">Чемпионаты мира</NavLink></li>
-              <li><NavLink className = "nav__sub-item" to = "/tournaments/euro-championships">Чемпионаты европы</NavLink></li>
+              <li><NavLink className = "nav__sub-item" to = "/tournaments/world-champs">Чемпионаты мира</NavLink></li>
+              <li className = "nav__li">
+                <NavLink className = "nav__sub-item" to = "/tournaments/euro-champs">Чемпионаты европы</NavLink>
+                <ul className = "nav__sub-ul nav__sub-sub-ul">
+                  <li><NavLink className = "nav__sub-item" to = "/tournaments/euro-champs/personal">Индивидуальный</NavLink></li>
+                  <li><NavLink className = "nav__sub-item" to = "/tournaments/euro-champs/command">Командный</NavLink></li>
+                </ul>
+              </li>
               <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2019-2020">Командный ЧЕ 2019-2020</NavLink></li>
               <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2019-2020">Командный ЧЕ 2020-2021</NavLink></li>
             </ul>

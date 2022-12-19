@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import BelarusTournaments from './pages/tournaments/BelarusTournaments';
 import Contacts from './pages/info/Contacts';
+import EuCommand from './pages/tournaments/EuChamps/EuCommand';
+import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/blocks/Layout';
@@ -12,7 +14,8 @@ import WAGC from './pages/tournaments/WAGC';
 
 import './css/logo.css';
 import './css/title.css';
-import GoEuChamps from './pages/tournaments/GoEuChamps';
+
+
 
 function App() {
   return (
@@ -32,8 +35,12 @@ function App() {
           <Route path = "tournaments/*">
             <Route index element = { <div/> }/>
             <Route path = "by-tournaments" element = { <BelarusTournaments/> }/>
-            <Route path = "world-championships" element = { <WAGC/> }/>
-            <Route path = "euro-championships" element = { <GoEuChamps/> }/>
+            <Route path = "world-champs" element = { <WAGC/> }/>
+            <Route path = "euro-champs/*">
+              <Route index element = { <div/> }/>
+              <Route path = "personal" element = { <EuPersonal/> }/>
+              <Route path = "command" element = { <EuCommand/> }/>
+            </Route>
             <Route path = "eu-2019-2020" element = { <div/> }/>
             <Route path = "eu-2020-2021" element = { <div/> }/>
           </Route>
