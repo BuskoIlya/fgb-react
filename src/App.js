@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import BelarusTournaments from './pages/tournaments/BelarusTournaments';
 import Contacts from './pages/info/Contacts';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
+import EuCommand1920 from './pages/tournaments/EuCommand19-20/EuCommand19-20';
+import EuCommandGroup from './pages/tournaments/EuCommand19-20/EuCommandGroup';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
@@ -14,8 +16,6 @@ import WAGC from './pages/tournaments/WAGC';
 
 import './css/logo.css';
 import './css/title.css';
-
-
 
 function App() {
   return (
@@ -41,7 +41,10 @@ function App() {
               <Route path = "personal" element = { <EuPersonal/> }/>
               <Route path = "command" element = { <EuCommand/> }/>
             </Route>
-            <Route path = "eu-2019-2020" element = { <div/> }/>
+            <Route path = "eu-2019-2020/*">
+              <Route index element = { <EuCommand1920/> }/>
+              <Route path = "group/:id" element = { <EuCommandGroup/> }/>
+            </Route>
             <Route path = "eu-2020-2021" element = { <div/> }/>
           </Route>
           <Route path = "study/*">
