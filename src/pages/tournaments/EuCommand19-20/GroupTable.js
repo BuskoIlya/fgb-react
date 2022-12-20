@@ -5,7 +5,7 @@ import Country from '../../../components/Country';
 
 import './GroupTable.css';
 
-function GroupTable({ title, refto, data }) {
+function GroupTable({ title, refto, data = [] }) {
 
   const flagPath = process.env.REACT_APP_IMG_FLAG_MINI_PATH;
 

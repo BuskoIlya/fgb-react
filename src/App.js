@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 
+import './css/logo.css';
+import './css/title.css';
+
 import BelarusTournaments from './pages/tournaments/BelarusTournaments';
 import Contacts from './pages/info/Contacts';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
@@ -13,9 +16,6 @@ import News from './pages/info/News';
 import Players from './pages/Players';
 import Ranks from './pages/info/Ranks';
 import WAGC from './pages/tournaments/WAGC';
-
-import './css/logo.css';
-import './css/title.css';
 
 function App() {
   return (

@@ -1,7 +1,6 @@
 import GroupTable from './GroupTable';
 import MainTitleLayout from '../../../components/blocks/MainTitleLayout';
 
-import './EuCommand19-20.css';
 import React from 'react';
 
 function EuCommand1920() {
@@ -25,7 +24,7 @@ function EuCommand1920() {
     tables.forEach(item =>
           fetch(item.url)
               .then(response => response.json())
-              .then(data => item.func(data))
+              .then(data => item.func(data.table))
               .catch(e =>  console.log(e))
     );
   }, []);
