@@ -6,8 +6,9 @@ import './css/title.css';
 import BelarusTournaments from './pages/tournaments/BelarusTournaments';
 import Contacts from './pages/info/Contacts';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
-import EuCommand1920 from './pages/tournaments/EuCommand19-20/EuCommand19-20';
-import EuCommandGroup from './pages/tournaments/EuCommand19-20/EuCommandGroup';
+import EuCommand1920 from './pages/tournaments/EuCommandGroups/EuCommand19-20';
+import EuCommand2021 from './pages/tournaments/EuCommandGroups/EuCommand20-21';
+import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
@@ -43,9 +44,12 @@ function App() {
             </Route>
             <Route path = "eu-2019-2020/*">
               <Route index element = { <EuCommand1920/> }/>
-              <Route path = "group/:id" element = { <EuCommandGroup/> }/>
+              <Route path = "group/:id" element = { <EuCommandGroup year = "2019-2020"/> }/>
             </Route>
-            <Route path = "eu-2020-2021" element = { <div/> }/>
+            <Route path = "eu-2020-2021/*">
+              <Route index element = { <EuCommand2021/> }/>
+              <Route path = "group/:id" element = { <EuCommandGroup year = "2020-2021"/> }/>
+            </Route>
           </Route>
           <Route path = "study/*">
             <Route index element = { <div/> }/>

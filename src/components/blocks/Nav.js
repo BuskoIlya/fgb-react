@@ -62,7 +62,15 @@ function Nav() {
                   <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2019-2020/group/D">Группа D</NavLink></li>
                 </ul>
               </li>
-              <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2019-2020">Командный ЧЕ 2020-2021</NavLink></li>
+              <li className = "nav__li">
+                <NavLink className = "nav__sub-item" to = "/tournaments/eu-2020-2021">Командный ЧЕ 2020-2021</NavLink>
+                <ul className = "nav__sub-ul nav__sub-sub-ul">
+                  <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2020-2021/group/A">Группа А</NavLink></li>
+                  <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2020-2021/group/B">Группа B</NavLink></li>
+                  <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2020-2021/group/C">Группа C</NavLink></li>
+                  <li><NavLink className = "nav__sub-item" to = "/tournaments/eu-2020-2021/group/D">Группа D</NavLink></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li className = "nav__li">

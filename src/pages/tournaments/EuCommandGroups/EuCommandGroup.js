@@ -5,10 +5,10 @@ import GroupTable from './GroupTable';
 import MainTitleLayout from '../../../components/blocks/MainTitleLayout';
 import RoundTable from './RoundTable';
 
-function EuCommandGroup() {
+function EuCommandGroup({ year }) {
 
   const params = useParams();
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_EU_COMMAND_19_20_GROUP + params.id;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_EU_COMMAND_GROUP + year + '-' + params.id;
   const [group, setGroup] = React.useState([]);
 
   React.useEffect(() => {
@@ -19,7 +19,7 @@ function EuCommandGroup() {
   }, [params]);
 
   return (
-      <MainTitleLayout title = { "Командный Чемпионат Европы 2019-2020. Группа " + params.id }>
+      <MainTitleLayout title = { `Командный Чемпионат Европы ${year}. Группа ${params.id}` }>
         <GroupTable data = { group.table }/>
         {
           group.rounds?.map(item =>
