@@ -1,10 +1,13 @@
 @import '../../css/colors';
+@import '../../css/sizes';
 
 .main-layout {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: @block-items-gap;
+
+  margin: 32px 0;
 
   &__title {
     min-width: 80%;

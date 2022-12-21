@@ -10,6 +10,7 @@ import EuCommand1920 from './pages/tournaments/EuCommandGroups/EuCommand19-20';
 import EuCommand2021 from './pages/tournaments/EuCommandGroups/EuCommand20-21';
 import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
+import GoStories from './pages/study/GoStories';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/blocks/Layout';
@@ -53,10 +54,10 @@ function App() {
           </Route>
           <Route path = "study/*">
             <Route index element = { <div/> }/>
-            <Route path = "go-schools" element = { <div/> }/>
+            {/*<Route path = "go-schools" element = { <div/> }/>*/}
             <Route path = "go-books" element = { <div/> }/>
             <Route path = "go-courses" element = { <div/> }/>
-            <Route path = "go-stories" element = { <div/> }/>
+            <Route path = "go-stories" element = { <GoStories/> }/>
             <Route path = "go-wiki" element = { <div/> }/>
           </Route>
           <Route path = "belarus/*">

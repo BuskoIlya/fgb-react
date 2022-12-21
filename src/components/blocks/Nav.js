@@ -76,7 +76,7 @@ function Nav() {
           <li className = "nav__li">
             <NavLink className = { setClass } to = "/study">Обучение</NavLink>
             <ul className = "nav__sub-ul">
-              <li><NavLink className = "nav__sub-item" to = "/study/go-schools">Школы Го</NavLink></li>
+              {/*<li><NavLink className = "nav__sub-item" to = "/study/go-schools">Школы Го</NavLink></li>*/}
               <li><NavLink className = "nav__sub-item" to = "/study/go-books">Книги по Го</NavLink></li>
               <li><NavLink className = "nav__sub-item" to = "/study/go-courses">Обучающие курсы</NavLink></li>
               <li><NavLink className = "nav__sub-item" to = "/study/go-stories">Рассказы о Го</NavLink></li>
