@@ -1,0 +1,40 @@
+@import '../../css/colors';
+@import '../../css/wave-background';
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  width: 24%;
+  padding: 16px;
+
+  border-radius: 2px;
+  transition: box-shadow .3s linear;
+
+  &:hover {
+    box-shadow: 2px 2px 2px 2px darken(@grey, 10%);
+  }
+
+  &__img {
+    width: 100%;
+
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &__ref {
+    text-decoration: none;
+  }
+
+  &__title {
+    .bg-wave-green();
+    padding: 8px 16px;
+    border-radius: 2px;
+  }
+
+  &__category {
+    color: darken(@grey, 30%)
+  }
+}

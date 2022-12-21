@@ -4,6 +4,7 @@ import './css/logo.css';
 import './css/title.css';
 
 import BelarusTournaments from './pages/tournaments/BelarusTournaments';
+import Books from './pages/study/Books';
 import Contacts from './pages/info/Contacts';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
 import EuCommand1920 from './pages/tournaments/EuCommandGroups/EuCommand19-20';
@@ -56,7 +57,7 @@ function App() {
           <Route path = "study/*">
             <Route index element = { <div/> }/>
             {/*<Route path = "go-schools" element = { <div/> }/>*/}
-            <Route path = "go-books" element = { <div/> }/>
+            <Route path = "go-books" element = { <Books/> }/>
             <Route path = "go-courses/*">
               <Route index element = { <div/> }/>
               <Route path = "welcome-to-go" element = { <WelcomeToGo/> }/>
