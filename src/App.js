@@ -18,6 +18,7 @@ import News from './pages/info/News';
 import Players from './pages/Players';
 import Ranks from './pages/info/Ranks';
 import WAGC from './pages/tournaments/WAGC';
+import WelcomeToGo from './pages/study/WelcomeToGo';
 
 function App() {
   return (
@@ -56,7 +57,10 @@ function App() {
             <Route index element = { <div/> }/>
             {/*<Route path = "go-schools" element = { <div/> }/>*/}
             <Route path = "go-books" element = { <div/> }/>
-            <Route path = "go-courses" element = { <div/> }/>
+            <Route path = "go-courses/*">
+              <Route index element = { <div/> }/>
+              <Route path = "welcome-to-go" element = { <WelcomeToGo/> }/>
+            </Route>
             <Route path = "go-stories" element = { <GoStories/> }/>
             <Route path = "go-wiki" element = { <div/> }/>
           </Route>

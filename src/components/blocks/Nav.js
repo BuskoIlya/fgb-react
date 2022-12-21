@@ -78,7 +78,12 @@ function Nav() {
             <ul className = "nav__sub-ul">
               {/*<li><NavLink className = "nav__sub-item" to = "/study/go-schools">Школы Го</NavLink></li>*/}
               <li><NavLink className = "nav__sub-item" to = "/study/go-books">Книги по Го</NavLink></li>
-              <li><NavLink className = "nav__sub-item" to = "/study/go-courses">Обучающие курсы</NavLink></li>
+              <li className = "nav__li">
+                <NavLink className = "nav__sub-item" to = "/study/go-courses">Обучающие курсы</NavLink>
+                <ul className = "nav__sub-ul nav__sub-sub-ul">
+                  <li><NavLink className = "nav__sub-item" to = "/study/go-courses/welcome-to-go">Знакомство с игрой Го</NavLink></li>
+                </ul>
+              </li>
               <li><NavLink className = "nav__sub-item" to = "/study/go-stories">Рассказы о Го</NavLink></li>
               <li><NavLink className = "nav__sub-item" to = "/study/go-wiki">Справочник Го</NavLink></li>
             </ul>
