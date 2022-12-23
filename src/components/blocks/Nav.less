@@ -15,25 +15,6 @@
 
   &__li { position: relative }
 
-  &__item {
-    .wave-background(@red);
-
-    display: inline-block;
-    padding: 16px 24px;
-
-    border-radius: 2px;
-
-    font-size: 1.2rem;
-    text-decoration: none;
-
-    &_active {
-      background: fade(@red, 75%);
-      color: white;
-
-      &:after { left: -50% }
-    }
-  }
-
   &__sub-ul {
     position: absolute;
     z-index: 2;
@@ -60,20 +41,6 @@
     visibility: visible;
   }
 
-  &__sub-item {
-    .wave-background(@green);
-
-    display: inline-block;
-
-    width: 100%;
-    padding: 16px 16px 16px 24px;
-
-    border-radius: 2px;
-    font-size: 1rem;
-    text-align: left;
-    text-decoration: none;
-  }
-
   &__mobile {
     .wave-background(@blue);
 
@@ -95,7 +62,6 @@
       position: absolute;
       flex-direction: column;
     }
-    &__item { width: 100% }
     &__mobile { display: block }
   }
 }

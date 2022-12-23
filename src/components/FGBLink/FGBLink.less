@@ -1,0 +1,27 @@
+@import '../../css/colors';
+@import '../../css/wave-background';
+
+.fgb-menu-link {
+  display: inline-block;
+  width: 100%;
+  border-radius: 2px;
+  text-decoration: none;
+
+  &_item {
+    .wave-background(@red);
+    padding: 16px 24px;
+    font-size: 1.2rem;
+    &_active {
+      background: fade(@red, 75%);
+      color: white;
+      &:after { left: -50% }
+    }
+  }
+
+  &_sub-item {
+    .wave-background(@green);
+    padding: 16px 16px 16px 24px;
+    font-size: 1rem;
+    text-align: left;
+  }
+}
