@@ -8,7 +8,7 @@ const menuItemClasses = 'fgb-menu-link fgb-menu-link_item';
 const menuItemCSS =
     ({ isActive }) => isActive ? `${menuItemClasses} fgb-menu-link_item_active` : menuItemClasses;
 const menuSubItemCSS = "fgb-menu-link fgb-menu-link_sub-item";
-const textCSS = '';
+const textCSS = 'fgb-text-link';
 
 const cssByType = {
   'menu-item': menuItemCSS,
@@ -16,14 +16,21 @@ const cssByType = {
   'text': textCSS
 }
 
-const FGBLink = ({ type, to, children }) => {
+const FGBLink = ({ type, children, ...rest }) => {
   let linkCSS = cssByType[type];
-  return <NavLink className={linkCSS} to={to}>{children}</NavLink>;
+  const Tag = type === 'text' ? 'a': NavLink;
+  if (type === 'text') {
+    rest = {target: '_blank', ...rest};
+  }
+  return <Tag className={linkCSS} {...rest}>{children}</Tag>;
 }
 
 FGBLink.propTypes = {
-  to: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(types).isRequired
+  to: PropTypes.string,
+  href: PropTypes.string,
+  type: PropTypes.oneOf(types)
 }
+
+FGBLink.defaultProps = {type: 'text'}
 
 export default FGBLink;
