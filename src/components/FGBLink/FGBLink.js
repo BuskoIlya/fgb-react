@@ -23,11 +23,11 @@ const FGBLink = ({ type, iconBefore, children, iconAfter, ...rest }) => {
     rest = {target: '_blank', ...rest};
   }
   return (
-      <Tag className={linkCSS} {...rest}>
-        {iconBefore}
-        {children}
-        {iconAfter}
-      </Tag>
+    <Tag className={linkCSS} {...rest}>
+      {iconBefore}
+      {children}
+      {iconAfter}
+    </Tag>
   );
 }
 

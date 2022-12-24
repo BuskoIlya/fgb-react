@@ -3,13 +3,13 @@ import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
-import Nav from './Nav';
+import FGBMenu from '../menu/FGBMenu';
 
 function Layout() {
   return (
     <>
       <Header/>
-      <Nav/>
+      <FGBMenu/>
       <Main>
         <Outlet/>
       </Main>

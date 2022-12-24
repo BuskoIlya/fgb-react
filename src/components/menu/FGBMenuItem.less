@@ -1,0 +1,26 @@
+@import '../../css/colors';
+
+.fgb-menu-item {
+  position: relative;
+
+  &__list {
+    position: absolute;
+    z-index: 2;
+
+    width: max-content;
+
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px @grey;
+
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s linear;
+  }
+
+  &:hover > .fgb-menu-item__list {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -2,10 +2,10 @@
 @import '../../css/sizes';
 @import '../../css/wave-background';
 
-.nav {
+.fgb-menu {
   position: relative;
 
-  &__ul {
+  &__desktop {
     z-index: 1;
     display: flex;
 
@@ -13,40 +13,11 @@
     background-color: white;
   }
 
-  &__li { position: relative }
-
-  &__sub-ul {
-    position: absolute;
-    z-index: 2;
-
-    width: max-content;
-
-    background-color: white;
-    border-radius: 2px;
-    box-shadow: 1px 1px 1px 1px @grey;
-
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s linear;
-  }
-
-  &__sub-sub-ul {
-    top: 0;
-    left: 100%;
-  }
-
-  &__li:hover > .nav__sub-ul {
-    opacity: 1;
-    visibility: visible;
-  }
-
   &__mobile {
     .wave-background(@blue);
 
     position: relative;
     display: none;
-
     padding: 16px 24px;
 
     border-radius: 2px;
@@ -58,7 +29,7 @@
     width: fit-content;
     margin: 0 auto;
 
-    &__ul {
+    &__desktop {
       position: absolute;
       flex-direction: column;
     }
