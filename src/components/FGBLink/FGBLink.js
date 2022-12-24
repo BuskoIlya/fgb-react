@@ -16,18 +16,26 @@ const cssByType = {
   'text': textCSS
 }
 
-const FGBLink = ({ type, children, ...rest }) => {
+const FGBLink = ({ type, iconBefore, children, iconAfter, ...rest }) => {
   let linkCSS = cssByType[type];
   const Tag = type === 'text' ? 'a': NavLink;
   if (type === 'text') {
     rest = {target: '_blank', ...rest};
   }
-  return <Tag className={linkCSS} {...rest}>{children}</Tag>;
+  return (
+      <Tag className={linkCSS} {...rest}>
+        {iconBefore}
+        {children}
+        {iconAfter}
+      </Tag>
+  );
 }
 
 FGBLink.propTypes = {
-  to: PropTypes.string,
   href: PropTypes.string,
+  iconAfter: PropTypes.node,
+  iconBefore: PropTypes.node,
+  to: PropTypes.string,
   type: PropTypes.oneOf(types)
 }
 
