@@ -1,7 +1,5 @@
 import React from 'react';
-
-import ContactCard from '../../components/ContactCard';
-
+import FGBCard from '../../components/FGBCard/FGBCard';
 import './Contacts.css';
 
 function Contacts() {
@@ -18,15 +16,28 @@ function Contacts() {
   }, []);
 
   return (
-      <section className = "contacts">
-        {
-          contacts.map(item =>
-            <ContactCard key = { item.name }
-                         photo = { imgPath + item.photo } name = { item.name } rank = { item.rank }
-                         description = { item.description } phone = { item.phone } email = { item.email }/>
-          )
-        }
-      </section>
+    <section className="contacts">
+      {
+        contacts.map(item => {
+          const secondDescription = (
+            <>
+              <p>{item.phone}</p>
+              <p>{item.email}</p>
+            </>
+          );
+          return  <FGBCard
+              key={item.name}
+              size={18}
+              img={imgPath + item.photo}
+              title={item.name}
+              shortDescription={item.rank}
+              description={item.description}
+              secondDescription={secondDescription}
+            />
+          }
+        )
+      }
+    </section>
   );
 }
 

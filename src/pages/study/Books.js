@@ -1,8 +1,6 @@
 import React from 'react';
-
-import BookCard from './BookCard';
+import FGBCard from '../../components/FGBCard/FGBCard';
 import MainTitleLayout from '../../components/blocks/MainTitleLayout';
-
 import './Books.css';
 
 function Books() {
@@ -18,15 +16,23 @@ function Books() {
   }, []);
 
   return (
-      <MainTitleLayout title = "Книги по Го">
-        <section className = "books">
-          {
-            books.map(item =>
-                <BookCard key = { item.title } img = { item.img } title = { item.title } category = { item.category }/>
-            )
-          }
-        </section>
-      </MainTitleLayout>
+    <MainTitleLayout title = "Книги по Го">
+      <section className = "books">
+        {
+          books.map(item =>
+            <FGBCard
+              key={item.title}
+              size={24}
+              color="green"
+              img={imgPath + item.img}
+              title={item.title}
+              author={item.author}
+              secondDescription={item.category}
+            />
+          )
+        }
+      </section>
+    </MainTitleLayout>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
+import FGBCard from '../../components/FGBCard/FGBCard';
 import MainTitleLayout from '../../components/blocks/MainTitleLayout';
-import StoryCard from '../../components/StoryCard';
-
 import './GoStories.css';
 
 function GoStories() {
@@ -21,8 +20,13 @@ function GoStories() {
       <section className = "go-stories">
         {
           stories.map(item =>
-              <StoryCard key = { item.title }
-                  img = { item.img } title = { item.title } author = { item.author } keyWords = { item.key_words }/>
+            <FGBCard
+              key={item.title}
+              size={32}
+              img={imgPath + item.img}
+              title={item.title}
+              author={item.author}
+            />
           )
         }
       </section>

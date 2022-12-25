@@ -1,7 +1,5 @@
 import React from "react";
-
-import NewsCard from "../components/NewsCard";
-
+import FGBCard from '../components/FGBCard/FGBCard';
 import "./Home.css";
 
 function Home() {
@@ -18,15 +16,22 @@ function Home() {
   }, []);
 
   return (
-      <section className = "home">
-        {
-          homeTournaments.map(item =>
-            <NewsCard key = { item.date }
-                      img = { imgPath + item.photo } title = { item.title } refto = { item.ref }
-                      date = { item.date } address = { item.address } author = { item.author }/>
-          )
-        }
-      </section>
+    <section className = "home">
+      {
+        homeTournaments.map(item =>
+          <FGBCard
+            key={item.date}
+            size={32}
+            color="green"
+            img={imgPath + item.photo}
+            title={item.title}
+            date={item.date}
+            address={item.address}
+            author={item.author}
+          />
+        )
+      }
+    </section>
   );
 }
 

@@ -1,8 +1,6 @@
 import React from 'react';
-
 import DropDownPanel from '../../components/DropDownPanel';
-import NewsCard from '../../components/NewsCard';
-
+import FGBCard from '../../components/FGBCard/FGBCard';
 import './BelarusTournaments.css';
 
 function BelarusTournaments() {
@@ -19,26 +17,33 @@ function BelarusTournaments() {
   }, []);
 
   return (
-      <section className = "by-tournaments">
-        <p className = "by-tournaments__description">
-          *Прошедшие турниры с участием наших игроков по годам:
-        </p>
-        <div className = "by-tournaments__items">
-          {
-            tournaments.map(year =>
-              <DropDownPanel key = { year.year } title = { year.year }>
-                {
-                  year.items.map(item =>
-                      <NewsCard key = { item.date }
-                                img = { imgPath + item.photo } title = { item.title } refto = { item.ref }
-                                date = { item.date } address = { item.address } author = { item.author }/>
-                  )
-                }
-              </DropDownPanel>
-            )
-          }
-        </div>
-      </section>
+    <section className="by-tournaments">
+      <p className="by-tournaments__description">
+        *Прошедшие турниры с участием наших игроков по годам:
+      </p>
+      <div className="by-tournaments__items">
+        {
+          tournaments.map(year =>
+            <DropDownPanel key={year.year} title={year.year}>
+              {
+                year.items.map(item =>
+                  <FGBCard
+                    key={item.date}
+                    size={32}
+                    color={'green'}
+                    img={imgPath + item.photo}
+                    title={item.title}
+                    date={item.date}
+                    address={item.address}
+                    author={item.author}
+                  />
+                )
+              }
+            </DropDownPanel>
+          )
+        }
+      </div>
+    </section>
   );
 }
 

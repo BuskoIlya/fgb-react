@@ -1,8 +1,6 @@
 import React from 'react';
-
 import DropDownPanel from '../../components/DropDownPanel';
-import NewsCard from '../../components/NewsCard';
-
+import FGBCard from '../../components/FGBCard/FGBCard';
 import './News.css';
 
 function News() {
@@ -19,26 +17,33 @@ function News() {
   }, []);
 
   return (
-      <section className = "news">
-        <p className = "news__description">
-          *Прошедшие турниры и другие события Го Беларуси по годам:
-        </p>
-        <div className = "news__items">
-          {
-            news.map(year =>
-              <DropDownPanel key = { year.year } title = { year.year }>
-                {
-                  year.items.map(item =>
-                      <NewsCard key = { item.date }
-                                img = { imgPath + item.photo } title = { item.title } refto = { item.ref }
-                                date = { item.date } address = { item.address } author = { item.author }/>
-                  )
-                }
-              </DropDownPanel>
-            )
-          }
-        </div>
-      </section>
+    <section className="news">
+      <p className="news__description">
+        *Прошедшие турниры и другие события Го Беларуси по годам:
+      </p>
+      <div className="news__items">
+        {
+          news.map(year =>
+            <DropDownPanel key={year.year} title={year.year}>
+              {
+                year.items.map(item =>
+                  <FGBCard
+                    key={item.date}
+                    size={32}
+                    color={'green'}
+                    img={imgPath + item.photo}
+                    title={item.title}
+                    date={item.date}
+                    address={item.address}
+                    author={item.author}
+                  />
+                )
+              }
+            </DropDownPanel>
+          )
+        }
+      </div>
+    </section>
   );
 }
 
