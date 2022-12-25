@@ -1,5 +1,5 @@
 import GroupTable from './GroupTable';
-import MainTitleLayout from '../../../components/blocks/MainTitleLayout';
+import TitleLayout from '../../../components/blocks/TitleLayout';
 
 import React from 'react';
 
@@ -30,12 +30,12 @@ function EuCommand1920() {
   }, []);
 
   return (
-      <MainTitleLayout title = "Командный Чемпионат Европы 2019-2020">
+      <TitleLayout title = "Командный Чемпионат Европы 2019-2020">
         <GroupTable title = "Группа А" refto = "/tournaments/eu-2019-2020/group/A" data = { groupA }/>
         <GroupTable title = "Группа B" refto = "/tournaments/eu-2019-2020/group/B" data = { groupB }/>
         <GroupTable title = "Группа C" refto = "/tournaments/eu-2019-2020/group/C" data = { groupC }/>
         <GroupTable title = "Группа D" refto = "/tournaments/eu-2019-2020/group/D" data = { groupD }/>
-      </MainTitleLayout>
+      </TitleLayout>
   );
 }
 

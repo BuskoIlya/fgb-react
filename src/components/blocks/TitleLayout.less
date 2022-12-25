@@ -1,23 +1,30 @@
 @import '../../css/colors';
 @import '../../css/sizes';
 
-.main-layout {
+.title-layout {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: @block-items-gap;
-
   margin: 32px 0;
 
   &__title {
     min-width: 80%;
     padding: 0.5em 1em;
-
     border: solid 1px white;
+
     border-radius: 0.125em;
     background-color: white;
     box-shadow: 1px 1px 1px 1px darken(@grey, 10%);
     color: inherit;
     font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: @block-items-gap;
+    width: 100%;
   }
 }

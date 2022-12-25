@@ -1,6 +1,6 @@
 import React from "react";
+import CardLayout from '../components/blocks/CardLayout';
 import FGBCard from '../components/FGBCard/FGBCard';
-import "./Home.css";
 
 function Home() {
 
@@ -16,7 +16,7 @@ function Home() {
   }, []);
 
   return (
-    <section className = "home">
+    <CardLayout>
       {
         homeTournaments.map(item =>
           <FGBCard
@@ -31,7 +31,7 @@ function Home() {
           />
         )
       }
-    </section>
+    </CardLayout>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Country from '../../../components/Country';
-import MainTitleLayout from '../../../components/blocks/MainTitleLayout';
+import TitleLayout from '../../../components/blocks/TitleLayout';
 
 function EuCommand() {
 
@@ -16,7 +16,7 @@ function EuCommand() {
   }, []);
 
   return (
-      <MainTitleLayout title = "Чемпионаты Европы. Командный зачёт">
+      <TitleLayout title = "Чемпионаты Европы. Командный зачёт">
         <table className = "table table_blue">
           <thead>
           <tr>
@@ -49,7 +49,7 @@ function EuCommand() {
           }
           </tbody>
         </table>
-      </MainTitleLayout>
+      </TitleLayout>
   );
 }
 

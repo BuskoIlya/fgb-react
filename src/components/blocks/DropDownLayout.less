@@ -1,8 +1,8 @@
-@import '../css/colors';
-@import '../css/sizes';
-@import '../css/wave-background';
+@import '../../css/colors';
+@import '../../css/sizes';
+@import '../../css/wave-background';
 
-.dropdown-panel {
+.dropdown-layout {
   display: flex;
   flex-direction: column;
   gap: @block-items-gap;
@@ -18,9 +18,5 @@
     cursor: pointer;
   }
 
-  &__data {
-    display: none;
-    gap: @block-items-gap;
-    flex-wrap: wrap;
-  }
+  &__content {display: none}
 }

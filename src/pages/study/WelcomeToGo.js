@@ -1,4 +1,4 @@
-import MainTitleLayout from '../../components/blocks/MainTitleLayout';
+import TitleLayout from '../../components/blocks/TitleLayout';
 
 function WelcomeToGo() {
 
@@ -6,7 +6,7 @@ function WelcomeToGo() {
     "KrMS_NzKRms", "e6i3L_muzqM", "oTLapsZrtEU", "UBo4tIx3mA4"];
 
   return (
-      <MainTitleLayout title = "Знакомство с игрой Го">
+      <TitleLayout title = "Знакомство с игрой Го">
         {
           videos.map(item =>
             <iframe key = { item }
@@ -16,7 +16,7 @@ function WelcomeToGo() {
                 allowFullScreen/>
           )
         }
-      </MainTitleLayout>
+      </TitleLayout>
   );
 }
 

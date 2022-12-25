@@ -1,7 +1,7 @@
 import React from 'react';
+import CardLayout from '../../components/blocks/CardLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
-import MainTitleLayout from '../../components/blocks/MainTitleLayout';
-import './Books.css';
+import TitleLayout from '../../components/blocks/TitleLayout';
 
 function Books() {
 
@@ -16,8 +16,8 @@ function Books() {
   }, []);
 
   return (
-    <MainTitleLayout title = "Книги по Го">
-      <section className = "books">
+    <TitleLayout title="Книги по Го">
+      <CardLayout>
         {
           books.map(item =>
             <FGBCard
@@ -31,8 +31,8 @@ function Books() {
             />
           )
         }
-      </section>
-    </MainTitleLayout>
+      </CardLayout>
+    </TitleLayout>
   );
 }
 

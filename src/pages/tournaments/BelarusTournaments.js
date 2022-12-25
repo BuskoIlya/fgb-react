@@ -1,7 +1,8 @@
 import React from 'react';
-import DropDownPanel from '../../components/DropDownPanel';
+import DropDownLayout from '../../components/blocks/DropDownLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
 import './BelarusTournaments.css';
+import CardLayout from '../../components/blocks/CardLayout';
 
 function BelarusTournaments() {
 
@@ -24,22 +25,24 @@ function BelarusTournaments() {
       <div className="by-tournaments__items">
         {
           tournaments.map(year =>
-            <DropDownPanel key={year.year} title={year.year}>
-              {
-                year.items.map(item =>
-                  <FGBCard
-                    key={item.date}
-                    size={32}
-                    color={'green'}
-                    img={imgPath + item.photo}
-                    title={item.title}
-                    date={item.date}
-                    address={item.address}
-                    author={item.author}
-                  />
-                )
-              }
-            </DropDownPanel>
+            <DropDownLayout key={year.year} title={year.year}>
+              <CardLayout>
+                {
+                  year.items.map(item =>
+                    <FGBCard
+                      key={item.date}
+                      size={32}
+                      color={'green'}
+                      img={imgPath + item.photo}
+                      title={item.title}
+                      date={item.date}
+                      address={item.address}
+                      author={item.author}
+                    />
+                  )
+                }
+              </CardLayout>
+            </DropDownLayout>
           )
         }
       </div>

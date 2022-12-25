@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 
 import GroupTable from './GroupTable';
-import MainTitleLayout from '../../../components/blocks/MainTitleLayout';
+import TitleLayout from '../../../components/blocks/TitleLayout';
 import RoundTable from './RoundTable';
 
 function EuCommandGroup({ year }) {
@@ -19,14 +19,14 @@ function EuCommandGroup({ year }) {
   }, [params]);
 
   return (
-      <MainTitleLayout title = { `Командный Чемпионат Европы ${year}. Группа ${params.id}` }>
+      <TitleLayout title = { `Командный Чемпионат Европы ${year}. Группа ${params.id}` }>
         <GroupTable data = { group.table }/>
         {
           group.rounds?.map(item =>
             <RoundTable key = { item.name } name = { item.name } date = { item.date } games = { item.games }/>
           )
         }
-      </MainTitleLayout>
+      </TitleLayout>
   );
 }
 

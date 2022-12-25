@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Country from '../../../components/Country';
-import MainTitleLayout from '../../../components/blocks/MainTitleLayout';
+import TitleLayout from '../../../components/blocks/TitleLayout';
 
 function EuPersonal() {
 
@@ -16,7 +16,7 @@ function EuPersonal() {
   }, []);
 
   return (
-      <MainTitleLayout title = "Чемпионаты Европы. Индивидуальный зачёт">
+      <TitleLayout title = "Чемпионаты Европы. Индивидуальный зачёт">
         <table className = "table table_blue">
           <thead>
           <tr>
@@ -41,7 +41,7 @@ function EuPersonal() {
           }
           </tbody>
         </table>
-      </MainTitleLayout>
+      </TitleLayout>
   );
 }
 

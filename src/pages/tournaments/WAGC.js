@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Country from '../../components/Country';
-import MainTitleLayout from '../../components/blocks/MainTitleLayout';
+import TitleLayout from '../../components/blocks/TitleLayout';
 
 import '../../css/table.css';
 import './WAGC.css';
@@ -19,7 +19,7 @@ function WAGC() {
   }, []);
 
   return (
-      <MainTitleLayout title = "Чемпионаты мира">
+      <TitleLayout title = "Чемпионаты мира">
         <section className = "wagc">
           <p className = "wagc__description">
           </p>
@@ -60,7 +60,7 @@ function WAGC() {
             </tbody>
           </table>
         </section>
-      </MainTitleLayout>
+      </TitleLayout>
   );
 }
 

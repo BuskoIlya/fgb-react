@@ -1,7 +1,7 @@
 import React from 'react';
+import CardLayout from '../../components/blocks/CardLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
-import MainTitleLayout from '../../components/blocks/MainTitleLayout';
-import './GoStories.css';
+import TitleLayout from '../../components/blocks/TitleLayout';
 
 function GoStories() {
 
@@ -16,8 +16,8 @@ function GoStories() {
   }, []);
 
   return (
-    <MainTitleLayout title = "Рассказы о Го">
-      <section className = "go-stories">
+    <TitleLayout title = "Рассказы о Го">
+      <CardLayout>
         {
           stories.map(item =>
             <FGBCard
@@ -29,8 +29,8 @@ function GoStories() {
             />
           )
         }
-      </section>
-    </MainTitleLayout>
+      </CardLayout>
+    </TitleLayout>
   );
 }
 

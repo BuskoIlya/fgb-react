@@ -1,6 +1,6 @@
 import React from 'react';
+import CardLayout from '../../components/blocks/CardLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
-import './Contacts.css';
 
 function Contacts() {
 
@@ -16,7 +16,7 @@ function Contacts() {
   }, []);
 
   return (
-    <section className="contacts">
+    <CardLayout>
       {
         contacts.map(item => {
           const secondDescription = (
@@ -37,7 +37,7 @@ function Contacts() {
           }
         )
       }
-    </section>
+    </CardLayout>
   );
 }
 
