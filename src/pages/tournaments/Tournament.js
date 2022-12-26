@@ -1,0 +1,48 @@
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import TitleLayout from '../../components/blocks/TitleLayout';
+import './Tournament.css';
+import FGBTournamentTable from '../../components/FGBTournamentTable/FGBTournamentTable';
+
+function Tournament() {
+  const cityPath = process.env.REACT_APP_IMG_LOGO_PATH;
+  const params = useParams();
+  const url =
+    process.env.REACT_APP_SERVER_URL
+    + process.env.REACT_APP_API_TOURNAMENT
+    + params.id;
+  const [data, setData] = React.useState([]);
+  React.useEffect(() => {
+    fetch("http://localhost:4000/api/tournament/by-championship-2022-11-19")
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(e =>  console.log(e));
+  }, []);
+
+  return (
+    <TitleLayout title={data.title}>
+      <div className="tournament">
+        <header className="tournament__header">
+          <img className="logo tournament__city-logo" src={cityPath + data.placeImg} alt={data.place} />
+          <div className="tournament__info">
+            <time>{data.date}</time>
+            <address>{data.address}</address>
+            <p className="tournament__author">{data.author}</p>
+          </div>
+        </header>
+        <>
+          {
+            data.tables?.map((table, index) =>
+              <>
+                {table.name && <p>{table.name}</p>}
+                <FGBTournamentTable key={index + 1} table={table}/>
+              </>
+            )
+          }
+        </>
+      </div>
+    </TitleLayout>
+  );
+}
+
+export default Tournament;

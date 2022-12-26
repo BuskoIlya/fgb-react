@@ -24,6 +24,7 @@ function Home() {
             size={32}
             color="green"
             img={imgPath + item.photo}
+            toRef={item.ref}
             title={item.title}
             date={item.date}
             address={item.address}

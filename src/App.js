@@ -16,10 +16,12 @@ import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/blocks/Layout';
 import News from './pages/info/News';
+import Photos from './pages/Photos';
 import Players from './pages/Players';
 import Ranks from './pages/info/Ranks';
 import WAGC from './pages/tournaments/WAGC';
 import WelcomeToGo from './pages/study/WelcomeToGo';
+import Tournament from './pages/tournaments/Tournament';
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
       <Routes>
         <Route path = "/" element = { <Layout/> }>
           <Route index element = { <Home/> }/>
-          <Route path = "photos" element = { <div/> }/>
+          <Route path = "photos" element = { <Photos/> }/>
           <Route path = "info/*">
             <Route index element = { <div/> }/>
             <Route path = "contacts" element = { <Contacts/> }/>
@@ -74,6 +76,8 @@ function App() {
             <Route path = "grodno" element = { <div/> }/>
             <Route path = "mogilev" element = { <div/> }/>
           </Route>
+
+          <Route path="tournament/:id" element={<Tournament />} />
         </Route>
       </Routes>
     </>
