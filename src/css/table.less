@@ -31,7 +31,7 @@
 
 .table-mixin(@color) {
   &, tr, th, td { border: solid 1px @color }
-  tr {
-    &:nth-child(2n) { background-color: lighten(@color, 40%) }
+  tbody tr {
+    &:nth-child(2n + 1) { background-color: lighten(@color, 40%) }
   }
 }
