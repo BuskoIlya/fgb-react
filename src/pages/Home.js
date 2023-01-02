@@ -4,27 +4,27 @@ import FGBCard from '../components/FGBCard/FGBCard';
 
 function Home() {
 
-  const homeTournamentsApiUrl = process.env.REACT_APP_SERVER_URL
-    + process.env.REACT_APP_API_HOME_TOURNAMENTS;
+  const url = process.env.REACT_APP_SERVER_URL
+    + process.env.REACT_APP_API_TOURNAMENTS + '2022';
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
-  const [homeTournaments, setHomeTournaments] = React.useState([]);
+  const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch(homeTournamentsApiUrl)
+    fetch(url)
         .then(response => response.json())
-        .then(data => setHomeTournaments(data))
+        .then(data => setData(data))
         .catch(e =>  console.log(e));
   }, []);
 
   return (
     <CardLayout>
       {
-        homeTournaments.map(item =>
+        data.map(item =>
           <FGBCard
             key={item.date}
             size={32}
             color="green"
-            img={imgPath + item.photo}
-            toRef={item.ref}
+            img={imgPath + item.img}
+            toRef={`/tournament/${item.id}`}
             title={item.title}
             date={item.date}
             address={item.address}

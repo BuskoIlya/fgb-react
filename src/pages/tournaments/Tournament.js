@@ -13,7 +13,7 @@ function Tournament() {
     + params.id;
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch("http://localhost:4000/api/tournament/by-championship-2022-11-19")
+    fetch(url)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(e =>  console.log(e));
@@ -33,10 +33,7 @@ function Tournament() {
         <>
           {
             data.tables?.map((table, index) =>
-              <>
-                {table.name && <p>{table.name}</p>}
-                <FGBTournamentTable key={index + 1} table={table}/>
-              </>
+              <FGBTournamentTable key={index + 1} table={table} title={table.info.title}/>
             )
           }
         </>
