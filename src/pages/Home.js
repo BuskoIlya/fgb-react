@@ -5,7 +5,7 @@ import FGBCard from '../components/FGBCard/FGBCard';
 function Home() {
 
   const url = process.env.REACT_APP_SERVER_URL
-    + process.env.REACT_APP_API_TOURNAMENTS + '2022';
+    + process.env.REACT_APP_API_TOURNAMENTS_BY_YEAR + '2022';
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
@@ -22,12 +22,12 @@ function Home() {
           <FGBCard
             key={item.date}
             size={32}
-            color="green"
+            color={item.color}
             img={imgPath + item.img}
             toRef={`/tournament/${item.id}`}
             title={item.title}
             date={item.date}
-            address={item.address}
+            address={item.short_address}
             author={item.author}
           />
         )

@@ -1,19 +1,19 @@
 import React from 'react';
+import CardLayout from '../../components/blocks/CardLayout';
 import DropDownLayout from '../../components/blocks/DropDownLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
 import './BelarusTournaments.css';
-import CardLayout from '../../components/blocks/CardLayout';
 
 function BelarusTournaments() {
 
-  const apiTournamentsUrl = process.env.REACT_APP_SERVER_URL
-      + process.env.REACT_APP_API_NEWS;
+  const url = process.env.REACT_APP_SERVER_URL
+      + process.env.REACT_APP_API_TOURNAMENTS_ALL;
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
-  const [tournaments, setTournaments] = React.useState([]);
+  const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch(apiTournamentsUrl)
+    fetch(url)
         .then(response => response.json())
-        .then(data => setTournaments(data))
+        .then(data => setData(data))
         .catch(e =>  console.log(e));
   }, []);
 
@@ -24,7 +24,7 @@ function BelarusTournaments() {
       </p>
       <div className="by-tournaments__items">
         {
-          tournaments.map(year =>
+          data.map(year =>
             <DropDownLayout key={year.year} title={year.year}>
               <CardLayout>
                 {
@@ -32,11 +32,12 @@ function BelarusTournaments() {
                     <FGBCard
                       key={item.date}
                       size={32}
-                      color={'green'}
-                      img={imgPath + item.photo}
+                      color={item.color}
+                      img={imgPath + item.img}
+                      toRef={`/tournament/${item.id}`}
                       title={item.title}
                       date={item.date}
-                      address={item.address}
+                      address={item.short_address}
                       author={item.author}
                     />
                   )

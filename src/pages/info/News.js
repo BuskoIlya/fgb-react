@@ -1,19 +1,19 @@
 import React from 'react';
+import CardLayout from '../../components/blocks/CardLayout';
 import DropDownLayout from '../../components/blocks/DropDownLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
 import './News.css';
-import CardLayout from '../../components/blocks/CardLayout';
 
 function News() {
 
-  const newsApiUrl = process.env.REACT_APP_SERVER_URL
-      + process.env.REACT_APP_API_NEWS;
+  const urlTournaments = process.env.REACT_APP_SERVER_URL
+      + process.env.REACT_APP_API_TOURNAMENTS_ALL;
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
-  const [news, setNews] = React.useState([]);
+  const [tournaments, setTournaments] = React.useState([]);
   React.useEffect(() => {
-    fetch(newsApiUrl)
+    fetch(urlTournaments)
         .then(response => response.json())
-        .then(data => setNews(data))
+        .then(data => setTournaments(data))
         .catch(e =>  console.log(e));
   }, []);
 
@@ -24,7 +24,7 @@ function News() {
       </p>
       <div className="news__items">
         {
-          news.map(year =>
+          tournaments.map(year =>
             <DropDownLayout key={year.year} title={year.year}>
               <CardLayout>
                 {
@@ -32,11 +32,12 @@ function News() {
                     <FGBCard
                       key={item.date}
                       size={32}
-                      color={'green'}
-                      img={imgPath + item.photo}
+                      color={item.color}
+                      img={imgPath + item.img}
+                      toRef={`/tournament/${item.id}`}
                       title={item.title}
                       date={item.date}
-                      address={item.address}
+                      address={item.short_address}
                       author={item.author}
                     />
                   )

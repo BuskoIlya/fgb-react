@@ -23,10 +23,10 @@ function Tournament() {
     <TitleLayout title={data.title}>
       <div className="tournament">
         <header className="tournament__header">
-          <img className="logo tournament__city-logo" src={cityPath + data.placeImg} alt={data.place} />
+          <img className="logo tournament__city-logo" src={cityPath + data.city_img} alt={data.short_address} />
           <div className="tournament__info">
             <time>{data.date}</time>
-            <address>{data.address}</address>
+            <address>{data.long_address}</address>
             <p className="tournament__author">{data.author}</p>
           </div>
         </header>
