@@ -78,6 +78,8 @@ function App() {
           </Route>
 
           <Route path="tournament/:id" element={<Tournament />} />
+          <Route path="tournament/ru/:id" element={<Tournament type="ru/"/>} />
+          <Route path="tournament/world/:id" element={<Tournament type="world/"/>} />
         </Route>
       </Routes>
     </>

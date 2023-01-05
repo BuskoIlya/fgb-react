@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import FGBTournamentTable from '../../components/FGBTournamentTable/FGBTournamentTable';
 import TitleLayout from '../../components/blocks/TitleLayout';
 import './Tournament.css';
-import FGBTournamentTable from '../../components/FGBTournamentTable/FGBTournamentTable';
 
-function Tournament() {
+function Tournament({ type = '' }) {
   const cityPath = process.env.REACT_APP_IMG_LOGO_PATH;
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL
     + process.env.REACT_APP_API_TOURNAMENT
-    + params.id;
+    + type + params.id;
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
     fetch(url)

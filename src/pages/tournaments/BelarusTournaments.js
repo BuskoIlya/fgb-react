@@ -34,7 +34,7 @@ function BelarusTournaments() {
                       size={32}
                       color={item.color}
                       img={imgPath + item.img}
-                      toRef={`/tournament/${item.id}`}
+                      toRef={item.toref ? `/tournament/${item.toref}` : `/tournament/${item.id}`}
                       title={item.title}
                       date={item.date}
                       address={item.short_address}

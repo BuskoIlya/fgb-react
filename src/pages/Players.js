@@ -18,7 +18,7 @@ function Players() {
   return (
       <TitleLayout title="Игроки Беларуси">
         <section className="players">
-          <table className="table table_blue">
+          <table className="table">
             <thead>
             <tr>
               <th className="table__cell">№</th>

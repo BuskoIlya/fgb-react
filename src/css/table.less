@@ -3,7 +3,6 @@
 
 .table {
   min-width: 80%;
-  border-radius: 2px;
 
   &_blue { .table-mixin(@blue) }
   &_green { .table-mixin(@green) }
@@ -12,12 +11,17 @@
 
   &_size-50 { min-width: 50% }
 
+  th { font-weight: 600 }
+
   &, tr, th, td {
+    border: solid 1px @grey;
     border-collapse: collapse;
     border-spacing: 0;
   }
 
-  th { font-weight: 600 }
+  tbody tr {
+    &:nth-child(2n + 1) { background-color: lighten(@grey, 12%) }
+  }
 
   &__cell {
     padding: 8px;
