@@ -4,21 +4,21 @@ import FGBCard from '../../components/FGBCard/FGBCard';
 
 function Contacts() {
 
-  const apiContactsUrl = process.env.REACT_APP_SERVER_URL
+  const url = process.env.REACT_APP_SERVER_URL
       + process.env.REACT_APP_API_CONTACTS;
   const imgPath = process.env.REACT_APP_IMG_CONTACTS_PATH;
-  const [contacts, setContacts] = React.useState([]);
+  const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch(apiContactsUrl)
+    fetch(url)
         .then(response => response.json())
-        .then(data => setContacts(data))
+        .then(data => setData(data))
         .catch(e =>  console.log(e));
   }, []);
 
   return (
     <CardLayout>
       {
-        contacts.map(item => {
+        data.map(item => {
           const secondDescription = (
             <>
               <p>{item.phone}</p>
@@ -28,9 +28,10 @@ function Contacts() {
           return  <FGBCard
               key={item.name}
               size={18}
-              img={imgPath + item.photo}
+              color="green"
+              img={imgPath + item.img}
               title={item.name}
-              shortDescription={item.rank}
+              shortDescription={item.sport_rank}
               description={item.description}
               secondDescription={secondDescription}
             />

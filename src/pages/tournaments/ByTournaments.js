@@ -2,9 +2,9 @@ import React from 'react';
 import CardLayout from '../../components/blocks/CardLayout';
 import DropDownLayout from '../../components/blocks/DropDownLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
-import './BelarusTournaments.css';
+import './ByTournaments.css';
 
-function BelarusTournaments() {
+function ByTournaments() {
 
   const url = process.env.REACT_APP_SERVER_URL
       + process.env.REACT_APP_API_TOURNAMENTS_ALL;
@@ -51,4 +51,4 @@ function BelarusTournaments() {
   );
 }
 
-export default BelarusTournaments;
+export default ByTournaments;
