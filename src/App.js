@@ -4,6 +4,7 @@ import './css/logo.css';
 import './css/title.css';
 
 import ByTournaments from './pages/tournaments/ByTournaments';
+import Book from './pages/study/Book';
 import Books from './pages/study/Books';
 import Contacts from './pages/info/Contacts';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
@@ -76,6 +77,7 @@ function App() {
             <Route path="mogilev" element={<div />} />
           </Route>
 
+          <Route path="book/:id" element={<Book />} />
           <Route path="tournament/:id" element={<Tournament />} />
           <Route path="tournament/ru/:id" element={<Tournament type="ru/"/>} />
           <Route path="tournament/world/:id" element={<Tournament type="world/"/>} />
