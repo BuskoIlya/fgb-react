@@ -1,10 +1,8 @@
 import React from 'react';
-
 import Country from '../../../components/Country';
 import TitleLayout from '../../../components/blocks/TitleLayout';
 
 function EuPersonal() {
-
   const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_EU_PERSONAL;
   const flagPath = process.env.REACT_APP_IMG_FLAG_MINI_PATH;
   const [data, setData] = React.useState([]);
@@ -16,32 +14,32 @@ function EuPersonal() {
   }, []);
 
   return (
-      <TitleLayout title = "Чемпионаты Европы. Индивидуальный зачёт">
-        <table className = "table table_blue">
-          <thead>
-          <tr>
-            <th className = "table__cell">Год</th>
-            <th className = "table__cell">Место проведения</th>
-            <th className = "table__cell">Победитель</th>
-          </tr>
-          </thead>
-          <tbody>
-          {
-            data.map((item) =>
-                <tr key = { item.year }>
-                  <td>{ item.year }</td>
-                  <td className = "table__cell table__cell_left">
-                    <Country img = { flagPath + item.flag } imgTitle = { item.country } text = { item.city }/>
-                  </td>
-                  <td className = "table__cell table__cell_left">
-                    <Country img = { flagPath + item.g_flag } imgTitle = { item.g_country } text = { item.g_name }/>
-                  </td>
-                </tr>
-            )
-          }
-          </tbody>
-        </table>
-      </TitleLayout>
+    <TitleLayout title="Чемпионаты Европы. Индивидуальный зачёт">
+      <table className="table table_blue">
+        <thead>
+        <tr>
+          <th className="table__cell">Год</th>
+          <th className="table__cell">Место проведения</th>
+          <th className="table__cell">Победитель</th>
+        </tr>
+        </thead>
+        <tbody>
+        {
+          data.map((item) =>
+            <tr key={item.year}>
+              <td>{item.year}</td>
+              <td className="table__cell table__cell_left">
+                <Country img={flagPath + item.flag} imgTitle={item.country} text={item.city} />
+              </td>
+              <td className="table__cell table__cell_left">
+                <Country img={flagPath + item.g_flag} imgTitle={item.g_country} text={item.g_name} />
+              </td>
+            </tr>
+          )
+        }
+        </tbody>
+      </table>
+    </TitleLayout>
   );
 }
 

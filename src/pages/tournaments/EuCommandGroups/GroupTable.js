@@ -37,16 +37,16 @@ function GroupTable({ title, refto, data = [] }) {
                   <td className = "table__cell table__cell_left">
                     <Country img = { flagPath + item.flag_country } text = { item.country }/>
                   </td>
-                  <td>{ item.game_count }</td>
-                  <td>{ item.board_total_win }</td>
-                  <td>{ item.board_1_win }</td>
-                  <td>{ item.board_2_win }</td>
-                  <td>{ item.board_3_win }</td>
-                  <td>{ item.board_4_win }</td>
-                  <td>{ item.game_win }</td>
-                  <td>{ item.game_draw }</td>
-                  <td>{ item.game_loos }</td>
-                  <td>{ item.game_lose }</td>
+                  <td>{ item.games }</td>
+                  <td>{ item.bw }</td>
+                  <td>{ item.b1 }</td>
+                  <td>{ item.b2 }</td>
+                  <td>{ item.b3 }</td>
+                  <td>{ item.b4 }</td>
+                  <td>{ item.w }</td>
+                  <td>{ item.d }</td>
+                  <td>{ item.l }</td>
+                  <td>{ item.score }</td>
                 </tr>
             )
           }
