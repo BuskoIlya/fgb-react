@@ -8,9 +8,8 @@ import Book from './pages/study/Book';
 import Books from './pages/study/Books';
 import Contacts from './pages/info/Contacts';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
-import EuCommand1920 from './pages/tournaments/EuCommandGroups/EuCommand19-20';
-import EuCommand2021 from './pages/tournaments/EuCommandGroups/EuCommand20-21';
 import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
+import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import GoStories from './pages/study/GoStories';
 import Home from './pages/Home';
@@ -20,9 +19,10 @@ import News from './pages/info/News';
 import Photos from './pages/Photos';
 import Players from './pages/Players';
 import Ranks from './pages/info/Ranks';
+import Story from './pages/study/Story';
+import Tournament from './pages/tournaments/Tournament';
 import WAGC from './pages/tournaments/WAGC';
 import WelcomeToGo from './pages/study/WelcomeToGo';
-import Tournament from './pages/tournaments/Tournament';
 
 function App() {
   return (
@@ -48,13 +48,9 @@ function App() {
               <Route path="personal" element={<EuPersonal />} />
               <Route path="command" element={<EuCommand />} />
             </Route>
-            <Route path="eu-2019-2020/*">
-              <Route index element={<EuCommand1920 />} />
-              <Route path="group/:id" element={<EuCommandGroup year="2019-2020" />} />
-            </Route>
-            <Route path="eu-2020-2021/*">
-              <Route index element={<EuCommand2021 />} />
-              <Route path="group/:id" element={<EuCommandGroup year="2020-2021" />} />
+            <Route path="eu-command-groups/:year/">
+              <Route index element={<EuCommandGroupResults />} />
+              <Route path=":group" element={<EuCommandGroup />} />
             </Route>
           </Route>
           <Route path="study/*">
@@ -78,6 +74,7 @@ function App() {
           </Route>
 
           <Route path="book/:id" element={<Book />} />
+          <Route path="story/:id" element={<Story />} />
           <Route path="tournament/:id" element={<Tournament />} />
           <Route path="tournament/ru/:id" element={<Tournament type="ru/"/>} />
           <Route path="tournament/world/:id" element={<Tournament type="world/"/>} />

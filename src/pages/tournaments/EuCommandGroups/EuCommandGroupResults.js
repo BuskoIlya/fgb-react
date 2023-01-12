@@ -26,7 +26,7 @@ function EuCommandGroupResults() {
             <GroupTable
               key={index + 1}
               title={`Группа ${item.group}`}
-              refto={`/tournaments/eu-${params.year}/group/A`}
+              refto={`/tournaments/eu-command-groups/${params.year}/A`}
               data={item.data}
             />
           )

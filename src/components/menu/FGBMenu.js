@@ -40,17 +40,17 @@ function FGBMenu() {
             <FGBMenuSubItem to="/tournaments/euro-champs/personal" name="Индивидуальный" />
             <FGBMenuSubItem to="/tournaments/euro-champs/command" name="Командный" />
           </FGBMenuSubItem>
-          <FGBMenuSubItem to="/tournaments/eu-2019-2020" name="Командный ЧЕ 2019-2020">
-            <FGBMenuSubItem to="/tournaments/eu-2019-2020/group/A" name="Группа А" />
-            <FGBMenuSubItem to="/tournaments/eu-2019-2020/group/B" name="Группа B" />
-            <FGBMenuSubItem to="/tournaments/eu-2019-2020/group/C" name="Группа C" />
-            <FGBMenuSubItem to="/tournaments/eu-2019-2020/group/D" name="Группа D" />
+          <FGBMenuSubItem to="/tournaments/eu-command-groups/2019-2020" name="Командный ЧЕ 2019-2020">
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2019-2020/A" name="Группа А" />
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2019-2020/B" name="Группа B" />
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2019-2020/C" name="Группа C" />
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2019-2020/D" name="Группа D" />
           </FGBMenuSubItem>
-          <FGBMenuSubItem to="/tournaments/eu-2020-2021" name="Командный ЧЕ 2020-2021">
-            <FGBMenuSubItem to="/tournaments/eu-2020-2021/group/A" name="Группа А" />
-            <FGBMenuSubItem to="/tournaments/eu-2020-2021/group/B" name="Группа B" />
-            <FGBMenuSubItem to="/tournaments/eu-2020-2021/group/C" name="Группа C" />
-            <FGBMenuSubItem to="/tournaments/eu-2020-2021/group/D" name="Группа D" />
+          <FGBMenuSubItem to="/tournaments/eu-command-groups/2020-2021" name="Командный ЧЕ 2020-2021">
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2020-2021/A" name="Группа А" />
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2020-2021/B" name="Группа B" />
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2020-2021/C" name="Группа C" />
+            <FGBMenuSubItem to="/tournaments/eu-command-groups/2020-2021/D" name="Группа D" />
           </FGBMenuSubItem>
         </FGBMenuItem>
         <FGBMenuItem to="/study" name="Обучение">
