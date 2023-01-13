@@ -5,13 +5,13 @@ import TitleLayout from '../../components/blocks/TitleLayout';
 
 function GoStories() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_GO_STUDY_STORIES;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_STUDY_GO_STORIES;
   const imgPath = process.env.REACT_APP_IMG_STORIES_PATH;
-  const [stories, setStories] = React.useState([]);
+  const [data, setData] = React.useState([]);
   React.useEffect(() => {
     fetch(url)
         .then(response => response.json())
-        .then(data => setStories(data))
+        .then(data => setData(data))
         .catch(e =>  console.log(e));
   }, []);
 
@@ -19,11 +19,13 @@ function GoStories() {
     <TitleLayout title = "Рассказы о Го">
       <CardLayout>
         {
-          stories.map(item =>
+          data.map(item =>
             <FGBCard
               key={item.title}
               size={32}
+              color={item.color}
               img={imgPath + item.img}
+              toRef={`/story/${item.id}`}
               title={item.title}
               author={item.author}
             />
