@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Country from '../../../components/Country';
+import FGBCountry from '../../../components/FGBCountry/FGBCountry';
+import FGBLink from '../../../components/FGBLink/FGBLink';
 import '../../../css/table.css';
 import './GroupTable.css';
 
 function GroupTable({title, refto, data = []}) {
+
   const flagPath = process.env.REACT_APP_IMG_FLAG_MINI_PATH;
+
   return (
-    <>
-      <p><Link to = {refto}>{title}</Link></p>
-      <table className="table group-table">
+    <div className="group-table">
+      <FGBLink type="text-inner" href={refto}>{title}</FGBLink>
+      <table className="table">
         <thead>
         <tr>
           <th className="table__cell" title="Место">№</th>
@@ -32,7 +34,7 @@ function GroupTable({title, refto, data = []}) {
             <tr key = {index + 1}>
               <td>{index + 1}</td>
               <td className="table__cell table__cell_left">
-                <Country img={flagPath + item.flag_country} text={item.country}/>
+                <FGBCountry img={flagPath + item.flag_country} text={item.country}/>
               </td>
               <td>{item.games}</td>
               <td>{item.bw}</td>
@@ -49,7 +51,7 @@ function GroupTable({title, refto, data = []}) {
         }
         </tbody>
       </table>
-    </>
+    </div>
   )
 }
 

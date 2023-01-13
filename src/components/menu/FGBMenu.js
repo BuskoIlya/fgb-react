@@ -4,7 +4,9 @@ import FGBMenuSubItem from './FGBMenuSubItem';
 import './FGBMenu.css';
 
 function FGBMenu() {
+
   const [desktopDisplay, setDesktopDisplay] = React.useState({display: ""});
+
   window.matchMedia('(max-width: 900px)').onchange = (e) => {
     if (e.matches) {
       setDesktopDisplay({display: "none"});
@@ -12,6 +14,7 @@ function FGBMenu() {
       setDesktopDisplay({display: "flex"});
     }
   }
+
   function onClickMobile() {
     if (desktopDisplay.display === "none") {
       setDesktopDisplay({display: "flex"});
@@ -59,15 +62,6 @@ function FGBMenu() {
             <FGBMenuSubItem to="/study/go-courses/welcome-to-go" name="Знакомство с игрой Го" />
           </FGBMenuSubItem>
           <FGBMenuSubItem to="/study/go-stories" name="Рассказы о Го" />
-          <FGBMenuSubItem to="/study/go-wiki" name="Справочник Го" />
-        </FGBMenuItem>
-        <FGBMenuItem to="/belarus" name="Беларусь">
-          <FGBMenuSubItem to="/belarus/minsk" name="Минск" />
-          <FGBMenuSubItem to="/belarus/brest" name="Брест" />
-          <FGBMenuSubItem to="/belarus/vitebsk" name="Витебск" />
-          <FGBMenuSubItem to="/belarus/gomel" name="Гомель" />
-          <FGBMenuSubItem to="/belarus/grodno" name="Гродно" />
-          <FGBMenuSubItem to="/belarus/mogilev" name="Могилёв" />
         </FGBMenuItem>
       </ul>
     </nav>

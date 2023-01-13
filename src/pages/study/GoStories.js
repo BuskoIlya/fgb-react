@@ -1,13 +1,14 @@
 import React from 'react';
-import CardLayout from '../../components/blocks/CardLayout';
+import CardLayout from '../../components/layouts/CardLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
-import TitleLayout from '../../components/blocks/TitleLayout';
+import TitleLayout from '../../components/layouts/TitleLayout';
 
 function GoStories() {
 
   const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_STUDY_GO_STORIES;
   const imgPath = process.env.REACT_APP_IMG_STORIES_PATH;
   const [data, setData] = React.useState([]);
+
   React.useEffect(() => {
     fetch(url)
         .then(response => response.json())
@@ -16,7 +17,7 @@ function GoStories() {
   }, []);
 
   return (
-    <TitleLayout title = "Рассказы о Го">
+    <TitleLayout title="Рассказы о Го">
       <CardLayout>
         {
           data.map(item =>

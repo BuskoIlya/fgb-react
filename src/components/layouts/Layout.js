@@ -1,17 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import FGBMenu from '../menu/FGBMenu';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../blocks/Footer';
+import Header from '../blocks/Header';
 
 function Layout() {
   return (
     <>
-      <Header/>
-      <FGBMenu/>
+      <Header />
+      <FGBMenu />
       <main>
-        <Outlet/>
+        <Outlet />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

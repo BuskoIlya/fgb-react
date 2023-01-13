@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import FGBLink from '../../components/FGBLink/FGBLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import FGBLink from '../../components/FGBLink/FGBLink';
 import './Book.css';
 
 function Book() {
+
   const imgPath = process.env.REACT_APP_IMG_BOOKS_PATH;
   const downloadPath = process.env.REACT_APP_DOWNLOAD_BOOKS;
   const params = useParams();
@@ -14,6 +15,7 @@ function Book() {
     + process.env.REACT_APP_API_BOOK
     + params.id;
   const [data, setData] = React.useState([]);
+
   React.useEffect(() => {
     fetch(url)
       .then(response => response.json())
@@ -31,10 +33,11 @@ function Book() {
         {data.category && <p className="book__category">{data.category}</p>}
         {data.description && <p className="book__description">{data.description}</p>}
         <FGBLink
-          type="text"
+          type="text-inner"
           href={downloadPath + data.download_ref}
           iconBefore={<FontAwesomeIcon icon={faDownload} />}
-          download>
+          download
+        >
           Скачать
         </FGBLink>
       </div>

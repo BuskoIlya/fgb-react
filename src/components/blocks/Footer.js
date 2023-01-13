@@ -2,10 +2,13 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer className = "footer">
+    <footer className="footer">
       <p>&copy; Бусько Илья Владимирович</p>
-      <img className = "logo footer__logo"
-           src = { process.env.REACT_APP_IMG_LOGO_PATH + 'fgb-160.png' } alt = "Логотип сообщества 'Умный Аист'"/>
+      <img
+        className="logo footer__logo"
+        src={process.env.REACT_APP_IMG_LOGO_PATH + 'fgb-160.png'}
+        alt="Логотип сообщества 'Умный Аист'"
+      />
     </footer>
   );
 }

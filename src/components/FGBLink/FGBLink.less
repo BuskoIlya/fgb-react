@@ -5,39 +5,47 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
   width: 100%;
+
   border-radius: 2px;
   text-decoration: none;
 
   &_item {
     .wave-background(@red);
+
     padding: 16px 24px;
     font-size: 1.2rem;
+
     &_active {
       background: fade(@red, 75%);
       color: white;
+
       &:after { left: -50% }
     }
   }
 
   &_sub-item {
     .wave-background(@green);
+
     padding: 16px 16px 16px 24px;
     font-size: 1rem;
+
     text-align: left;
   }
 }
 
 .fgb-text-link {
   .wave-background(@blue);
+
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
   padding: 0 0.5rem;
+
   border-radius: 2px;
   color: @blue;
 }
 
-.fgb-title-link {
-  text-decoration: none;
-}
+.fgb-title-link {text-decoration: none}

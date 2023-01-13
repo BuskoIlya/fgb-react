@@ -1,11 +1,13 @@
 import React from 'react';
-import Country from '../../../components/Country';
-import TitleLayout from '../../../components/blocks/TitleLayout';
+import FGBCountry from '../../../components/FGBCountry/FGBCountry';
+import TitleLayout from '../../../components/layouts/TitleLayout';
 
 function EuCommand() {
+
   const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_EU_COMMAND;
   const flagPath = process.env.REACT_APP_IMG_FLAG_MINI_PATH;
   const [data, setData] = React.useState([]);
+
   React.useEffect(() => {
     fetch(url)
         .then(response => response.json())
@@ -31,16 +33,16 @@ function EuCommand() {
             <tr key={item.year}>
               <td>{item.year}</td>
               <td className="table__cell">
-                <Country img={flagPath + item.flag} imgTitle={item.country} text={item.city} />
+                <FGBCountry img={flagPath + item.flag} imgTitle={item.country} text={item.city} />
               </td>
               <td className="table__cell">
-                <Country img={flagPath + item.g_flag} text={item.g_country} />
+                <FGBCountry img={flagPath + item.g_flag} text={item.g_country} />
               </td>
               <td className="table__cell">
-                <Country img={flagPath + item.s_flag} text={item.s_country} />
+                <FGBCountry img={flagPath + item.s_flag} text={item.s_country} />
               </td>
               <td className="table__cell">
-                <Country img={flagPath + item.b_flag} text={item.b_country} />
+                <FGBCountry img={flagPath + item.b_flag} text={item.b_country} />
               </td>
             </tr>
           )

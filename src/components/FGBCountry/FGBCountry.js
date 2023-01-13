@@ -1,6 +1,6 @@
-import './Country.css';
+import './FGBCountry.css';
 
-function Country({ img, imgTitle, text }) {
+function FGBCountry({ img, imgTitle, text }) {
   return (
       <div className="country">
         <img className="country__img" src={img} alt="" title={imgTitle} />
@@ -9,4 +9,4 @@ function Country({ img, imgTitle, text }) {
   );
 }
 
-export default Country;
+export default FGBCountry;

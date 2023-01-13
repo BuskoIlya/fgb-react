@@ -1,10 +1,10 @@
 import React from 'react';
-import FGBLink from '../FGBLink/FGBLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import FGBLink from '../FGBLink/FGBLink';
 import './FGBMenuItem.css';
 
-function FGBMenuItem({ name, children, ...rest }) {
+function FGBMenuItem({name, children, ...rest}) {
   return (
     <>
       {

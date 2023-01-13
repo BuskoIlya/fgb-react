@@ -4,14 +4,14 @@
 .table {
   min-width: 80%;
 
-  &_blue { .table-mixin(@blue) }
-  &_green { .table-mixin(@green) }
-  &_red { .table-mixin(@red) }
-  &_yellow { .table-mixin(@yellow) }
+  &_blue {.table-mixin(@blue)}
+  &_green {.table-mixin(@green)}
+  &_red {.table-mixin(@red)}
+  &_yellow {.table-mixin(@yellow)}
 
-  &_size-50 { min-width: 50% }
+  &_size-50 {min-width: 50%}
 
-  th { font-weight: 600 }
+  th {font-weight: 600}
 
   &, tr, th, td {
     border: solid 1px @grey;
@@ -20,11 +20,11 @@
   }
 
   tbody tr {
-    &:nth-child(2n + 1) { background-color: lighten(@grey, 12%) }
+    &:nth-child(2n + 1) {background-color: lighten(@grey, 12%)}
   }
 
   &__cell {
-    padding: 8px;
+    padding: 8px 16px;
 
     &_left {
       padding-left: 16px;
@@ -47,8 +47,8 @@
 }
 
 .table-mixin(@color) {
-  &, tr, th, td { border: solid 1px @color }
+  &, tr, th, td {border: solid 1px @color}
   tbody tr {
-    &:nth-child(2n + 1) { background-color: lighten(@color, 40%) }
+    &:nth-child(2n + 1) {background-color: lighten(@color, 40%)}
   }
 }

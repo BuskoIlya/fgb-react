@@ -1,14 +1,16 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import TitleLayout from '../../components/blocks/TitleLayout';
+import TitleLayout from '../../components/layouts/TitleLayout';
 
 function Story() {
+
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL
     + process.env.REACT_APP_API_STUDY_STORY
     + params.id;
   const [data, setData] = React.useState([]);
+
   React.useEffect(() => {
     fetch(url)
       .then(response => response.json())

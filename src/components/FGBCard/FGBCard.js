@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import './FGBCard.css';
 import FGBLink from '../FGBLink/FGBLink';
+import './FGBCard.css';
 
-const FGBCard = ({ size, color, secondClass, img, toRef, title, date, address, author,
-                   shortDescription, description, secondDescription }) => {
+const FGBCard = ({size, color, secondClass, img, toRef, title, date, address, author,
+                  shortDescription, description, secondDescription}) => {
+
   const cardClass = classNames(
     'fgb-card',
     `fgb-card_size_${size}`,
     {[`fgb-card_${color}`]: color},
     secondClass
   );
+
   return (
     <article className={cardClass}>
       <img className="fgb-card__img" src={img} alt={title}/>

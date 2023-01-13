@@ -14,7 +14,7 @@ import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import GoStories from './pages/study/GoStories';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
-import Layout from './components/blocks/Layout';
+import Layout from './components/layouts/Layout';
 import News from './pages/info/News';
 import Photos from './pages/Photos';
 import Players from './pages/Players';
@@ -61,23 +61,13 @@ function App() {
               <Route path="welcome-to-go" element={<WelcomeToGo />} />
             </Route>
             <Route path="go-stories" element={<GoStories />} />
-            <Route path="go-wiki" element={<div />} />
-          </Route>
-          <Route path="belarus/*">
-            <Route index element={<div />} />
-            <Route path="minsk" element={<div />} />
-            <Route path="brest" element={<div />} />
-            <Route path="vitebsk" element={<div />} />
-            <Route path="gomel" element={<div />} />
-            <Route path="grodno" element={<div />} />
-            <Route path="mogilev" element={<div />} />
           </Route>
 
           <Route path="book/:id" element={<Book />} />
           <Route path="story/:id" element={<Story />} />
           <Route path="tournament/:id" element={<Tournament />} />
-          <Route path="tournament/ru/:id" element={<Tournament type="ru/"/>} />
-          <Route path="tournament/world/:id" element={<Tournament type="world/"/>} />
+          <Route path="tournament/ru/:id" element={<Tournament type="ru/" />} />
+          <Route path="tournament/world/:id" element={<Tournament type="world/" />} />
         </Route>
       </Routes>
     </>

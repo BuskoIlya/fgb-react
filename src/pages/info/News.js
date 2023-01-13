@@ -1,15 +1,16 @@
 import React from 'react';
-import CardLayout from '../../components/blocks/CardLayout';
-import DropDownLayout from '../../components/blocks/DropDownLayout';
+import CardLayout from '../../components/layouts/CardLayout';
+import DropDownLayout from '../../components/layouts/DropDownLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
 import './News.css';
 
 function News() {
 
-  const urlTournaments = process.env.REACT_APP_SERVER_URL
-      + process.env.REACT_APP_API_TOURNAMENTS_ALL;
+  const urlTournaments =
+    process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_TOURNAMENTS_ALL;
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
   const [tournaments, setTournaments] = React.useState([]);
+
   React.useEffect(() => {
     fetch(urlTournaments)
         .then(response => response.json())
