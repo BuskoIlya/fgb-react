@@ -6,7 +6,7 @@ import './Tournament.css';
 
 function Tournament({type = ''}) {
 
-  const cityPath = process.env.REACT_APP_IMG_LOGO_PATH;
+  const cityPath = process.env.REACT_APP_IMG_LOGOS_PATH;
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL

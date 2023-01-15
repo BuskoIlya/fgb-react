@@ -15,9 +15,12 @@ const linkTypes = {
   'title': {css: 'fgb-title-link', tag: Link}
 }
 
-const FGBLink = ({type, iconBefore, children, iconAfter, ...rest}) => {
+const FGBLink = ({type, extraClasses, iconBefore, children, iconAfter, ...rest}) => {
 
-  const linkCSS = linkTypes[type].css;
+  let linkCSS = linkTypes[type].css;
+  if (extraClasses) {
+    linkCSS += ' ' + extraClasses;
+  }
   const Tag = linkTypes[type].tag;
   if (type === 'text-out') {
     rest = {target: '_blank', ...rest};

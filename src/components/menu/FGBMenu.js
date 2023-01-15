@@ -28,7 +28,7 @@ function FGBMenu() {
       <div className="fgb-menu__mobile" onClick={onClickMobile}>Меню</div>
       <ul className="fgb-menu__desktop" style={desktopDisplay}>
         <FGBMenuItem to="/" name="Главная" />
-        <FGBMenuItem to="/photos" name="Фото" />
+        <FGBMenuItem to="/team-game/1" name="Фото" />
         <FGBMenuItem to="/info" name="Информация">
           <FGBMenuSubItem to="/info/contacts" name="Контакты" />
           <FGBMenuSubItem to="/info/ranks" name="Разряды" />
