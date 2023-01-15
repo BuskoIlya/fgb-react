@@ -1,0 +1,21 @@
+.flex {
+  &-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &_center {justify-content: center}
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+
+    &_center {align-items: center}
+    &_width-50 {width: 50%}
+  }
+
+  &_gap-8 {gap: 8px}
+  &_gap-16 {gap: 16px}
+  &_gap-32 {gap: 32px}
+}
