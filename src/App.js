@@ -15,6 +15,7 @@ import GoStories from './pages/study/GoStories';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/layouts/Layout';
+import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
 import News from './pages/info/News';
 import Photos from './pages/Photos';
 import Players from './pages/Players';
@@ -65,6 +66,7 @@ function App() {
 
           <Route path="book/:id" element={<Book />} />
           <Route path="story/:id" element={<Story />} />
+          <Route path="national-team-game/:id" element={<NationalTeamGame />} />
           <Route path="tournament/:id" element={<Tournament />} />
           <Route path="tournament/ru/:id" element={<Tournament type="ru/" />} />
           <Route path="tournament/world/:id" element={<Tournament type="world/" />} />

@@ -6,17 +6,15 @@ import './News.css';
 
 function News() {
 
-  const urlTournaments =
-    process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_TOURNAMENTS_ALL;
-  const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
-  const [tournaments, setTournaments] = React.useState([]);
-
+  const imgNewsPath = process.env.REACT_APP_IMG_NEWS_PATH;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_NEWS;
+  const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch(urlTournaments)
-        .then(response => response.json())
-        .then(data => setTournaments(data))
-        .catch(e =>  console.log(e));
-  }, []);
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(e => console.log(e));
+  });
 
   return (
     <section className="news">
@@ -25,7 +23,7 @@ function News() {
       </p>
       <div className="news__items">
         {
-          tournaments.map(year =>
+          data.map(year =>
             <DropDownLayout key={year.year} title={year.year}>
               <CardLayout>
                 {
@@ -34,8 +32,8 @@ function News() {
                       key={item.date}
                       size={32}
                       color={item.color}
-                      img={imgPath + item.img}
-                      toRef={item.toref ? `/tournament/${item.toref}` : `/tournament/${item.id}`}
+                      img={imgNewsPath + item.img}
+                      toRef={item.ref}
                       title={item.title}
                       date={item.date}
                       address={item.short_address}
