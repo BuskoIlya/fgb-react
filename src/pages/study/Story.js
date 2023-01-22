@@ -7,7 +7,7 @@ function Story() {
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL
-    + process.env.REACT_APP_API_STUDY_STORY
+    + process.env.REACT_APP_API_STUDY_GO_STORY
     + params.id;
   const [data, setData] = React.useState([]);
 

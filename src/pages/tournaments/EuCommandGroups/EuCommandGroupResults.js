@@ -8,7 +8,7 @@ function EuCommandGroupResults() {
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL
-    + process.env.REACT_APP_API_EU_COMMAND_GROUPS_YEAR
+    + process.env.REACT_APP_API_TOURNAMENTS_EU_COMMAND_GROUPS_BY_YEAR
     + params.year;
   const [data, setData] = React.useState([]);
 

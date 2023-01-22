@@ -19,7 +19,7 @@ function Home() {
   return (
     <CardLayout>
       {
-        data.map(item =>
+        data?.map(item =>
           <FGBCard
             key={item.date}
             size={32}

@@ -4,7 +4,7 @@ import FGBCard from '../../components/FGBCard/FGBCard';
 
 function Contacts() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_CONTACTS;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_INFO_CONTACTS;
   const imgPath = process.env.REACT_APP_IMG_CONTACTS_PATH;
   const [data, setData] = React.useState([]);
 

@@ -17,7 +17,9 @@ function NationalTeamGame() {
   const gamesPath = process.env.REACT_APP_DOWNLOAD_GAMES;
   const params = useParams();
   const url =
-    process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_NATIONAL_TEAM_GAME + params.id;
+    process.env.REACT_APP_SERVER_URL
+    + process.env.REACT_APP_API_TOURNAMENTS_NATIONAL_TEAM_GAME
+    + params.id;
   console.log(url);
   const [data, setData] = React.useState();
 

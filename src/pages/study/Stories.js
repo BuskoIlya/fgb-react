@@ -3,7 +3,7 @@ import CardLayout from '../../components/layouts/CardLayout';
 import FGBCard from '../../components/FGBCard/FGBCard';
 import TitleLayout from '../../components/layouts/TitleLayout';
 
-function GoStories() {
+function Stories() {
 
   const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_STUDY_GO_STORIES;
   const imgPath = process.env.REACT_APP_IMG_STORIES_PATH;
@@ -37,4 +37,4 @@ function GoStories() {
   );
 }
 
-export default GoStories;
+export default Stories;

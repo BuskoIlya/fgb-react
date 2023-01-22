@@ -7,7 +7,7 @@ import './News.css';
 function News() {
 
   const imgNewsPath = process.env.REACT_APP_IMG_NEWS_PATH;
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_NEWS;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_INFO_NEWS;
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
     fetch(url)

@@ -4,7 +4,7 @@ import TitleLayout from '../../../components/layouts/TitleLayout';
 
 function EuPersonal() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_EU_PERSONAL;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_TOURNAMENTS_EU_PERSONAL;
   const flagPath = process.env.REACT_APP_IMG_FLAG_MINI_PATH;
   const [data, setData] = React.useState([]);
 

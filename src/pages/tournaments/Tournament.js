@@ -10,7 +10,7 @@ function Tournament({type = ''}) {
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL
-    + process.env.REACT_APP_API_TOURNAMENT
+    + process.env.REACT_APP_API_TOURNAMENTS_BY_ID
     + type + params.id;
   const [data, setData] = React.useState([]);
 

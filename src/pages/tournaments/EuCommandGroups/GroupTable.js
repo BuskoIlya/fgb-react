@@ -10,7 +10,7 @@ function GroupTable({title, refto, data = []}) {
 
   return (
     <div className="group-table">
-      <FGBLink type="text-inner" href={refto}>{title}</FGBLink>
+      {refto && <FGBLink type="text-inner" href={refto}>{title}</FGBLink>}
       <table className="table">
         <thead>
         <tr>

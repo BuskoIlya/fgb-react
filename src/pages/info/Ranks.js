@@ -4,7 +4,7 @@ import '../../css/table.css';
 
 function Ranks() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_RANKS;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_INFO_RANKS;
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {

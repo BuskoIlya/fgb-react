@@ -6,7 +6,7 @@ import './ByTournaments.css';
 
 function ByTournaments() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_TOURNAMENTS_ALL;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_TOURNAMENTS;
   const imgPath = process.env.REACT_APP_IMG_NEWS_PATH;
   const [data, setData] = React.useState([]);
 

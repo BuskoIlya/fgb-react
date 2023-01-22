@@ -4,7 +4,7 @@ import TitleLayout from '../../../components/layouts/TitleLayout';
 
 function EuCommand() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_EU_COMMAND;
+  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_TOURNAMENTS_EU_COMMAND;
   const flagPath = process.env.REACT_APP_IMG_FLAG_MINI_PATH;
   const [data, setData] = React.useState([]);
 

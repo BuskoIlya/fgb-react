@@ -11,13 +11,12 @@ import EuCommand from './pages/tournaments/EuChamps/EuCommand';
 import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
-import GoStories from './pages/study/GoStories';
+import Stories from './pages/study/Stories';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
 import Layout from './components/layouts/Layout';
 import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
 import News from './pages/info/News';
-import Photos from './pages/Photos';
 import Players from './pages/Players';
 import Ranks from './pages/info/Ranks';
 import Story from './pages/study/Story';
@@ -31,7 +30,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="photos" element={<Photos />} />
           <Route path="info/*">
             <Route index element={<div />} />
             <Route path="contacts" element={<Contacts />} />
@@ -61,7 +59,7 @@ function App() {
               <Route index element={<div />} />
               <Route path="welcome-to-go" element={<WelcomeToGo />} />
             </Route>
-            <Route path="go-stories" element={<GoStories />} />
+            <Route path="go-stories" element={<Stories />} />
           </Route>
 
           <Route path="book/:id" element={<Book />} />

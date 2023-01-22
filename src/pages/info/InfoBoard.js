@@ -3,7 +3,7 @@ import './InfoBoard.css';
 
 function InfoBoard() {
   return (
-    <section className="info-board">
+    <div className="info-board">
       <div className="info-board__item">
         <h3 className="title">Сайты федераций Го</h3>
         <p>
@@ -59,7 +59,7 @@ function InfoBoard() {
           <small><i>(Грунковский Юрий)</i></small>
         </p>
       </div>
-    </section>
+    </div>
   );
 }
 

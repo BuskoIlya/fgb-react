@@ -12,7 +12,7 @@ function Book() {
   const params = useParams();
   const url =
     process.env.REACT_APP_SERVER_URL
-    + process.env.REACT_APP_API_BOOK
+    + process.env.REACT_APP_API_STUDY_GO_BOOK
     + params.id;
   const [data, setData] = React.useState([]);
 
@@ -26,7 +26,7 @@ function Book() {
   return (
     <div className="book">
       <div className="book__item">
-        <img className="book__img" src={imgPath + data.img} alt={data.title} />
+        {data.img && <img className="book__img" src={imgPath + data.img} alt={data.title} />}
       </div>
       <div className="book__item">
         {data.author && <p className="book__author">{data.author}</p>}
