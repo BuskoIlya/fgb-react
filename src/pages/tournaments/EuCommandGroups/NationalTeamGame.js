@@ -102,7 +102,7 @@ function NationalTeamGame() {
             {
               data.playerGames.map((item, index) =>
                 <tr key={index + 1}>
-                  <td className="table__cell">{index + 1}</td>
+                  <td data-label="№" className="table__cell">{index + 1}</td>
                   <td className="table__cell table__cell_left">
                     <div className="flex-row">
                       <span className="team-game__black-stone">&#9679;</span>
@@ -115,7 +115,7 @@ function NationalTeamGame() {
                       <FGBCountry img={flagsPath + item.white_flag} text={item.white_player}/>
                     </div>
                   </td>
-                  <td className="table__cell">
+                  <td data-label="Результат" className="table__cell">
                     <div className="flex-row flex_gap-8">
                       {
                         item.winner === 'b'
@@ -125,7 +125,7 @@ function NationalTeamGame() {
                       {item.result}
                     </div>
                   </td>
-                  <td className="table__cell">
+                  <td data-label="Скачать" className="table__cell">
                     <FGBLink
                       type="text-inner"
                       extraClasses="align__block_center"

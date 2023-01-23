@@ -15,7 +15,7 @@
   overflow: hidden;
   color: @black;
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -36,6 +36,6 @@
     color: white;
     background: fade(@color, 75%);
 
-    &:after {left: -50%}
+    &::after {left: -50%}
   }
 }

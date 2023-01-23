@@ -35,12 +35,16 @@ const FGBTournamentTable = ({ table, title }) => {
                 }
                 if (typeof item[key] === 'object') {
                   return (
-                    <td key={keyIndex + 1} className="table__cell">
+                    <td data-label={columnNames[keyIndex]} key={keyIndex + 1} className="table__cell">
                       <FGBCountry img={flagPath + item[key].flag_img} imgTitle={item[key].name} />
                     </td>
                   );
                 }
-                return <td key={keyIndex + 1} className={className}>{item[key]}</td>
+                return (
+                  <td data-label={columnNames[keyIndex]} key={keyIndex + 1} className={className}>
+                    {item[key]}
+                  </td>
+                );
               })
             }
           </tr>

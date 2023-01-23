@@ -1,4 +1,5 @@
 @import '../../../css/colors';
+@import '../../../css/sizes';
 
 .group-table {
   display: flex;
@@ -8,16 +9,19 @@
 
   width: 100%;
 
-  table {
+  .table {
     tbody tr:first-child {
       background-color: @green;
     }
+
     tbody tr:nth-child(2) {
       background-color: fade(@green, 70%);
     }
+
     tbody tr:last-child {
       background-color: @red;
     }
+
     tbody tr:nth-last-child(2) {
       background-color: fade(@red, 70%);
     }

@@ -1,5 +1,5 @@
-@import "colors";
-@import "sizes";
+@import 'colors';
+@import 'sizes';
 
 .table {
   min-width: 80%;
@@ -44,6 +44,76 @@
     padding-bottom: 16px;
     font-weight: 600;
   }
+
+  @media screen and (max-width: @desktop-width) {
+    min-width: fit-content;
+  }
+
+  @media screen and (max-width: @mobile-width) {
+    width: 80%;
+    border: none;
+
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 0px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 0px;
+    }
+
+    tr {
+      display: block;
+      border: none;
+      margin-bottom: 16px
+    }
+
+    td {
+      display: block;
+      text-align: right;
+      padding-right: 16px;
+      border: none;
+      border-bottom: solid 1px @grey;
+    }
+
+    &__cell {
+      padding: 0;
+
+      &_left {
+        padding-left: 0;
+      }
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      padding-left: 16px;
+    }
+
+    .country {
+      padding: 0;
+      margin-left: auto;
+
+      &__empty-text {
+        &::after {
+          content: '.';
+          margin-right: -12px;
+          color: white;
+        }
+      }
+    }
+
+    .flex-row {
+      width: fit-content;
+      margin-left: auto;
+
+      .country {margin-left: 8px}
+    }
+
+    td:last-child {border-bottom: 0}
+  }
 }
 
 .table-mixin(@color) {
@@ -52,3 +122,4 @@
     &:nth-child(2n + 1) {background-color: lighten(@color, 40%)}
   }
 }
+

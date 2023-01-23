@@ -32,20 +32,20 @@ function GroupTable({title, refto, data = []}) {
         {
           data.map((item, index) =>
             <tr key = {index + 1}>
-              <td>{index + 1}</td>
-              <td className="table__cell table__cell_left">
+              <td data-label="Место">{index + 1}</td>
+              <td data-label="Команда" className="table__cell table__cell_left">
                 <FGBCountry img={flagPath + item.flag_country} text={item.country}/>
               </td>
-              <td>{item.games}</td>
-              <td>{item.bw}</td>
-              <td>{item.b1}</td>
-              <td>{item.b2}</td>
-              <td>{item.b3}</td>
-              <td>{item.b4}</td>
-              <td>{item.w}</td>
-              <td>{item.d}</td>
-              <td>{item.l}</td>
-              <td>{item.score}</td>
+              <td data-label="Игры">{item.games}</td>
+              <td data-label="Выигранных партий">{item.bw}</td>
+              <td data-label="Доска номер 1">{item.b1}</td>
+              <td data-label="Доска номер 2">{item.b2}</td>
+              <td data-label="Доска номер 3">{item.b3}</td>
+              <td data-label="Доска номер 4">{item.b4}</td>
+              <td data-label="Выигрыш">{item.w}</td>
+              <td data-label="Ничья">{item.d}</td>
+              <td data-label="Поражение">{item.l}</td>
+              <td data-label="Очки">{item.score}</td>
             </tr>
           )
         }

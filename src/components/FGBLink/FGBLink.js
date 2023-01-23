@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import './FGBLink.css';
 
-const types = ['menu-item', 'menu-sub-item', 'text-out', 'text-inner', 'title'];
+const types = ['img', 'menu-item', 'menu-sub-item', 'text-out', 'text-inner', 'title'];
 const menuItemClasses = 'fgb-menu-link fgb-menu-link_item';
 const menuItemCSS =
     ({isActive}) => isActive ? `${menuItemClasses} fgb-menu-link_item_active` : menuItemClasses;
 const menuSubItemCSS = "fgb-menu-link fgb-menu-link_sub-item";
 const linkTypes = {
+  'img': {css: 'fgb-img-link', tag: Link},
   'menu-item': {css: menuItemCSS, tag: NavLink},
   'menu-sub-item': {css: menuSubItemCSS, tag: NavLink},
   'text-out': {css: 'fgb-text-link', tag: 'a'},

@@ -29,11 +29,11 @@ function EuPersonal() {
         {
           data.map((item) =>
             <tr key={item.year}>
-              <td>{item.year}</td>
-              <td className="table__cell table__cell_left">
+              <td data-label="Год">{item.year}</td>
+              <td data-label="Место проведения" className="table__cell table__cell_left">
                 <FGBCountry img={flagPath + item.flag} imgTitle={item.country} text={item.city} />
               </td>
-              <td className="table__cell table__cell_left">
+              <td data-label="Победитель" className="table__cell table__cell_left">
                 <FGBCountry img={flagPath + item.g_flag} imgTitle={item.g_country} text={item.g_name} />
               </td>
             </tr>

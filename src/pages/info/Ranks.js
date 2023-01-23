@@ -27,8 +27,8 @@ function Ranks() {
         {
           data.map((item, index) =>
             <tr key={index + 1}>
-              <td className="table__cell">{item.scores}</td>
-              <td className="table__cell">{item.sport_rank}</td>
+              <td data-label="Очки" className="table__cell">{item.scores}</td>
+              <td data-label="Разряды кю/дан" className="table__cell">{item.sport_rank}</td>
             </tr>
           )
         }

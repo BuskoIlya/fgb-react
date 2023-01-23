@@ -15,7 +15,9 @@ const FGBCard = ({size, color, secondClass, img, toRef, title, date, address, au
 
   return (
     <article className={cardClass}>
-      <img className="fgb-card__img" src={img} alt={title}/>
+      <FGBLink type="img" to={toRef}>
+        <img className="fgb-card__img" src={img} alt={title}/>
+      </FGBLink>
       <FGBLink type="title" to={toRef}>
         <h4 className="fgb-card__title">{title}</h4>
       </FGBLink>

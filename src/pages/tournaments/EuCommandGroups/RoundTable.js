@@ -24,13 +24,13 @@ function RoundTable({name, date, games = []}) {
       {
         games.map((item, index) =>
           <tr key={index + 1}>
-            <td className="table__cell table__cell_left">
+            <td data-label="Команда 1" className="table__cell table__cell_left">
               <FGBCountry img={flagPath + item.cmd_1_flag} text={item.cmd_1}/>
             </td>
-            <td className="table__cell table__cell_left">
+            <td data-label="Команда 2" className="table__cell table__cell_left">
               <FGBCountry img={flagPath + item.cmd_2_flag} text={item.cmd_2}/>
             </td>
-            <td className="table__cell">{item.result}</td>
+            <td data-label="Результат" className="table__cell">{item.result}</td>
           </tr>
         )
       }

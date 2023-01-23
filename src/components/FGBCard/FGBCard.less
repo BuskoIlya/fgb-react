@@ -1,4 +1,5 @@
 @import '../../css/colors';
+@import '../../css/sizes';
 @import '../../css/wave-background';
 
 .fgb-card {
@@ -44,6 +45,18 @@
 
   &__info {line-height: 1.5}
   &__second-description {color: darken(@grey, 30%)}
+
+  @media screen and (max-width: @ipad-adaptive-width) {
+    &_size_18 {width: 24%}
+    &_size_24 {width: 32%}
+    &_size_32 {width: 49%}
+  }
+
+  @media screen and (max-width: @mobile-width) {
+    &_size_18 {width: 200px}
+    &_size_24 {width: 260px}
+    &_size_32 {width: 320px}
+  }
 }
 
 .fgb-card-mixin_color(@color) {

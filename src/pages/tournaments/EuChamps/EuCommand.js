@@ -31,17 +31,17 @@ function EuCommand() {
         {
           data.map((item) =>
             <tr key={item.year}>
-              <td>{item.year}</td>
-              <td className="table__cell">
+              <td data-label="Год">{item.year}</td>
+              <td data-label="Место проведения" className="table__cell">
                 <FGBCountry img={flagPath + item.flag} imgTitle={item.country} text={item.city} />
               </td>
-              <td className="table__cell">
+              <td data-label="Золото" className="table__cell">
                 <FGBCountry img={flagPath + item.g_flag} text={item.g_country} />
               </td>
-              <td className="table__cell">
+              <td data-label="Серебро" className="table__cell">
                 <FGBCountry img={flagPath + item.s_flag} text={item.s_country} />
               </td>
-              <td className="table__cell">
+              <td data-label="Бронза" className="table__cell">
                 <FGBCountry img={flagPath + item.b_flag} text={item.b_country} />
               </td>
             </tr>

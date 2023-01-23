@@ -33,17 +33,17 @@ function WAGC() {
         {
           data?.map((item) =>
             <tr key= {item.year}>
-              <td>{item.year}</td>
-              <td className="table__cell">
+              <td data-label="Год">{item.year}</td>
+              <td data-label="Место проведения" className="table__cell">
                 <FGBCountry img={flagPath + item.flag_country} imgTitle={item.country} text={item.city} />
               </td>
-              <td className="table__cell">
+              <td data-label="Золото" className="table__cell">
                 <FGBCountry img={flagPath + item.g_flag_country} imgTitle={item.g_country} text={item.g_name} />
               </td>
-              <td className="table__cell">
+              <td data-label="Серебро" className="table__cell">
                 <FGBCountry img={flagPath + item.s_flag_country} imgTitle={item.s_country} text={item.s_name} />
               </td>
-              <td className="table__cell">
+              <td data-label="Бронза" className="table__cell">
                 <FGBCountry img={flagPath + item.b_flag_country} imgTitle={item.b_country} text={item.b_name} />
               </td>
             </tr>
