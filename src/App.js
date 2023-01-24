@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import './css/logo.css';
 import './css/title.css';
@@ -11,6 +11,7 @@ import EuCommand from './pages/tournaments/EuChamps/EuCommand';
 import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
+import Error from './components/error/Error';
 import Stories from './pages/study/Stories';
 import Home from './pages/Home';
 import InfoBoard from './pages/info/InfoBoard';
@@ -68,6 +69,9 @@ function App() {
           <Route path="tournament/:id" element={<Tournament />} />
           <Route path="tournament/ru/:id" element={<Tournament type="ru/" />} />
           <Route path="tournament/world/:id" element={<Tournament type="world/" />} />
+
+          <Route path="error" element={<Error />} />
+          <Route path="*" element={<Navigate to="error" replace={true} />} />
         </Route>
       </Routes>
     </>
