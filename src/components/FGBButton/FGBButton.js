@@ -1,10 +1,12 @@
 import './FGBButton.css';
 
-function FGBButton({classes, onClickAction, startIcon, endIcon, children}) {
+function FGBButton({classes, onClickAction, startIcon, endIcon, children, ...rest}) {
   return (
     <button
       className={classes}
-      onClick={onClickAction}>
+      onClick={onClickAction}
+      {...rest}
+    >
       {startIcon}
       {children}
       {endIcon}
