@@ -8,34 +8,39 @@ import './Login.css';
 
 function Login() {
 
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_LOGIN;
   const [user, setUser] = React.useContext(UserContext);
+  const [isLogin, setIsLogin] = React.useState(true);
   const [fields, setFields] = React.useState({
     email: '',
     password: ''
   });
   const navigate = useNavigate();
 
-  const handleChange = (event) => {
+  const handleChangeFieldValue = (event) => {
     setFields({
       ...fields,
       [event.target.name]: event.target.value
     });
   };
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  const onSubmit = async (e) => {
+    e.preventDefault();
     const options = {
       method: 'POST',
       headers: {'Content-Type': 'application/json; charset=UTF-8'},
       body: JSON.stringify({login: fields.email, password: fields.password})
     };
+    let url = process.env.REACT_APP_SERVER_URL;
+    url += isLogin ?
+      process.env.REACT_APP_API_USER_LOGIN :
+      process.env.REACT_APP_API_USER_REGISTER;
     const res = await fetch(url, options);
+
     if (res.ok) {
-      const {token} = await res.json();
+      const {token, logoImg, letter, fio} = await res.json();
       window.localStorage.setItem('token', token);
-      setUser({token: token});
-      navigate('/profile');
+      setUser({token, logoImg, letter, fio});
+      navigate(`/profile`);
     } else {
       alert('Неверный логин или пароль!');
       navigate('/');
@@ -46,24 +51,28 @@ function Login() {
     <form onSubmit={onSubmit} className="login">
       <div className="login__title">
         <FGBButton
-          className="fgb-button fgb-button_blue"
+          active={isLogin ? true : false}
+          color="blue"
+          onClickAction={(e) => {e.preventDefault(); setIsLogin(true);}}
           startIcon={<FontAwesomeIcon icon={faRightToBracket} />}
         >
           Войти
         </FGBButton>
         <FGBButton
-          className="fgb-button fgb-button_blue"
+          active={!isLogin ? true : false}
+          color="blue"
+          onClickAction={(e) => {e.preventDefault(); setIsLogin(false);}}
           startIcon={<FontAwesomeIcon icon={faUser} />}
         >
           Зарегистрироваться
         </FGBButton>
       </div>
       <label className="login__field">
-        Логин:
+        Логин (почта):
         <input
           className="login__input"
           name="email"
-          onChange={handleChange}
+          onChange={handleChangeFieldValue}
           placeholder="Почта"
           type="text"
           value={fields.email}
@@ -74,12 +83,12 @@ function Login() {
         <input
           className="login__input"
           name="password"
-          onChange={handleChange}
+          onChange={handleChangeFieldValue}
           type="text"
           value={fields.password}
         />
       </label>
-      <FGBButton className="fgb-button fgb-button_blue">Войти</FGBButton>
+      <FGBButton color="blue">{isLogin ? 'Войти': 'Зарегистрироваться'}</FGBButton>
     </form>
   );
 }

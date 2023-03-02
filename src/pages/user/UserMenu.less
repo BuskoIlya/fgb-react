@@ -2,5 +2,33 @@
 @import '../../css/wave-background';
 
 .user-menu {
+  position: relative;
 
+  &__nav {
+
+  }
+
+  &__ul {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+
+    list-style: none;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px @grey;
+  }
+
+  &__logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  &__logo-text {
+    font-size: 2rem;
+    line-height: 1.8;
+  }
 }
