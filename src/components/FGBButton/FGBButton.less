@@ -24,4 +24,17 @@
   &_green {.wave-background(@green)}
   &_red {.wave-background(@red)}
   &_yellow {.wave-background(@yellow)}
+
+  &_active {
+    &-blue {.mix-active(@blue)}
+    &-green {.mix-active(@green)}
+    &-red {.mix-active(@red)}
+    &-yellow {.mix-active(@yellow)}
+  }
+}
+
+.mix-active(@color) {
+  background: fade(@color, 75%);
+  color: white;
+  &:after { left: -50% }
 }

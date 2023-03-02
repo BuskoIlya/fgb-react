@@ -1,9 +1,20 @@
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import './FGBButton.css';
 
-function FGBButton({classes, onClickAction, startIcon, endIcon, children, ...rest}) {
+const colors = ['blue', 'green', 'red', 'yellow'];
+
+function FGBButton({color, active, onClickAction, startIcon, endIcon, children, ...rest}) {
+
+  const btnClasses = classNames(
+    'fgb-button',
+    {[`fgb-button_${color}`]: color},
+    {[`fgb-button_active-${color}`]: active && color}
+  );
+
   return (
     <button
-      className={classes}
+      className={btnClasses}
       onClick={onClickAction}
       {...rest}
     >
@@ -12,6 +23,12 @@ function FGBButton({classes, onClickAction, startIcon, endIcon, children, ...res
       {endIcon}
     </button>
   );
+}
+
+FGBButton.propTypes = {
+  color: PropTypes.oneOf(colors),
+  endIcon: PropTypes.node,
+  startIcon: PropTypes.node
 }
 
 export default FGBButton;
