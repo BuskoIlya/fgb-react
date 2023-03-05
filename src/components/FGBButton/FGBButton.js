@@ -4,12 +4,14 @@ import './FGBButton.css';
 
 const colors = ['blue', 'green', 'red', 'yellow'];
 
-function FGBButton({color, active, onClickAction, startIcon, endIcon, children, ...rest}) {
+function FGBButton(
+  {active, children, color, endIcon, onClickAction, secondClasses, startIcon, ...rest}) {
 
   const btnClasses = classNames(
     'fgb-button',
     {[`fgb-button_${color}`]: color},
-    {[`fgb-button_active-${color}`]: active && color}
+    {[`fgb-button_active-${color}`]: active && color},
+    secondClasses
   );
 
   return (

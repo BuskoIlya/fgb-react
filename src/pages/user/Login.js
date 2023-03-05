@@ -1,14 +1,18 @@
 import React from 'react';
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons';
+
 import FGBButton from '../../components/FGBButton/FGBButton';
 import UserContext from '../../user/UserContext';
 import './Login.css';
 
 function Login() {
 
-  const [user, setUser] = React.useContext(UserContext);
+  const [cookies, setCookie, removeCookie] = useCookies();
+  const [userContext, setUserContext] = React.useContext(UserContext);
   const [isLogin, setIsLogin] = React.useState(true);
   const [fields, setFields] = React.useState({
     email: '',
@@ -28,7 +32,8 @@ function Login() {
     const options = {
       method: 'POST',
       headers: {'Content-Type': 'application/json; charset=UTF-8'},
-      body: JSON.stringify({login: fields.email, password: fields.password})
+      body: JSON.stringify({email: fields.email, password: fields.password}),
+      credentials: "include",
     };
     let url = process.env.REACT_APP_SERVER_URL;
     url += isLogin ?
@@ -37,9 +42,9 @@ function Login() {
     const res = await fetch(url, options);
 
     if (res.ok) {
-      const {token, logoImg, letter, fio} = await res.json();
+      const {fullName, img, letter, token} = await res.json();
       window.localStorage.setItem('token', token);
-      setUser({token, logoImg, letter, fio});
+      setUserContext({fullName, img, letter, token});
       navigate(`/profile`);
     } else {
       alert('Неверный логин или пароль!');

@@ -1,15 +1,18 @@
 import React from 'react';
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import UserContext from '../../user/UserContext';
 
 import FGBButton from '../../components/FGBButton/FGBButton';
 import FGBMenuItem from '../../components/menu/FGBMenuItem';
+import UserContext from '../../user/UserContext';
 import './UserMenu.css';
 
 function UserMenu({secondClasses}) {
 
+  const [cookies, setCookie, removeCookie] = useCookies();
   const [user, setUser] = React.useContext(UserContext);
   const [userMenuDisplay, setUserMenuDisplay] = React.useState({display: "none"});
   const navigate = useNavigate();
@@ -22,6 +25,7 @@ function UserMenu({secondClasses}) {
     if (window.confirm('Вы действиетельно хотите выйти?')) {
       setUser({});
       window.localStorage.removeItem('token');
+      removeCookie('token');
     }
   }
 
@@ -41,10 +45,9 @@ function UserMenu({secondClasses}) {
           <nav className="user-menu__nav">
             <div className="logo user-menu__logo" onClick={onClickMobile}>
               {
-                user.logoImg ?
+                user.img ?
                   <img
-                    src={process.env.REACT_APP_IMG_USERS + user.logoImg}
-                    alt={user.fio}
+                    src={process.env.REACT_APP_IMG_USERS + user.img}
                   />
                   : <span className="user-menu__logo-text">{user.letter || '?'}</span>
               }
