@@ -1,5 +1,4 @@
 import React from 'react';
-import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,22 +9,23 @@ import FGBMenuItem from '../../components/menu/FGBMenuItem';
 import UserContext from '../../user/UserContext';
 import './UserMenu.css';
 
-function UserMenu({secondClasses}) {
+function UserMenu({ secondClasses }) {
 
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const urlLogout = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_LOGOUT;
   const [user, setUser] = React.useContext(UserContext);
-  const [userMenuDisplay, setUserMenuDisplay] = React.useState({display: "none"});
+  const [userMenuDisplay, setUserMenuDisplay] = React.useState({ display: "none" });
   const navigate = useNavigate();
 
-  const onLogin = () => {
-    navigate('login');
-  }
+  const onLogin = () => { navigate('login') }
 
-  const onLogout = () => {
+  const onLogout = async () => {
     if (window.confirm('Вы действиетельно хотите выйти?')) {
-      setUser({});
-      window.localStorage.removeItem('token');
-      removeCookie('token');
+      await fetch(urlLogout, { credentials: 'include' })
+        .then(response => {
+          setUser({});
+          window.localStorage.removeItem('token');
+        })
+        .catch(e =>  console.log(e));
     }
   }
 

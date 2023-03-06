@@ -7,7 +7,7 @@ import './css/title.css';
 
 function App() {
 
-  const [user, setUser] = React.useState({token: window.localStorage.getItem('token')});
+  const [user, setUser] = React.useState({ token: window.localStorage.getItem('token') });
 
   return (
     <CookiesProvider>

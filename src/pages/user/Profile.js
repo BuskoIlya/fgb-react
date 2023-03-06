@@ -4,14 +4,15 @@ import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-regular-svg-icons
 
 import FGBButton from '../../components/FGBButton/FGBButton';
 import UserContext from '../../user/UserContext';
-
 import styles from './Profile.module.css';
-import { useCookies } from 'react-cookie';
 
 export default () => {
 
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const userDataUrl = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER;
+  const updateUserUrl = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_UPDATE;
+
   const [userContext, setUserContext] = React.useContext(UserContext);
+  const [userData, setUserData] = React.useState({});
   const [isSave, setIsSave] = React.useState(false);
   const [isEdit, setIsEdit] = React.useState(false);
   const [fields, setFields] = React.useState({
@@ -25,10 +26,8 @@ export default () => {
     isPlayer: false
   });
 
-  const userDataUrl = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER;
-  const [userData, setUserData] = React.useState({});
   React.useEffect(() => {
-    fetch(userDataUrl, {credentials: 'include'})
+    fetch(userDataUrl, { credentials: 'include' })
       .then(response => response.json())
       .then(data => setUserData(data))
       .catch(e =>  console.log(e));
@@ -55,23 +54,24 @@ export default () => {
 
     const options = {
       method: 'PATCH',
-      headers: {'Content-Type': 'application/json; charset=UTF-8'},
-      body: JSON.stringify(newUserData)
+      body: JSON.stringify(newUserData),
+      headers: { 'Content-Type': 'application/json; charset=UTF-8' }
     };
-    let url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_UPDATE;
-    const res = await fetch(url, options);
 
-    if (res.ok) {
-      setUserContext({fullName, letter: fields.name?.substr(0, 1)});
-      setUserData({fullName, ...newUserData});
-    } else {
-      alert('Данные не удалось сохранить!');
-    }
+    await fetch(updateUserUrl, options)
+      .then(response => {
+        setUserContext({fullName, letter: fields.name?.substr(0, 1)});
+        setUserData({fullName, ...newUserData});
+      })
+      .catch(e => {
+        console.log(e);
+        alert('Данные не удалось сохранить!');
+      });
+
     setIsEdit(false);
   }
 
-  const onLoadPhoto = () => {
-  }
+  const onLoadPhoto = () => {}
 
   const onChangeValue = (event) => {
     setFields({

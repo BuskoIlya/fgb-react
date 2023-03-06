@@ -1,5 +1,4 @@
 import React from 'react';
-import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,13 +10,9 @@ import './Login.css';
 
 function Login() {
 
-  const [cookies, setCookie, removeCookie] = useCookies();
-  const [userContext, setUserContext] = React.useContext(UserContext);
+  const [user, setUser] = React.useContext(UserContext);
   const [isLogin, setIsLogin] = React.useState(true);
-  const [fields, setFields] = React.useState({
-    email: '',
-    password: ''
-  });
+  const [fields, setFields] = React.useState({ email: '', password: '' });
   const navigate = useNavigate();
 
   const handleChangeFieldValue = (event) => {
@@ -29,27 +24,31 @@ function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     const options = {
       method: 'POST',
-      headers: {'Content-Type': 'application/json; charset=UTF-8'},
-      body: JSON.stringify({email: fields.email, password: fields.password}),
+      body: JSON.stringify({ email: fields.email, password: fields.password }),
       credentials: "include",
+      headers: { 'Content-Type': 'application/json; charset=UTF-8' }
     };
     let url = process.env.REACT_APP_SERVER_URL;
     url += isLogin ?
       process.env.REACT_APP_API_USER_LOGIN :
       process.env.REACT_APP_API_USER_REGISTER;
-    const res = await fetch(url, options);
 
-    if (res.ok) {
-      const {fullName, img, letter, token} = await res.json();
-      window.localStorage.setItem('token', token);
-      setUserContext({fullName, img, letter, token});
-      navigate(`/profile`);
-    } else {
-      alert('Неверный логин или пароль!');
-      navigate('/');
-    }
+    await fetch(url, options)
+      .then(response => response.json())
+      .then(data => {
+        const { fullName, img, letter, token } = data;
+        window.localStorage.setItem('token', token);
+        setUser({ fullName, img, letter, token });
+        navigate(`/profile`);
+      })
+      .catch(e => {
+        console.log(e);
+        alert('Неверный логин или пароль!');
+        navigate('/');
+      });
   }
 
   return (
