@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
 import FGBButton from '../../components/FGBButton/FGBButton';
 import UserContext from '../../user/UserContext';
+import * as util from '../../js/util';
 import styles from './Profile.module.css';
 
 export default () => {
@@ -12,58 +14,58 @@ export default () => {
   const updateUserUrl = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_UPDATE;
 
   const [userContext, setUserContext] = React.useContext(UserContext);
-  const [userData, setUserData] = React.useState({});
-  const [isSave, setIsSave] = React.useState(false);
   const [isEdit, setIsEdit] = React.useState(false);
-  const [fields, setFields] = React.useState({
-    family: '',
-    name: '',
-    father: '',
-    email: '',
-    password: '',
-    birthdate: '',
-    city: '',
-    isPlayer: false
-  });
+  const [data, setData] = React.useState({});
+  const [originData, setOriginData] = React.useState({});
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     fetch(userDataUrl, { credentials: 'include' })
       .then(response => response.json())
-      .then(data => setUserData(data))
-      .catch(e =>  console.log(e));
+      .then(data => {
+        data = { ...data, fullName: util.fullNameOfObj(data) };
+        setData(data);
+        setOriginData(data);
+      })
+      .catch(e =>  {
+        console.log(e);
+        navigate('/');
+      });
   }, []);
 
-  const onEdit = () => {
-    setIsEdit(true);
-  }
+  const onEdit = () => { setIsEdit(!isEdit) }
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    const newUserData = {
-      email: fields.email,
-      password: fields.password,
-      family: fields.family,
-      name: fields.name,
-      father: fields.father,
-      birthdate: fields.birthdate,
-      city: fields.city,
-      isPlayer: fields.isPlayer
-    };
-    const fullName = [fields.family, fields.name, fields.father].join(' ').trim();
+    setData({ ...data, fullName: util.fullNameOfObj(data) });
+    let { fullName, password, ...copiedNewData } = data;
+    let updatedData = {};
+    for (let key in copiedNewData) {
+      if (copiedNewData[key] !== originData[key]) {
+        updatedData[key] = copiedNewData[key];
+      }
+    }
 
     const options = {
       method: 'PATCH',
-      body: JSON.stringify(newUserData),
+      body: JSON.stringify(updatedData),
+      credentials: 'include',
       headers: { 'Content-Type': 'application/json; charset=UTF-8' }
     };
-
     await fetch(updateUserUrl, options)
       .then(response => {
-        setUserContext({fullName, letter: fields.name?.substr(0, 1)});
-        setUserData({fullName, ...newUserData});
+        setOriginData(data);
+        setUserContext({
+          fullName: data.fullName,
+          img: userContext.img,
+          letter: data.name?.substr(0, 1),
+          token: userContext.token
+        });
+        alert('Данные сохранены!');
       })
       .catch(e => {
+        setData(originData);
         console.log(e);
         alert('Данные не удалось сохранить!');
       });
@@ -74,23 +76,19 @@ export default () => {
   const onLoadPhoto = () => {}
 
   const onChangeValue = (event) => {
-    setFields({
-      ...fields,
-      [event.target.name]: event.target.value
-    });
+    setData({ ...data, [event.target.name]: event.target.value });
   };
 
   return (
     <>
       <header className={styles.header}>
-        <h1 className={styles.title}>Фамилия Имя Отчество</h1>
         <FGBButton
           color='blue'
-          onClickAction={onEdit}
+          onClick={onEdit}
           secondClasses={styles.button}
           startIcon={<FontAwesomeIcon icon={faPenToSquare}/>}
         >
-          Изменить
+          { !isEdit ? 'Изменить' : 'Отменить' }
         </FGBButton>
       </header>
       <form onSubmit={onSubmit}>
@@ -103,9 +101,7 @@ export default () => {
           />
           <div className={styles.description}>
             {
-              userData.fullName
-                ?
-                <p>{userData.fullName}</p>
+              !isEdit ? <p>{ data.fullName ? data.fullName : 'Фамилия Имя Отчество' }</p>
                 :
                 <div className={styles.full_name}>
                   <input
@@ -114,7 +110,7 @@ export default () => {
                     onChange={onChangeValue}
                     placeholder="Фамилия"
                     type="text"
-                    value={fields.family}
+                    value={data.family}
                   />
                   <input
                     className={styles.input}
@@ -122,7 +118,7 @@ export default () => {
                     onChange={onChangeValue}
                     placeholder="Имя"
                     type="text"
-                    value={fields.name}
+                    value={data.name}
                   />
                   <input
                     className={styles.input}
@@ -130,14 +126,12 @@ export default () => {
                     onChange={onChangeValue}
                     placeholder="Отчество"
                     type="text"
-                    value={fields.father}
+                    value={data.father}
                   />
                 </div>
             }
             {
-              userData.email && !isEdit
-                ?
-                <label className={styles.label}>Почта :<span>{userData.email}</span></label>
+              !isEdit ? <label className={styles.label}>Почта :<span>{data.email}</span></label>
                 :
                 <label className={styles.label}>
                   Почта :
@@ -146,14 +140,12 @@ export default () => {
                     name="email"
                     onChange={onChangeValue}
                     type="text"
-                    value={fields.email}
+                    value={data.email}
                   />
                 </label>
             }
             {
-              userData.password
-                ?
-                <label className={styles.label}>Пароль :</label>
+              !isEdit ? <label className={styles.label}>Пароль :</label>
                 :
                 <label className={styles.label}>
                   Пароль :
@@ -162,14 +154,15 @@ export default () => {
                     name="password"
                     onChange={onChangeValue}
                     type="password"
-                    value={fields.password}
+                    value={data.password}
                   />
                 </label>
             }
             {
-              userData.birthdate
-                ?
-                <label className={styles.label}>Дата рождения :<span>{userData.birthdate}</span></label>
+              !isEdit ?
+                <label className={styles.label}>Дата рождения :
+                  <span>{ util.getDate(data.birthdate) }</span>
+                </label>
                 :
                 <label className={styles.label}>
                   Дата рождения :
@@ -177,15 +170,13 @@ export default () => {
                     className={styles.input}
                     name="birthdate"
                     onChange={onChangeValue}
-                    type="text"
-                    value={fields.birthdate}
+                    type="date"
+                    value={data.birthdate}
                   />
                 </label>
             }
             {
-              userData.city
-                ?
-                <label className={styles.label}>Город :<span>{userData.city}</span></label>
+              !isEdit ? <label className={styles.label}>Город :<span>{data.city}</span></label>
                 :
                 <label className={styles.label}>
                   Город :
@@ -194,25 +185,24 @@ export default () => {
                     name="city"
                     onChange={onChangeValue}
                     type="text"
-                    value={fields.city}
+                    value={data.city}
                   />
                 </label>
             }
             {
-              !userData.isPlayer
-                ?
+              data.isPlayer ? <span>Вы зарегистрированы как игрок</span> :
+                !isEdit ? <span>Вы не зарегистрированы как игрок</span> :
                 <label className={styles.label}>Зарегистрировать как игрока?
                   <input
                     name="isPlayer"
                     onChange={onChangeValue}
                     type="checkbox"
-                    value={fields.isPlayer}
+                    value={data.isPlayer}
                   />
                 </label>
-                :
-                <span>Вы зарегистрированы как игрок</span>
             }
             <FGBButton
+              disabled={!isEdit}
               color='blue'
               secondClasses={styles.button}
               startIcon={<FontAwesomeIcon icon={faFloppyDisk}/>}

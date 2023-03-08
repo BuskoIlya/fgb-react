@@ -60,7 +60,7 @@ function UserMenu({ secondClasses }) {
           :
           <FGBButton
             color="blue"
-            onClickAction={onLogin}
+            onClick={onLogin}
             startIcon={<FontAwesomeIcon icon={faRightToBracket}/>}
           >
             Войти

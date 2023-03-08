@@ -19,9 +19,10 @@ function DropDownLayout({ title, children }) {
   return (
     <div className="dropdown-layout">
       <FGBButton
-        classes="fgb-button fgb-button_yellow dropdown-layout__title"
-        onClickAction={dropDown}
+        color="yellow"
         endIcon={<FontAwesomeIcon icon={faChevronDown} />}
+        onClickAction={dropDown}
+        secondClasses="dropdown-layout__title"
       >
         {title}
       </FGBButton>

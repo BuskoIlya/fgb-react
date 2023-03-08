@@ -13,7 +13,6 @@
 
   border-radius: 0.125em;
   background-color: white;
-  color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
@@ -31,6 +30,8 @@
     &-red {.mix-active(@red)}
     &-yellow {.mix-active(@yellow)}
   }
+
+  &:disabled { cursor: not-allowed }
 }
 
 .mix-active(@color) {

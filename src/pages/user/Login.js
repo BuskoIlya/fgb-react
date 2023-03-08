@@ -55,17 +55,17 @@ function Login() {
     <form onSubmit={onSubmit} className="login">
       <div className="login__title">
         <FGBButton
-          active={isLogin ? true : false}
+          active={isLogin}
           color="blue"
-          onClickAction={(e) => {e.preventDefault(); setIsLogin(true);}}
+          onClick={(e) => {e.preventDefault(); setIsLogin(true);}}
           startIcon={<FontAwesomeIcon icon={faRightToBracket} />}
         >
           Войти
         </FGBButton>
         <FGBButton
-          active={!isLogin ? true : false}
+          active={!isLogin}
           color="blue"
-          onClickAction={(e) => {e.preventDefault(); setIsLogin(false);}}
+          onClick={(e) => {e.preventDefault(); setIsLogin(false);}}
           startIcon={<FontAwesomeIcon icon={faUser} />}
         >
           Зарегистрироваться
