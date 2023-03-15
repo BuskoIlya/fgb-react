@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
-import FGBButton from '../../components/FGBButton/FGBButton';
+import { Button } from 'fgb-ui-components';
 import FGBMenuItem from '../../components/menu/FGBMenuItem';
 import UserContext from '../../user/UserContext';
 import './UserMenu.css';
@@ -58,13 +58,13 @@ function UserMenu({ secondClasses }) {
             </ul>
           </nav>
           :
-          <FGBButton
+          <Button
             color="blue"
             onClick={onLogin}
             startIcon={<FontAwesomeIcon icon={faRightToBracket}/>}
           >
             Войти
-          </FGBButton>
+          </Button>
       }
     </div>
   );

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 
-import FGBButton from '../../components/FGBButton/FGBButton';
+import { Button } from 'fgb-ui-components';
 import UserContext from '../../user/UserContext';
 import './Login.css';
 
@@ -54,22 +54,22 @@ function Login() {
   return (
     <form onSubmit={onSubmit} className="login">
       <div className="login__title">
-        <FGBButton
+        <Button
           active={isLogin}
           color="blue"
           onClick={(e) => {e.preventDefault(); setIsLogin(true);}}
           startIcon={<FontAwesomeIcon icon={faRightToBracket} />}
         >
           Войти
-        </FGBButton>
-        <FGBButton
+        </Button>
+        <Button
           active={!isLogin}
           color="blue"
           onClick={(e) => {e.preventDefault(); setIsLogin(false);}}
           startIcon={<FontAwesomeIcon icon={faUser} />}
         >
           Зарегистрироваться
-        </FGBButton>
+        </Button>
       </div>
       <label className="login__field">
         Логин (почта):
@@ -92,7 +92,7 @@ function Login() {
           value={fields.password}
         />
       </label>
-      <FGBButton color="blue">{isLogin ? 'Войти': 'Зарегистрироваться'}</FGBButton>
+      <Button color="blue">{isLogin ? 'Войти': 'Зарегистрироваться'}</Button>
     </form>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import FGBButton from '../FGBButton/FGBButton';
+import { Button } from 'fgb-ui-components';
 import './DropDownLayout.css';
 
 function DropDownLayout({ title, children }) {
@@ -18,14 +18,14 @@ function DropDownLayout({ title, children }) {
 
   return (
     <div className="dropdown-layout">
-      <FGBButton
+      <Button
         color="yellow"
         endIcon={<FontAwesomeIcon icon={faChevronDown} />}
-        onClickAction={dropDown}
-        secondClasses="dropdown-layout__title"
+        onClick={dropDown}
+        className="dropdown-layout__title"
       >
         {title}
-      </FGBButton>
+      </Button>
       <div className="dropdown-layout__content" style={isDisplay}>{children}</div>
     </div>
   );

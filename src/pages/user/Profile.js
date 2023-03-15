@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
-import FGBButton from '../../components/FGBButton/FGBButton';
+import { Button } from 'fgb-ui-components';
 import UserContext from '../../user/UserContext';
 import * as util from '../../js/util';
 import styles from './Profile.module.css';
@@ -82,14 +82,14 @@ export default () => {
   return (
     <>
       <header className={styles.header}>
-        <FGBButton
+        <Button
           color='blue'
           onClick={onEdit}
-          secondClasses={styles.button}
+          className={styles.button}
           startIcon={<FontAwesomeIcon icon={faPenToSquare}/>}
         >
           { !isEdit ? 'Изменить' : 'Отменить' }
-        </FGBButton>
+        </Button>
       </header>
       <form onSubmit={onSubmit}>
         <div className={styles.container}>
@@ -201,14 +201,14 @@ export default () => {
                   />
                 </label>
             }
-            <FGBButton
+            <Button
               disabled={!isEdit}
               color='blue'
-              secondClasses={styles.button}
+              className={styles.button}
               startIcon={<FontAwesomeIcon icon={faFloppyDisk}/>}
             >
               Сохранить
-            </FGBButton>
+            </Button>
           </div>
         </div>
       </form>
