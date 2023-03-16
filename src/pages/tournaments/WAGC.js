@@ -1,5 +1,5 @@
 import React from 'react';
-import FGBCountry from '../../components/FGBCountry/FGBCountry';
+import { TitleCountry } from 'fgb-ui-components';
 import TitleLayout from '../../components/layouts/TitleLayout';
 import '../../css/table.css';
 
@@ -35,16 +35,16 @@ function WAGC() {
             <tr key= {item.year}>
               <td data-label="Год">{item.year}</td>
               <td data-label="Место проведения" className="table__cell">
-                <FGBCountry img={flagPath + item.flag_country} imgTitle={item.country} text={item.city} />
+                <TitleCountry flagImg={flagPath + item.flag_country} flagTitle={item.country} name={item.city} />
               </td>
               <td data-label="Золото" className="table__cell">
-                <FGBCountry img={flagPath + item.g_flag_country} imgTitle={item.g_country} text={item.g_name} />
+                <TitleCountry flagImg={flagPath + item.g_flag_country} flagTitle={item.g_country} name={item.g_name} />
               </td>
               <td data-label="Серебро" className="table__cell">
-                <FGBCountry img={flagPath + item.s_flag_country} imgTitle={item.s_country} text={item.s_name} />
+                <TitleCountry flagImg={flagPath + item.s_flag_country} flagTitle={item.s_country} name={item.s_name} />
               </td>
               <td data-label="Бронза" className="table__cell">
-                <FGBCountry img={flagPath + item.b_flag_country} imgTitle={item.b_country} text={item.b_name} />
+                <TitleCountry flagImg={flagPath + item.b_flag_country} flagTitle={item.b_country} name={item.b_name} />
               </td>
             </tr>
           )

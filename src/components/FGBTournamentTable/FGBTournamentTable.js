@@ -1,5 +1,5 @@
 import React from 'react';
-import FGBCountry from '../FGBCountry/FGBCountry';
+import { TitleCountry } from 'fgb-ui-components';
 
 const FGBTournamentTable = ({ table, title }) => {
 
@@ -36,7 +36,7 @@ const FGBTournamentTable = ({ table, title }) => {
                 if (typeof item[key] === 'object') {
                   return (
                     <td data-label={columnNames[keyIndex]} key={keyIndex + 1} className="table__cell">
-                      <FGBCountry img={flagPath + item[key].flag_img} imgTitle={item[key].name} />
+                      <TitleCountry flagImg={flagPath + item[key].flag_img} flagTitle={item[key].name} />
                     </td>
                   );
                 }

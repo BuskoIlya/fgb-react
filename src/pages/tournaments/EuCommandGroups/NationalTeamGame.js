@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import FGBCountry from '../../../components/FGBCountry/FGBCountry';
 import FGBLink from '../../../components/FGBLink/FGBLink';
+import { TitleCountry } from 'fgb-ui-components';
 import TitleLayout from '../../../components/layouts/TitleLayout';
 import '../../../css/align.css';
 import '../../../css/flex.css';
@@ -106,13 +106,13 @@ function NationalTeamGame() {
                   <td className="table__cell table__cell_left">
                     <div className="flex-row">
                       <span className="team-game__black-stone">&#9679;</span>
-                      <FGBCountry img={flagsPath + item.black_flag} text={item.black_player}/>
+                      <TitleCountry flagImg={flagsPath + item.black_flag} name={item.black_player}/>
                     </div>
                   </td>
                   <td className="table__cell table__cell_left">
                     <div className="flex-row">
                       <span>&#9675;</span>
-                      <FGBCountry img={flagsPath + item.white_flag} text={item.white_player}/>
+                      <TitleCountry flagImg={flagsPath + item.white_flag} name={item.white_player}/>
                     </div>
                   </td>
                   <td data-label="Результат" className="table__cell">

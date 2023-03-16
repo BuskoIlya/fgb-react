@@ -1,5 +1,5 @@
 import React from 'react';
-import FGBCountry from '../../../components/FGBCountry/FGBCountry';
+import { TitleCountry } from 'fgb-ui-components';
 import TitleLayout from '../../../components/layouts/TitleLayout';
 
 function EuCommand() {
@@ -33,16 +33,16 @@ function EuCommand() {
             <tr key={item.year}>
               <td data-label="Год">{item.year}</td>
               <td data-label="Место проведения" className="table__cell">
-                <FGBCountry img={flagPath + item.flag} imgTitle={item.country} text={item.city} />
+                <TitleCountry flagImg={flagPath + item.flag} flagTitle={item.country} name={item.city} />
               </td>
               <td data-label="Золото" className="table__cell">
-                <FGBCountry img={flagPath + item.g_flag} text={item.g_country} />
+                <TitleCountry flagImg={flagPath + item.g_flag} name={item.g_country} />
               </td>
               <td data-label="Серебро" className="table__cell">
-                <FGBCountry img={flagPath + item.s_flag} text={item.s_country} />
+                <TitleCountry flagImg={flagPath + item.s_flag} name={item.s_country} />
               </td>
               <td data-label="Бронза" className="table__cell">
-                <FGBCountry img={flagPath + item.b_flag} text={item.b_country} />
+                <TitleCountry flagImg={flagPath + item.b_flag} name={item.b_country} />
               </td>
             </tr>
           )

@@ -1,6 +1,6 @@
 import React from 'react';
-import FGBCountry from '../../../components/FGBCountry/FGBCountry';
 import FGBLink from '../../../components/FGBLink/FGBLink';
+import { TitleCountry } from 'fgb-ui-components';
 import '../../../css/table.css';
 import './GroupTable.css';
 
@@ -34,7 +34,7 @@ function GroupTable({title, refto, data = []}) {
             <tr key = {index + 1}>
               <td data-label="Место">{index + 1}</td>
               <td data-label="Команда" className="table__cell table__cell_left">
-                <FGBCountry img={flagPath + item.flag_country} text={item.country}/>
+                <TitleCountry flagImg={flagPath + item.flag_country} name={item.country}/>
               </td>
               <td data-label="Игры">{item.games}</td>
               <td data-label="Выигранных партий">{item.bw}</td>
