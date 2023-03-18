@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import FGBLink from '../FGBLink/FGBLink';
+import { NavLink } from 'react-router-dom';
+import { LinkMenu } from 'fgb-ui-components';
 import './FGBMenuSubItem.css';
 
 function FGBMenuSubItem({name, children, ...rest}) {
@@ -10,13 +11,13 @@ function FGBMenuSubItem({name, children, ...rest}) {
       {
         children ? (
           <li className="fgb-menu-sub-item">
-            <FGBLink
-                type="menu-sub-item"
-                iconAfter={<FontAwesomeIcon icon={faChevronRight} />}
-                {...rest}
+            <LinkMenu
+              iconAfter={<FontAwesomeIcon icon={faChevronRight} />}
+              Tag={NavLink}
+              {...rest}
             >
               {name}
-            </FGBLink>
+            </LinkMenu>
             <ul className="fgb-menu-sub-item__list">
               {children}
             </ul>
@@ -24,7 +25,7 @@ function FGBMenuSubItem({name, children, ...rest}) {
         ) :
         (
           <li>
-            <FGBLink type="menu-sub-item" {...rest}>{name}</FGBLink>
+            <LinkMenu Tag={NavLink} {...rest}>{name}</LinkMenu>
           </li>
         )
       }

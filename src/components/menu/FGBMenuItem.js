@@ -1,7 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import FGBLink from '../FGBLink/FGBLink';
+import { NavLink } from 'react-router-dom';
+
+import { LinkMenu } from 'fgb-ui-components';
 import './FGBMenuItem.css';
 
 function FGBMenuItem({name, children, ...rest}) {
@@ -10,13 +12,14 @@ function FGBMenuItem({name, children, ...rest}) {
       {
         children ? (
           <li className = "fgb-menu-item">
-            <FGBLink
-                type="menu-item"
+            <LinkMenu
                 iconAfter={<FontAwesomeIcon icon={faChevronDown} />}
+                isFirstLevel
+                Tag={NavLink}
                 {...rest}
             >
               {name}
-            </FGBLink>
+            </LinkMenu>
             <ul className = "fgb-menu-item__list">
               {children}
             </ul>
@@ -24,7 +27,7 @@ function FGBMenuItem({name, children, ...rest}) {
         ) :
         (
           <li>
-            <FGBLink type="menu-item" {...rest}>{name}</FGBLink>
+            <LinkMenu isFirstLevel Tag={NavLink} {...rest}>{name}</LinkMenu>
           </li>
         )
       }

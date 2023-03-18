@@ -55,7 +55,7 @@ function Login() {
     <form onSubmit={onSubmit} className="login">
       <div className="login__title">
         <Button
-          active={isLogin}
+          isActive={isLogin}
           color="blue"
           iconBefore={<FontAwesomeIcon icon={faRightToBracket} />}
           onClick={(e) => {e.preventDefault(); setIsLogin(true);}}
@@ -63,7 +63,7 @@ function Login() {
           Войти
         </Button>
         <Button
-          active={!isLogin}
+          isActive={!isLogin}
           color="blue"
           iconBefore={<FontAwesomeIcon icon={faUser} />}
           onClick={(e) => {e.preventDefault(); setIsLogin(false);}}
