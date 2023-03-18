@@ -20,7 +20,7 @@ function DropDownLayout({ title, children }) {
     <div className="dropdown-layout">
       <Button
         color="yellow"
-        endIcon={<FontAwesomeIcon icon={faChevronDown} />}
+        iconAfter={<FontAwesomeIcon icon={faChevronDown} />}
         onClick={dropDown}
         className="dropdown-layout__title"
       >

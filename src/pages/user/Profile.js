@@ -86,7 +86,7 @@ export default () => {
           color='blue'
           onClick={onEdit}
           className={styles.button}
-          startIcon={<FontAwesomeIcon icon={faPenToSquare}/>}
+          iconBefore={<FontAwesomeIcon icon={faPenToSquare}/>}
         >
           { !isEdit ? 'Изменить' : 'Отменить' }
         </Button>
@@ -205,7 +205,7 @@ export default () => {
               disabled={!isEdit}
               color='blue'
               className={styles.button}
-              startIcon={<FontAwesomeIcon icon={faFloppyDisk}/>}
+              iconBefore={<FontAwesomeIcon icon={faFloppyDisk}/>}
             >
               Сохранить
             </Button>

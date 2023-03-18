@@ -31,10 +31,10 @@ function EuPersonal() {
             <tr key={item.year}>
               <td data-label="Год">{item.year}</td>
               <td data-label="Место проведения" className="table__cell table__cell_left">
-                <TitleCountry flagImg={flagPath + item.flag} flagTitle={item.country} name={item.city} />
+                <TitleCountry flagImg={flagPath + item.flag} flagTitle={item.country} text={item.city} />
               </td>
               <td data-label="Победитель" className="table__cell table__cell_left">
-                <TitleCountry flagImg={flagPath + item.g_flag} flagTitle={item.g_country} name={item.g_name} />
+                <TitleCountry flagImg={flagPath + item.g_flag} flagTitle={item.g_country} text={item.g_name} />
               </td>
             </tr>
           )

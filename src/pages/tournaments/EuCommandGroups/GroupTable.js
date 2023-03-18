@@ -1,5 +1,6 @@
 import React from 'react';
-import FGBLink from '../../../components/FGBLink/FGBLink';
+import { Link } from 'react-router-dom';
+import { LinkInner } from 'fgb-ui-components';
 import { TitleCountry } from 'fgb-ui-components';
 import '../../../css/table.css';
 import './GroupTable.css';
@@ -10,7 +11,7 @@ function GroupTable({title, refto, data = []}) {
 
   return (
     <div className="group-table">
-      {refto && <FGBLink type="text-inner" href={refto}>{title}</FGBLink>}
+      {refto && <LinkInner Tag={Link} to={refto}>{title}</LinkInner>}
       <table className="table">
         <thead>
         <tr>
@@ -34,7 +35,7 @@ function GroupTable({title, refto, data = []}) {
             <tr key = {index + 1}>
               <td data-label="Место">{index + 1}</td>
               <td data-label="Команда" className="table__cell table__cell_left">
-                <TitleCountry flagImg={flagPath + item.flag_country} name={item.country}/>
+                <TitleCountry flagImg={flagPath + item.flag_country} text={item.country}/>
               </td>
               <td data-label="Игры">{item.games}</td>
               <td data-label="Выигранных партий">{item.bw}</td>

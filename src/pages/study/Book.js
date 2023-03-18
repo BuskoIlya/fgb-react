@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import FGBLink from '../../components/FGBLink/FGBLink';
+import { LinkDownload } from 'fgb-ui-components';
 import './Book.css';
 
 function Book() {
@@ -32,14 +32,12 @@ function Book() {
         {data.author && <p className="book__author">{data.author}</p>}
         {data.category && <p className="book__category">{data.category}</p>}
         {data.description && <p className="book__description">{data.description}</p>}
-        <FGBLink
-          type="text-inner"
+        <LinkDownload
           href={downloadPath + data.download_ref}
           iconBefore={<FontAwesomeIcon icon={faDownload} />}
-          download
         >
           Скачать
-        </FGBLink>
+        </LinkDownload>
       </div>
     </div>
   );

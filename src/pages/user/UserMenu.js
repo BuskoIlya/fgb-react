@@ -60,8 +60,8 @@ function UserMenu({ secondClasses }) {
           :
           <Button
             color="blue"
+            iconBefore={<FontAwesomeIcon icon={faRightToBracket}/>}
             onClick={onLogin}
-            startIcon={<FontAwesomeIcon icon={faRightToBracket}/>}
           >
             Войти
           </Button>

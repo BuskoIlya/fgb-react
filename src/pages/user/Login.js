@@ -57,16 +57,16 @@ function Login() {
         <Button
           active={isLogin}
           color="blue"
+          iconBefore={<FontAwesomeIcon icon={faRightToBracket} />}
           onClick={(e) => {e.preventDefault(); setIsLogin(true);}}
-          startIcon={<FontAwesomeIcon icon={faRightToBracket} />}
         >
           Войти
         </Button>
         <Button
           active={!isLogin}
           color="blue"
+          iconBefore={<FontAwesomeIcon icon={faUser} />}
           onClick={(e) => {e.preventDefault(); setIsLogin(false);}}
-          startIcon={<FontAwesomeIcon icon={faUser} />}
         >
           Зарегистрироваться
         </Button>

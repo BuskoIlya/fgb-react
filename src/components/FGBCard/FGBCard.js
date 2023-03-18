@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FGBLink from '../FGBLink/FGBLink';
+import { Link } from 'react-router-dom';
+import { CardTitle } from 'fgb-ui-components';
 import './FGBCard.css';
 
 const FGBCard = ({size, color, secondClass, img, toRef, title, date, address, author,
@@ -15,12 +16,10 @@ const FGBCard = ({size, color, secondClass, img, toRef, title, date, address, au
 
   return (
     <article className={cardClass}>
-      <FGBLink type="img" to={toRef}>
+      <Link to={toRef}>
         <img className="fgb-card__img" src={img} alt={title}/>
-      </FGBLink>
-      <FGBLink type="title" to={toRef}>
-        <h4 className="fgb-card__title">{title}</h4>
-      </FGBLink>
+      </Link>
+      <CardTitle color={color} Tag={Link} to={toRef}>{title}</CardTitle>
       <div className="fgb-card__info">
         {date && <time>{date}</time>}
         {address && <address>{address}</address>}
