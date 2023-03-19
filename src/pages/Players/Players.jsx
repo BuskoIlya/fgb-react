@@ -1,21 +1,17 @@
 import React from 'react';
-import TitleLayout from '../components/layouts/TitleLayout';
-import '../css/table.css';
+import { getPlayers } from '../../api';
+import { LayoutTitle } from 'fgb-ui-components';
+import '../../css/table.css';
 
-function Players() {
-
-  const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_PLAYERS;
+export const Players = () => {
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(url)
-        .then(response => response.json())
-        .then(data => setData(data))
-        .catch(e =>  console.log(e));
+    getPlayers().then(res => setData(res.data)).catch(e => console.log(e));
   }, []);
 
   return (
-    <TitleLayout title="Игроки Беларуси">
+    <LayoutTitle title="Игроки Беларуси">
       <table className="table">
         <thead>
         <tr>
@@ -40,8 +36,6 @@ function Players() {
         }
         </tbody>
       </table>
-    </TitleLayout>
+    </LayoutTitle>
   );
 }
-
-export default Players;

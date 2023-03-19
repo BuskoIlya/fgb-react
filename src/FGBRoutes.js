@@ -11,7 +11,7 @@ import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import Home from './pages/Home';
-import InfoBoard from './pages/info/InfoBoard';
+import { InfoBoard } from './pages/InfoBoard';
 import Layout from './components/layouts/Layout';
 import Login from './pages/user/Login';
 import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
