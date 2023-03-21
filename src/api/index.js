@@ -1,4 +1,5 @@
 export {
+  getPlayers,
   getRanks,
-  getPlayers
+  getWAGC
 } from './getStaticPageData';

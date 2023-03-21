@@ -8,11 +8,7 @@ import { useStaticPageData } from '../../hooks';
 export const Ranks = () => {
   const [data, isLoading, error] = useStaticPageData(getRanks);
   return (
-    <LayoutTitleWithNoData
-      errorMessage={error}
-      isLoading={isLoading}
-      title="Система разрядов в Го"
-    >
+    <LayoutTitleWithNoData error={error} isLoading={isLoading} title="Система разрядов в Го">
       <table className="table table_size-50">
         <thead>
         <tr>
@@ -22,10 +18,10 @@ export const Ranks = () => {
         </thead>
         <tbody>
         {
-          data?.map((item, index) =>
-            <tr key={index + 1}>
-              <td data-label="Очки" className="table__cell">{item.scores}</td>
-              <td data-label="Разряды кю/дан" className="table__cell">{item.sport_rank}</td>
+          data?.map(x =>
+            <tr key={x.scores}>
+              <td data-label="Очки" className="table__cell">{x.scores}</td>
+              <td data-label="Разряды кю/дан" className="table__cell">{x.sportRank}</td>
             </tr>
           )
         }

@@ -11,19 +11,22 @@ import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
 import Home from './pages/Home';
-import { InfoBoard } from './pages/InfoBoard';
 import Layout from './components/layouts/Layout';
 import Login from './pages/user/Login';
 import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
 import News from './pages/info/News';
-import { Players } from './pages/Players';
 import Profile from './pages/user/Profile';
-import { Ranks } from './pages/Ranks';
 import Stories from './pages/study/Stories';
 import Story from './pages/study/Story';
 import Tournament from './pages/tournaments/Tournament';
-import WAGC from './pages/tournaments/WAGC';
-import WelcomeToGo from './pages/study/WelcomeToGo';
+
+import {
+  InfoBoard,
+  Players,
+  Ranks,
+  WAGC,
+  WelcomeToGo
+} from './pages';
 
 function FGBRoutes() {
   return (

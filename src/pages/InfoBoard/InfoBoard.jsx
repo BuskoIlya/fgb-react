@@ -12,16 +12,16 @@ export const InfoBoard = () => {
   return (
     <>
       {
-        infoBoardData.map((section, sectionIndex) =>
-          <div key={sectionIndex + 1} className={css.section}>
+        infoBoardData.map(section =>
+          <div key={section.title} className={css.section}>
             <h3 className={css.section__title}>{section.title}</h3>
             {
-              section.data.map((item, index) =>
-                <InfoBoardItem key={index + 1}
-                  href={item.href}
-                  joke={item.joke}
-                  important={item.important}
-                  text={item.text}
+              section.data.map(x =>
+                <InfoBoardItem key={x.text}
+                  href={x.href}
+                  joke={x.joke}
+                  important={x.important}
+                  text={x.text}
                 />
               )
             }

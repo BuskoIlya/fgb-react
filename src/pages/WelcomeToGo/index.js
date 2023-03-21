@@ -1,0 +1,1 @@
+export { WelcomeToGo } from './WelcomeToGo';

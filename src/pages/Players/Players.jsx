@@ -8,11 +8,7 @@ import { useStaticPageData } from '../../hooks';
 export const Players = () => {
   const [data, isLoading, error] = useStaticPageData(getPlayers);
   return (
-    <LayoutTitleWithNoData
-      errorMessage={error}
-      isLoading={isLoading}
-      title="Игроки Беларуси"
-    >
+    <LayoutTitleWithNoData error={error} isLoading={isLoading} title="Игроки Беларуси">
       <table className="table">
         <thead>
         <tr>
@@ -25,13 +21,13 @@ export const Players = () => {
         </thead>
         <tbody>
         {
-          data?.map((item, index) =>
-            <tr key = {index + 1}>
-              <td className="table__cell">{index + 1}</td>
-              <td className="table__cell table__cell_left">{item.fio}</td>
-              <td className="table__cell">{item.city}</td>
-              <td className="table__cell">{item.sport_rank}</td>
-              <td className="table__cell">{item.score}</td>
+          data?.map((x, i) =>
+            <tr key = {x.fullName}>
+              <td className="table__cell">{i + 1}</td>
+              <td className="table__cell table__cell_left">{x.fullName}</td>
+              <td className="table__cell">{x.city}</td>
+              <td className="table__cell">{x.sportRank}</td>
+              <td className="table__cell">{x.score}</td>
             </tr>
           )
         }

@@ -1,0 +1,1 @@
+export { WAGC } from './WAGC';
