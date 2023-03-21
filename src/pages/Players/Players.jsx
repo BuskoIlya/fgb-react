@@ -1,17 +1,18 @@
 import React from 'react';
-import { getPlayers } from '../../api';
-import { LayoutTitle } from 'fgb-ui-components';
+import { LayoutTitleWithNoData } from '../../components';
 import '../../css/table.css';
 
+import { getPlayers } from '../../api';
+import { useStaticPageData } from '../../hooks';
+
 export const Players = () => {
-  const [data, setData] = React.useState([]);
-
-  React.useEffect(() => {
-    getPlayers().then(res => setData(res.data)).catch(e => console.log(e));
-  }, []);
-
+  const [data, isLoading, error] = useStaticPageData(getPlayers);
   return (
-    <LayoutTitle title="Игроки Беларуси">
+    <LayoutTitleWithNoData
+      errorMessage={error}
+      isLoading={isLoading}
+      title="Игроки Беларуси"
+    >
       <table className="table">
         <thead>
         <tr>
@@ -24,7 +25,7 @@ export const Players = () => {
         </thead>
         <tbody>
         {
-          data.map((item, index) =>
+          data?.map((item, index) =>
             <tr key = {index + 1}>
               <td className="table__cell">{index + 1}</td>
               <td className="table__cell table__cell_left">{item.fio}</td>
@@ -36,6 +37,6 @@ export const Players = () => {
         }
         </tbody>
       </table>
-    </LayoutTitle>
+    </LayoutTitleWithNoData>
   );
-}
+};
