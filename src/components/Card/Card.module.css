@@ -1,0 +1,48 @@
+@import '../../css/constants.css';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 2%;
+  padding: 16px;
+  border: solid 1px var(--fgbui-grey);
+
+  border-radius: 2px;
+  transition: box-shadow .3s linear;
+}
+
+.content:hover {
+  box-shadow: 2px 2px 2px 2px var(--fgbui-dark-grey);
+}
+
+.author { color: var(--fgbui-dark-font-grey) }
+.img {
+  width: 100%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.info { line-height: 1.5 }
+.secondDescription { color: var(--fgbui-dark-font-grey) }
+
+.blue { border: solid 1px var(--fgbui-blue) }
+.green { border: solid 1px var(--fgbui-green) }
+.red { border: solid 1px var(--fgbui-red) }
+
+.size_18 { width: 18% }
+.size_24 { width: 24% }
+.size_32 { width: 32% }
+
+@media screen and (max-width: 810px) {
+  .size_18 { width: 24% }
+  .size_24 { width: 32% }
+  .size_32 { width: 49% }
+}
+
+@media screen and (max-width: 430px) {
+  .size_18 { width: 200px }
+  .size_24 { width: 260px }
+  .size_32 { width: 320px }
+}
