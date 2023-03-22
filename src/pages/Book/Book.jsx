@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { LayoutWithNoData } from '../../components';
 import { LinkDownload } from 'fgb-ui-components';
+import { LayoutWithNoData } from '../../components';
 import css from './Book.module.css';
 
 import { getBook } from '../../api';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, LayoutTitleWithNoData } from '../../components';
 import { LayoutCard } from 'fgb-ui-components';
+import { Card, LayoutTitleWithNoData } from '../../components';
 
 import { getBooks } from '../../api';
 import { useStaticPageData } from '../../hooks';

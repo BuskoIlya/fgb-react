@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContactsPhoneEmail } from './ContactsPhoneEmail';
 import { Card, LayoutCardWithNoData } from '../../components';
+import { ContactsPhoneEmail } from './ContactsPhoneEmail';
 
 import { getContacts } from '../../api';
 import { useStaticPageData } from '../../hooks';
