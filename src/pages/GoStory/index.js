@@ -1,0 +1,1 @@
+export { GoStory } from './GoStory';

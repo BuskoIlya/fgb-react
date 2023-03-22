@@ -1,9 +1,11 @@
 export {
+  getBook,
   getBooks,
   getContacts,
   getHome,
+  getGoStories,
+  getGoStory,
   getPlayers,
   getRanks,
-  getStories,
   getWAGC
 } from './getStaticPageData';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Book from './pages/study/Book';
 import ByTournaments from './pages/tournaments/ByTournaments';
 import Error from './components/error/Error';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
@@ -13,17 +12,18 @@ import Login from './pages/user/Login';
 import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
 import News from './pages/info/News';
 import Profile from './pages/user/Profile';
-import Story from './pages/study/Story';
 import Tournament from './pages/tournaments/Tournament';
 
 import {
+  Book,
   Books,
   Contacts,
   Home,
+  GoStories,
+  GoStory,
   InfoBoard,
   Players,
   Ranks,
-  GoStories,
   WAGC,
   WelcomeToGo
 } from './pages';
@@ -66,7 +66,7 @@ function FGBRoutes() {
         </Route>
 
         <Route path="book/:id" element={<Book />} />
-        <Route path="story/:id" element={<Story />} />
+        <Route path="story/:id" element={<GoStory />} />
         <Route path="national-team-game/:id" element={<NationalTeamGame />} />
         <Route path="tournament/:id" element={<Tournament />} />
         <Route path="tournament/ru/:id" element={<Tournament type="ru/" />} />
