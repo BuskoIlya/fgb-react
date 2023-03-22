@@ -2,28 +2,28 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Book from './pages/study/Book';
-import Books from './pages/study/Books';
 import ByTournaments from './pages/tournaments/ByTournaments';
-import Contacts from './pages/info/Contacts';
 import Error from './components/error/Error';
 import EuCommand from './pages/tournaments/EuChamps/EuCommand';
 import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
-import Home from './pages/Home';
 import Layout from './components/layouts/Layout';
 import Login from './pages/user/Login';
 import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
 import News from './pages/info/News';
 import Profile from './pages/user/Profile';
-import Stories from './pages/study/Stories';
 import Story from './pages/study/Story';
 import Tournament from './pages/tournaments/Tournament';
 
 import {
+  Books,
+  Contacts,
+  Home,
   InfoBoard,
   Players,
   Ranks,
+  GoStories,
   WAGC,
   WelcomeToGo
 } from './pages';
@@ -62,7 +62,7 @@ function FGBRoutes() {
             <Route index element={<div />} />
             <Route path="welcome-to-go" element={<WelcomeToGo />} />
           </Route>
-          <Route path="go-stories" element={<Stories />} />
+          <Route path="go-stories" element={<GoStories />} />
         </Route>
 
         <Route path="book/:id" element={<Book />} />
