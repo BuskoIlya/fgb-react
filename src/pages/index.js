@@ -1,6 +1,8 @@
 export { Book } from './Book';
 export { Books } from './Books';
 export { Contacts } from './Contacts';
+export { EuCommandChamps } from './EuCommandChamps';
+export { EuPersonalChamps } from './EuPersonalChamps';
 export { Home } from './Home';
 export { GoStories } from './GoStories';
 export { GoStory } from './GoStory';

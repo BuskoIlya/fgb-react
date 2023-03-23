@@ -16,4 +16,6 @@ export {
   LayoutWithNoData
 } from './LayoutsWithNoData';
 
+export { TDCountry } from './TDCountry';
+
 export { UserMenu } from './UserMenu';

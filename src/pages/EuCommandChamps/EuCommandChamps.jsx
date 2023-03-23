@@ -1,15 +1,18 @@
 import React from 'react';
 import { LayoutTitleWithNoData, TDCountry } from '../../components';
-import '../../css/table.css';
 
-import { getWAGC } from '../../api';
+import { getEuCommandChamps } from '../../api';
 import { useStaticPageData } from '../../hooks';
 
-export const WAGC = () => {
-  const [data, isLoading, error] = useStaticPageData(getWAGC);
+export const EuCommandChamps = () => {
+  const [data, isLoading, error] = useStaticPageData(getEuCommandChamps);
   return (
-    <LayoutTitleWithNoData error={error} isLoading={isLoading} title="Чемпионаты мира">
-      <table className="table">
+    <LayoutTitleWithNoData
+      error={error}
+      isLoading={isLoading}
+      title="Чемпионаты Европы. Командный зачёт"
+    >
+      <table className="table table_blue">
         <thead>
         <tr>
           <th className="table__cell">Год</th>
@@ -25,9 +28,9 @@ export const WAGC = () => {
             <tr key={x.year}>
               <td data-label="Год">{x.year}</td>
               <TDCountry label="Место проведения" img={x.flag} tooltip={x.country} value={x.city} />
-              <TDCountry label="Золото" img={x.flag1} tooltip={x.country1} value={x.name1} />
-              <TDCountry label="Серебро" img={x.flag2} tooltip={x.country2} value={x.name2} />
-              <TDCountry label="Бронза" img={x.flag3} tooltip={x.country3} value={x.name3} />
+              <TDCountry label="Золото" img={x.flag1} value={x.country1} />
+              <TDCountry label="Серебро" img={x.flag2} value={x.country2} />
+              <TDCountry label="Бронза" img={x.flag3} value={x.country3} />
             </tr>
           )
         }

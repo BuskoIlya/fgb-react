@@ -1,0 +1,1 @@
+export { EuPersonalChamps } from './EuPersonalChamps';

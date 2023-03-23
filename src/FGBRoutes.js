@@ -2,10 +2,8 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Error from './components/error/Error';
-import EuCommand from './pages/EuChamps/EuCommand';
 import EuCommandGroup from './pages/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/EuCommandGroups/EuCommandGroupResults';
-import EuPersonal from './pages/EuChamps/EuPersonal';
 import Login from './pages/user/Login';
 import NationalTeamGame from './pages/EuCommandGroups/NationalTeamGame';
 import Profile from './pages/user/Profile';
@@ -17,6 +15,8 @@ import {
   Book,
   Books,
   Contacts,
+  EuCommandChamps,
+  EuPersonalChamps,
   Home,
   GoStories,
   GoStory,
@@ -48,8 +48,8 @@ function FGBRoutes() {
           <Route path="world-champs" element={<WAGC />} />
           <Route path="euro-champs/*">
             <Route index element={<div />} />
-            <Route path="personal" element={<EuPersonal />} />
-            <Route path="command" element={<EuCommand />} />
+            <Route path="personal" element={<EuPersonalChamps />} />
+            <Route path="command" element={<EuCommandChamps />} />
           </Route>
           <Route path="eu-command-groups/:year/">
             <Route index element={<EuCommandGroupResults />} />
