@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LinkInner } from 'fgb-ui-components';
 import { TitleCountry } from 'fgb-ui-components';
-import '../../../css/table.css';
+import '../../css/table.css';
 import './GroupTable.css';
 
 function GroupTable({title, refto, data = []}) {

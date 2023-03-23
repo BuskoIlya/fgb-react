@@ -5,7 +5,9 @@ export {
   getHome,
   getGoStories,
   getGoStory,
+  getNews,
   getPlayers,
   getRanks,
+  getTournaments,
   getWAGC
 } from './getStaticPageData';

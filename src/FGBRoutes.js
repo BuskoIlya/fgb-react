@@ -1,17 +1,15 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import ByTournaments from './pages/tournaments/ByTournaments';
 import Error from './components/error/Error';
-import EuCommand from './pages/tournaments/EuChamps/EuCommand';
-import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
-import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
-import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
+import EuCommand from './pages/EuChamps/EuCommand';
+import EuCommandGroup from './pages/EuCommandGroups/EuCommandGroup';
+import EuCommandGroupResults from './pages/EuCommandGroups/EuCommandGroupResults';
+import EuPersonal from './pages/EuChamps/EuPersonal';
 import Login from './pages/user/Login';
-import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
-import News from './pages/info/News';
+import NationalTeamGame from './pages/EuCommandGroups/NationalTeamGame';
 import Profile from './pages/user/Profile';
-import Tournament from './pages/tournaments/Tournament';
+import Tournament from './pages/Tournament/Tournament';
 
 import { Layout } from './components';
 
@@ -23,8 +21,10 @@ import {
   GoStories,
   GoStory,
   InfoBoard,
+  News,
   Players,
   Ranks,
+  Tournaments,
   WAGC,
   WelcomeToGo
 } from './pages';
@@ -44,7 +44,7 @@ function FGBRoutes() {
         <Route path="players" element={<Players />} />
         <Route path="tournaments/*">
           <Route index element={<div />} />
-          <Route path="by-tournaments" element={<ByTournaments />} />
+          <Route path="by-tournaments" element={<Tournaments />} />
           <Route path="world-champs" element={<WAGC />} />
           <Route path="euro-champs/*">
             <Route index element={<div />} />

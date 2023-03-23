@@ -1,0 +1,15 @@
+@import '../../css/constants.css';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fgbui-block-items-gap);
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description { text-align: left }

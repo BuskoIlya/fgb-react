@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import GroupTable from './GroupTable';
 import RoundTable from './RoundTable';
-import TitleLayout from '../../../components/layouts/TitleLayout';
+import TitleLayout from '../../components/layouts/TitleLayout';
 
 function EuCommandGroup() {
 

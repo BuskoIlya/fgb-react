@@ -1,6 +1,6 @@
 import React from 'react';
 import { TitleCountry } from 'fgb-ui-components';
-import TitleLayout from '../../../components/layouts/TitleLayout';
+import TitleLayout from '../../components/layouts/TitleLayout';
 
 function EuCommand() {
 

@@ -5,9 +5,9 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { LinkDownload, LinkExternal, LinkInner } from 'fgb-ui-components';
 import { TitleCountry } from 'fgb-ui-components';
-import TitleLayout from '../../../components/layouts/TitleLayout';
-import '../../../css/align.css';
-import '../../../css/flex.css';
+import TitleLayout from '../../components/layouts/TitleLayout';
+import '../../css/align.css';
+import '../../css/flex.css';
 import './NationalTeamGame.css';
 
 function NationalTeamGame() {

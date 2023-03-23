@@ -1,6 +1,6 @@
 import React from 'react';
 import { TitleCountry } from 'fgb-ui-components';
-import '../../../css/table.css';
+import '../../css/table.css';
 import './RoundTable.css';
 
 function RoundTable({name, date, games = []}) {
