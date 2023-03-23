@@ -6,6 +6,8 @@ export { Header } from './Header';
 
 export { Layout } from './Layout';
 
+export { LayoutDropDown } from './LayoutDropDown';
+
 export { Logo } from './Logo';
 
 export {

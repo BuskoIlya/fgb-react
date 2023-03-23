@@ -1,6 +1,6 @@
 import React from 'react';
 import CardLayout from '../../components/layouts/CardLayout';
-import DropDownLayout from '../../components/layouts/DropDownLayout';
+import { LayoutDropDown } from '../../components';
 import FGBCard from '../../components/FGBCard/FGBCard';
 import './News.css';
 
@@ -24,7 +24,7 @@ function News() {
       <div className="news__items">
         {
           data.map(year =>
-            <DropDownLayout key={year.year} title={year.year}>
+            <LayoutDropDown key={year.year} title={year.year}>
               <CardLayout>
                 {
                   year.items.map(item =>
@@ -42,7 +42,7 @@ function News() {
                   )
                 }
               </CardLayout>
-            </DropDownLayout>
+            </LayoutDropDown>
           )
         }
       </div>

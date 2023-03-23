@@ -1,0 +1,16 @@
+@import '../../css/constants.css';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fgbui-block-items-gap);
+}
+
+.title {
+  width: 80%;
+  margin: 0 auto;
+
+  border: none;
+  box-shadow: 1px 1px 1px 1px var(--fgbui-dark-grey);
+  color: var(--fgbui-black);
+}
