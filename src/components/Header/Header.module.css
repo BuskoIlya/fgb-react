@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.logo { width: 80px }
+.userMenu { margin-left: auto }
+
+@media screen and (max-width: 810px) {
+  .title { font-size: 1rem }
+  .logo { width: 40px }
+}

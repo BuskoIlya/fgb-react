@@ -7,12 +7,13 @@ import EuCommand from './pages/tournaments/EuChamps/EuCommand';
 import EuCommandGroup from './pages/tournaments/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/tournaments/EuCommandGroups/EuCommandGroupResults';
 import EuPersonal from './pages/tournaments/EuChamps/EuPersonal';
-import Layout from './components/layouts/Layout';
 import Login from './pages/user/Login';
 import NationalTeamGame from './pages/tournaments/EuCommandGroups/NationalTeamGame';
 import News from './pages/info/News';
 import Profile from './pages/user/Profile';
 import Tournament from './pages/tournaments/Tournament';
+
+import { Layout } from './components';
 
 import {
   Book,

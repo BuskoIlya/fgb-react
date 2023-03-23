@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import FGBMenu from '../menu/FGBMenu';
-import Footer from '../blocks/Footer';
-import Header from '../blocks/Header';
+import { Footer } from '../Footer';
+import { Header } from '../Header';
 
-function Layout() {
+export const Layout = () => {
   return (
     <>
       <Header />
@@ -15,5 +15,3 @@ function Layout() {
     </>
   );
 }
-
-export default Layout;
