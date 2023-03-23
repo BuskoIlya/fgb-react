@@ -13,3 +13,5 @@ export {
   LayoutTitleWithNoData,
   LayoutWithNoData
 } from './LayoutsWithNoData';
+
+export { UserMenu } from './UserMenu';

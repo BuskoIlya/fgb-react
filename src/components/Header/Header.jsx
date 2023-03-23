@@ -1,4 +1,4 @@
-import UserMenu from '../../pages/user/UserMenu';
+import { UserMenu } from '../UserMenu';
 import { Logo } from '../Logo';
 import css from './Header.module.css';
 
@@ -11,7 +11,7 @@ export const Header = () => {
         title="Флаг Беларуси"
       />
       <h1 className={`title ${css.title}`}>Сообщество Го Беларуси</h1>
-      <UserMenu secondClasses={css.userMenu}/>
+      <UserMenu className={css.userMenu} />
     </header>
   );
 };

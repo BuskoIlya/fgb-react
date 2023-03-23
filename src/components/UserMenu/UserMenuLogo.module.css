@@ -1,0 +1,9 @@
+.content {
+  width: 64px;
+  height: 64px;
+}
+
+.letter {
+  font-size: 2rem;
+  line-height: 1.8;
+}
