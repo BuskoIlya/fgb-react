@@ -1,0 +1,26 @@
+@import '../../css/constants.css';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+}
+
+.content tbody tr:first-child {
+  background-color: var(--fgbui-green);
+}
+
+.content tbody tr:nth-child(2) {
+  background-color: var(--fgbui-dark-green);
+}
+
+.content tbody tr:last-child {
+  background-color: var(--fgbui-red);
+}
+
+.content tbody tr:nth-last-child(2) {
+  background-color: var(--fgbui-dark-red);
+}

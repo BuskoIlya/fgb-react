@@ -2,6 +2,8 @@ export { Card } from './Card';
 
 export { Footer } from './Footer';
 
+export { GroupTable } from './GroupTable';
+
 export { Header } from './Header';
 
 export { Layout } from './Layout';

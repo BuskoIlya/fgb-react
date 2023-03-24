@@ -3,7 +3,6 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Error from './components/error/Error';
 import EuCommandGroup from './pages/EuCommandGroups/EuCommandGroup';
-import EuCommandGroupResults from './pages/EuCommandGroups/EuCommandGroupResults';
 import Login from './pages/user/Login';
 import Profile from './pages/user/Profile';
 
@@ -14,6 +13,7 @@ import {
   Books,
   Contacts,
   EuCommandChamps,
+  EuCommandGroupResults,
   EuPersonalChamps,
   Home,
   GoStories,
