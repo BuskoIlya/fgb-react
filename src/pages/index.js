@@ -2,6 +2,7 @@ export { Book } from './Book';
 export { Books } from './Books';
 export { Contacts } from './Contacts';
 export { EuCommandChamps } from './EuCommandChamps';
+export { EuCommandGroup } from './EuCommandGroups';
 export { EuCommandGroupResults } from './EuCommandGroupResults';
 export { EuPersonalChamps } from './EuPersonalChamps';
 export { Home } from './Home';

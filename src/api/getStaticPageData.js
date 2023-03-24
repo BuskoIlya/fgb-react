@@ -8,6 +8,9 @@ export const getContacts =
   async () => axios.get(process.env.REACT_APP_API_INFO_CONTACTS);
 export const getEuCommandChamps =
   async () => axios.get(process.env.REACT_APP_API_TOURNAMENTS_EU_COMMAND);
+export const getEuCommandGroup =
+  async (year, group) => axios.get(
+    process.env.REACT_APP_API_TOURNAMENTS_EU_COMMAND_GROUPS_BY_YEAR + year + '/' + group);
 export const getEuCommandGroupResults =
   async (year) => axios.get(process.env.REACT_APP_API_TOURNAMENTS_EU_COMMAND_GROUPS_BY_YEAR + year);
 export const getEuPersonalChamps =

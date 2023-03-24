@@ -2,10 +2,8 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Error from './components/error/Error';
-import EuCommandGroup from './pages/EuCommandGroups/EuCommandGroup';
 import Login from './pages/user/Login';
 import Profile from './pages/user/Profile';
-
 import { Layout } from './components';
 
 import {
@@ -13,6 +11,7 @@ import {
   Books,
   Contacts,
   EuCommandChamps,
+  EuCommandGroup,
   EuCommandGroupResults,
   EuPersonalChamps,
   Home,

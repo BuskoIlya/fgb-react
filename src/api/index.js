@@ -3,6 +3,7 @@ export {
   getBooks,
   getContacts,
   getEuCommandChamps,
+  getEuCommandGroup,
   getEuCommandGroupResults,
   getEuPersonalChamps,
   getHome,
