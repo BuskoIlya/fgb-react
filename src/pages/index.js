@@ -10,6 +10,7 @@ export { InfoBoard } from './InfoBoard';
 export { News } from './News';
 export { Players } from './Players';
 export { Ranks } from './Ranks';
+export { Tournament } from './Tournament';
 export { Tournaments } from './Tournaments';
 export { WAGC } from './WAGC';
 export { WelcomeToGo } from './WelcomeToGo';

@@ -10,6 +10,7 @@ export {
   getNews,
   getPlayers,
   getRanks,
+  getTournament,
   getTournaments,
   getWAGC
 } from './getStaticPageData';

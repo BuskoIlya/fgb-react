@@ -7,7 +7,6 @@ import EuCommandGroupResults from './pages/EuCommandGroups/EuCommandGroupResults
 import Login from './pages/user/Login';
 import NationalTeamGame from './pages/EuCommandGroups/NationalTeamGame';
 import Profile from './pages/user/Profile';
-import Tournament from './pages/Tournament/Tournament';
 
 import { Layout } from './components';
 
@@ -24,6 +23,7 @@ import {
   News,
   Players,
   Ranks,
+  Tournament,
   Tournaments,
   WAGC,
   WelcomeToGo

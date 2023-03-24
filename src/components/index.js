@@ -18,4 +18,6 @@ export {
 
 export { TDCountry } from './TDCountry';
 
+export { TournamentTable } from './TournamentTable';
+
 export { UserMenu } from './UserMenu';

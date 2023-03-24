@@ -1,0 +1,34 @@
+@import '../../css/constants.css';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  padding: 0 16px;
+}
+
+.cityLogo {
+  width: 72px;
+  height: 72px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  text-align: left;
+}
+
+.author { color: var(--fgbui-dark-font-grey) }
