@@ -5,7 +5,6 @@ import Error from './components/error/Error';
 import EuCommandGroup from './pages/EuCommandGroups/EuCommandGroup';
 import EuCommandGroupResults from './pages/EuCommandGroups/EuCommandGroupResults';
 import Login from './pages/user/Login';
-import NationalTeamGame from './pages/EuCommandGroups/NationalTeamGame';
 import Profile from './pages/user/Profile';
 
 import { Layout } from './components';
@@ -20,6 +19,7 @@ import {
   GoStories,
   GoStory,
   InfoBoard,
+  NationalTeamGame,
   News,
   Players,
   Ranks,

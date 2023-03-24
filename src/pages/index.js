@@ -7,6 +7,7 @@ export { Home } from './Home';
 export { GoStories } from './GoStories';
 export { GoStory } from './GoStory';
 export { InfoBoard } from './InfoBoard';
+export { NationalTeamGame } from './NationalTeamGame';
 export { News } from './News';
 export { Players } from './Players';
 export { Ranks } from './Ranks';

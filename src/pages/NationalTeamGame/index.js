@@ -1,0 +1,1 @@
+export { NationalTeamGame } from './NationalTeamGame';

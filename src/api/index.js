@@ -7,6 +7,7 @@ export {
   getHome,
   getGoStories,
   getGoStory,
+  getNationalTeamGame,
   getNews,
   getPlayers,
   getRanks,

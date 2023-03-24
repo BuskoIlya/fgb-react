@@ -1,0 +1,10 @@
+.content {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.gameResult {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
