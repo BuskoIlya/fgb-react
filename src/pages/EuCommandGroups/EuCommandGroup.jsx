@@ -9,7 +9,7 @@ import { useStaticPageData } from '../../hooks';
 export const EuCommandGroup = () => {
   const params = useParams();
   const [data, isLoading, error] =
-    useStaticPageData(() => getEuCommandGroup(params.year, params.group));
+    useStaticPageData(() => getEuCommandGroup(params.year, params.group), [params.group]);
   return (
     <LayoutTitleWithNoData
       error={error}

@@ -27,7 +27,7 @@ export const Book = () => {
             {data.category && <p>{data.category}</p>}
             {data.description && <p>{data.description}</p>}
             <LinkDownload
-              href={downloadPath + data.downloadRef}
+              href={downloadPath + data.ref}
               iconBefore={<FontAwesomeIcon icon={faDownload}/>}
             >
               Скачать
