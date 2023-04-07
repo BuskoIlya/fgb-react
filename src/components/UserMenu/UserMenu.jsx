@@ -1,58 +1,50 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { observer } from 'mobx-react-lite';
 
 import FGBMenuItem from '../menu/FGBMenuItem';
-import UserContext from '../../user/UserContext';
-
+import { UserContext } from '../../store';
 import { Button } from 'fgb-ui-components';
 import { UserMenuLogo } from './UserMenuLogo';
 import { useShow } from '../../hooks';
 import css from './UserMenu.module.css';
 
-const urlLogout = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_LOGOUT;
+export const UserMenu = observer(({ className }) => {
 
-export const UserMenu = ({ className }) => {
-  const [user, setUser] = React.useContext(UserContext);
+  const { userStore } = useContext(UserContext);
   const [isShow, handleShow] = useShow(false);
   const navigate = useNavigate();
 
   const onLogin = () => { navigate('login') };
-
   const onLogout = async () => {
     if (window.confirm('Вы действиетельно хотите выйти?')) {
-      await fetch(urlLogout, { credentials: 'include' })
-        .then(response => {
-          setUser({});
-          window.localStorage.removeItem('token');
-        })
-        .catch(e =>  console.log(e));
+      await userStore.logout();
     }
   };
 
   return (
     <div className={`${css.wrapper} ${className}`}>
       {
-        user.token ?
+        userStore.isAuth ? (
           <nav>
-            <UserMenuLogo img={user.img} letter={user.letter} onClick={handleShow} />
+            <UserMenuLogo img={userStore.img} letter={userStore.initials} onClick={handleShow} />
             { isShow &&
               <ul className={css.ul}>
                 <FGBMenuItem to="profile" name="Профиль" />
                 <FGBMenuItem to="/" name="Выйти" onClick={onLogout} />
               </ul>
             }
-          </nav>
-          :
+          </nav>) : (
           <Button
             color="blue"
             iconBefore={<FontAwesomeIcon icon={faRightToBracket} />}
             onClick={onLogin}
           >
             Войти
-          </Button>
+          </Button>)
       }
     </div>
   );
-};
+});

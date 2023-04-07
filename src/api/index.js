@@ -17,3 +17,5 @@ export {
   getTournaments,
   getWAGC
 } from './getStaticPageData';
+
+export * as authService from './authService';

@@ -9,6 +9,7 @@ export { Home } from './Home';
 export { GoStories } from './GoStories';
 export { GoStory } from './GoStory';
 export { InfoBoard } from './InfoBoard';
+export { Login } from './Login';
 export { NationalTeamGame } from './NationalTeamGame';
 export { News } from './News';
 export { Players } from './Players';

@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Error from './components/error/Error';
-import Login from './pages/user/Login';
 import Profile from './pages/user/Profile';
 import { Layout } from './components';
 
@@ -18,6 +17,7 @@ import {
   GoStories,
   GoStory,
   InfoBoard,
+  Login,
   NationalTeamGame,
   News,
   Players,

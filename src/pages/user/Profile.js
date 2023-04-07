@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
 import { Button } from 'fgb-ui-components';
-import UserContext from '../../user/UserContext';
+import { UserContext } from '../../store';
 import * as util from '../../js/util';
 import styles from './Profile.module.css';
 
 export default () => {
-
   const userDataUrl = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER;
   const updateUserUrl = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_API_USER_UPDATE;
 
-  const [userContext, setUserContext] = React.useContext(UserContext);
-  const [isEdit, setIsEdit] = React.useState(false);
-  const [data, setData] = React.useState({});
-  const [originData, setOriginData] = React.useState({});
+  const { userStore } = useContext(UserContext);
+  const [isEdit, setIsEdit] = useState(false);
+  const [data, setData] = useState({});
+  const [originData, setOriginData] = useState({});
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -56,11 +55,10 @@ export default () => {
     await fetch(updateUserUrl, options)
       .then(response => {
         setOriginData(data);
-        setUserContext({
+        userStore.setUser({
           fullName: data.fullName,
-          img: userContext.img,
-          letter: data.name?.substr(0, 1),
-          token: userContext.token
+          img: userStore.img,
+          initials: data.name?.substr(0, 1)
         });
         alert('Данные сохранены!');
       })

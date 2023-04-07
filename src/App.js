@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FGBRoutes from './FGBRoutes';
-import UserContext from './user/UserContext';
+import { UserContext, UserStore } from './store';
 import './css/logo.css';
 import './css/title.css';
 
-function App() {
+const userStore = new UserStore();
 
-  const [user, setUser] = React.useState({ token: window.localStorage.getItem('token') });
+export const App = () => {
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      userStore.checkAuth();
+    }
+  }, []);
 
   return (
-    <UserContext.Provider value={[user, setUser]}>
+    <UserContext.Provider value={{userStore}}>
       <FGBRoutes/>
     </UserContext.Provider>
   );
-}
-
-export default App;
+};
