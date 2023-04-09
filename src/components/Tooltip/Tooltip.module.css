@@ -1,0 +1,30 @@
+@import "../../css/constants.css";
+
+.tooltip {
+  position: absolute;
+  z-index: 1;
+  transform: translateX(0);
+
+  width: 100%;
+  padding: 8px;
+
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 0.125rem;
+  color: var(--fgbui-black);
+  font-size: 0.75em;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .75s linear;
+}
+
+.tooltip_error {
+  background-color: var(--fgbui-light-red);
+  color: var(--fgbui-blue);
+}
+
+.tooltip_error {
+  background-color: var(--fgbui-light-red);
+  color: var(--fgbui-red);
+}
