@@ -8,13 +8,13 @@ import FGBMenuItem from '../menu/FGBMenuItem';
 import { UserContext } from '../../store';
 import { Button } from 'fgb-ui-components';
 import { UserMenuLogo } from './UserMenuLogo';
-import { useShow } from '../../hooks';
+import { useToggle } from '../../hooks';
 import css from './UserMenu.module.css';
 
 export const UserMenu = observer(({ className }) => {
 
   const { userStore } = useContext(UserContext);
-  const [isShow, handleShow] = useShow(false);
+  const [toggle, switchToggle] = useToggle(false);
   const navigate = useNavigate();
 
   const onLogin = () => { navigate('login') };
@@ -29,8 +29,8 @@ export const UserMenu = observer(({ className }) => {
       {
         userStore.isAuth ? (
           <nav>
-            <UserMenuLogo img={userStore.img} letter={userStore.initials} onClick={handleShow} />
-            { isShow &&
+            <UserMenuLogo img={userStore.img} letter={userStore.initials} onClick={switchToggle} />
+            { toggle &&
               <ul className={css.ul}>
                 <FGBMenuItem to="profile" name="Профиль" />
                 <FGBMenuItem to="/" name="Выйти" onClick={onLogout} />
