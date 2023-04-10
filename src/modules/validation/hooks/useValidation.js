@@ -11,12 +11,20 @@ export const useValidation = (value, validations) => {
     for (const x in validations) {
       switch (x) {
         case Validations.MIN_LENGTH:
-          value.length < validations[x] ? setIsMinLength(true) : setIsMinLength(false);
-          setMessage(`Минимальная длина поля должна быть ${validations[x]} символов`);
+          if (value.length < validations[x]) {
+            setIsMinLength(true);
+            setMessage(`Минимальная длина поля должна быть ${validations[x]} символов`);
+          } else {
+            setIsMinLength(false);
+          }
           break;
         case Validations.REQUIRED:
-          value ? setIsEmpty(false) : setIsEmpty(true);
-          setMessage(`Поле является обязательным`);
+          if (value) {
+            setIsEmpty(false);
+          } else {
+            setIsEmpty(true);
+            setMessage(`Поле является обязательным`);
+          }
           break;
         default:
           setMessage('');

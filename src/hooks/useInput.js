@@ -21,5 +21,5 @@ export const useInput = (initialValue, validations) => {
     }
   }, [focus, isValid]);
 
-  return { isValid, errorMessage: message, status, value, onChange, onFocus };
+  return { isValid, message, status, value, onChange, onFocus };
 };

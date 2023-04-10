@@ -1,20 +1,12 @@
 @import "../../../css/constants.css";
 
-.wrapper {
-  position: relative;
-}
-
-.content:focus-within + div,
-.content:hover + div {
-  visibility: visible;
-  opacity: 1;
-}
+.wrapper { position: relative }
 
 .content {
   display: block;
-  text-align: left;
-  line-height: 3;
   font-size: 1rem;
+  line-height: 3;
+  text-align: left;
 }
 
 .input {
@@ -24,32 +16,37 @@
   font-size: inherit;
 }
 
+/* Типы input согласно статусам: default, error, valid */
 .input_default:focus-visible {
   outline: solid 1px var(--fgbui-blue);
   border: solid 1px var(--fgbui-blue);
   border-radius: 0.125rem;
 }
 
-.input_error {
-  border: solid 1px var(--fgbui-red);
+.input_error { border: solid 1px var(--fgbui-red) }
+.input_error:focus { background-color: var(--fgbui-light-red) }
+.input_error:focus-visible { outline: none }
+
+.input_valid { border: solid 1px var(--fgbui-green) }
+.input_valid:focus { background-color: var(--fgbui-light-green) }
+.input_valid:focus-visible { outline: none }
+
+/* Контейнер для подсказки */
+.tooltip {
+  position: absolute;
+  transform: translateX(0);
+  z-index: 2;
+
+  width: 100%;
+  margin-top: 5px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .75s linear;
 }
 
-.input_error:focus {
-  background-color: var(--fgbui-light-red);
-}
-
-.input_error:focus-visible {
-  outline: none;
-}
-
-.input_valid {
-  border: solid 1px var(--fgbui-green);
-}
-
-.input_valid:focus {
-  background-color: var(--fgbui-light-green);
-}
-
-.input_valid:focus-visible {
-  outline: none;
+.content:focus-within + .tooltip,
+.content:hover + .tooltip {
+  visibility: visible;
+  opacity: 1;
 }

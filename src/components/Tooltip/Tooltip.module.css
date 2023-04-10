@@ -1,30 +1,65 @@
 @import "../../css/constants.css";
 
 .tooltip {
-  position: absolute;
-  z-index: 1;
-  transform: translateX(0);
-
   width: 100%;
   padding: 8px;
 
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .75);
+  border: solid 1px var(--fgbui-black);
   border-radius: 0.125rem;
   color: var(--fgbui-black);
   font-size: 0.75em;
   text-align: left;
-
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity .75s linear;
 }
 
+.tooltip::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -4px;
+  border-color: transparent transparent var(--fgbui-black) transparent;
+  border-style: solid;
+  border-width: 4px;
+}
+
+/* Типы подсказок: error(красный), info(синий), success(зелёный), warning(жёлтый) */
 .tooltip_error {
   background-color: var(--fgbui-light-red);
+  border: none;
+  color: var(--fgbui-red);
+}
+
+.tooltip_error::after {
+  border-color: transparent transparent var(--fgbui-red) transparent;
+}
+
+.tooltip_info {
+  background-color: var(--fgbui-light-blue);
+  border: none;
   color: var(--fgbui-blue);
 }
 
-.tooltip_error {
-  background-color: var(--fgbui-light-red);
-  color: var(--fgbui-red);
+.tooltip_info::after {
+  border-color: transparent transparent var(--fgbui-blue) transparent;
+}
+
+.tooltip_success {
+  background-color: var(--fgbui-light-green);
+  border: none;
+  color: var(--fgbui-green);
+}
+
+.tooltip_success::after {
+  border-color: transparent transparent var(--fgbui-green) transparent;
+}
+
+.tooltip_warning {
+  background-color: var(--fgbui-light-yellow);
+  border: none;
+  color: var(--fgbui-black);
+}
+
+.tooltip_warning::after {
+  border-color: transparent transparent var(--fgbui-black) transparent;
 }
