@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Error from './components/error/Error';
-import Profile from './pages/user/Profile';
 import { Layout } from './components';
 
 import {
@@ -21,6 +20,7 @@ import {
   NationalTeamGame,
   News,
   Players,
+  Profile,
   Ranks,
   Tournament,
   Tournaments,

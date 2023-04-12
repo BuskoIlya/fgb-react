@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  gap: 2%;
+}
+
+.text { font-weight: bolder }
+

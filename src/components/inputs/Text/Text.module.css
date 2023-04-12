@@ -1,39 +1,53 @@
 @import "../../../css/constants.css";
 
-.wrapper { position: relative }
+.container_horizontal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.container_vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-.content {
-  display: block;
+.label {
   font-size: 1rem;
-  line-height: 3;
   text-align: left;
 }
 
+.inputContainer { position: relative }
+
 .input {
   display: block;
-  width: 100%;
   padding: 8px;
-  font-size: inherit;
-}
 
-/* Типы input согласно статусам: default, error, valid */
-.input_default:focus-visible {
-  outline: solid 1px var(--fgbui-blue);
-  border: solid 1px var(--fgbui-blue);
+  border: solid 1px var(--fgbui-dark-font-grey);
   border-radius: 0.125rem;
+  font-size: 0.85rem;
+  outline: none;
+}
+.input:focus {
+  border: solid 1px var(--fgbui-blue);
 }
 
-.input_error { border: solid 1px var(--fgbui-red) }
+/* Типы input согласно статусам: error, valid */
+.input_error,
+.input_error:focus {
+  border: solid 1px var(--fgbui-red);
+}
 .input_error:focus { background-color: var(--fgbui-light-red) }
-.input_error:focus-visible { outline: none }
 
-.input_valid { border: solid 1px var(--fgbui-green) }
+.input_valid,
+.input_valid:focus {
+  border: solid 1px var(--fgbui-green);
+}
 .input_valid:focus { background-color: var(--fgbui-light-green) }
-.input_valid:focus-visible { outline: none }
 
 /* Контейнер для подсказки */
 .tooltip {
   position: absolute;
+  top: 100%;
   transform: translateX(0);
   z-index: 2;
 
@@ -45,8 +59,8 @@
   transition: opacity .75s linear;
 }
 
-.content:focus-within + .tooltip,
-.content:hover + .tooltip {
+.input:focus-within + .tooltip,
+.input:hover + .tooltip {
   visibility: visible;
   opacity: 1;
 }

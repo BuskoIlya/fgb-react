@@ -4,6 +4,10 @@ export const checkAuth = () => {
   return axios.get(process.env.REACT_APP_API_USER);
 }
 
+export const getAuth = () => {
+  return axios.get(process.env.REACT_APP_API_USER);
+}
+
 export const login = async (email, password) => {
   return axios.post(process.env.REACT_APP_API_USER_LOGIN, { email, password });
 }
@@ -14,4 +18,8 @@ export const logout = async () => {
 
 export const register = async (email, password) => {
   return axios.post(process.env.REACT_APP_API_USER_REGISTER, { email, password });
+}
+
+export const updateMe = async (data) => {
+  return axios.patch(process.env.REACT_APP_API_USER_UPDATE, data);
 }

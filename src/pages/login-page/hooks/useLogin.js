@@ -1,20 +1,20 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../store';
-import { useInput, useToggle } from '../../../hooks';
+import { useInput, useToggle, useValidatedInput } from '../../../hooks';
 import { Validations } from '../../../modules/validation';
 
 export const useLogin = () => {
   const { userStore } = useContext(UserContext);
   const [toggle, switchToggle] = useToggle(true);
   const email = useInput('');
-  const password = useInput('', new Validations().setMinLength(6).isRequired());
+  const password = useValidatedInput('', new Validations().setMinLength(6).isRequired());
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
 
   useEffect(() => {
-    setIsValid(email.isValid && password.isValid);
-  }, [email.isValid, password.isValid]);
+    setIsValid(password.isValid);
+  }, [password.isValid]);
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -30,5 +30,14 @@ export const useLogin = () => {
     }
   };
 
-  return [toggle, switchToggle, email, password, isValid, onSubmit];
+  const { setValue: sve, ...emailData } = { ...email };
+  const { isValid: ivp, setValue: svp, ...passwordData } = { ...password };
+  return {
+    toggle,
+    switchToggle,
+    email: { ...emailData },
+    password: { ...passwordData },
+    isValid,
+    onSubmit
+  };
 };

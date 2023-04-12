@@ -25,9 +25,9 @@
 
 /* Типы подсказок: error(красный), info(синий), success(зелёный), warning(жёлтый) */
 .tooltip_error {
-  background-color: var(--fgbui-light-red);
+  background-color: var(--fgbui-red);
   border: none;
-  color: var(--fgbui-red);
+  color: white;
 }
 
 .tooltip_error::after {
@@ -35,9 +35,9 @@
 }
 
 .tooltip_info {
-  background-color: var(--fgbui-light-blue);
+  background-color: var(--fgbui-blue);
   border: none;
-  color: var(--fgbui-blue);
+  color: white;
 }
 
 .tooltip_info::after {
@@ -45,9 +45,9 @@
 }
 
 .tooltip_success {
-  background-color: var(--fgbui-light-green);
+  background-color: var(--fgbui-green);
   border: none;
-  color: var(--fgbui-green);
+  color: white;
 }
 
 .tooltip_success::after {
@@ -55,11 +55,11 @@
 }
 
 .tooltip_warning {
-  background-color: var(--fgbui-light-yellow);
+  background-color: var(--fgbui-yellow);
   border: none;
   color: var(--fgbui-black);
 }
 
 .tooltip_warning::after {
-  border-color: transparent transparent var(--fgbui-black) transparent;
+  border-color: transparent transparent var(--fgbui-yellow) transparent;
 }

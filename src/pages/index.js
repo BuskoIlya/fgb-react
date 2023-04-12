@@ -13,6 +13,7 @@ export { Login } from './login-page';
 export { NationalTeamGame } from './NationalTeamGame';
 export { News } from './News';
 export { Players } from './Players';
+export { Profile } from './profile-page';
 export { Ranks } from './Ranks';
 export { Tournament } from './Tournament';
 export { Tournaments } from './Tournaments';

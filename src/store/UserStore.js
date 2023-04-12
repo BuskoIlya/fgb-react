@@ -10,6 +10,8 @@ export class UserStore {
   initials;
   img;
 
+  profileData;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -24,6 +26,10 @@ export class UserStore {
     this.img = img;
   }
 
+  setProfileData(data) {
+    this.profileData = {...data};
+  }
+
   async checkAuth() {
     try {
       const { data } = await authService.checkAuth();
@@ -34,6 +40,17 @@ export class UserStore {
         initials: userData.name?.substr(0, 1),
         img
       });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async getMe() {
+    try {
+      const { data } = await authService.checkAuth();
+      const { token, img, ...userData } = data;
+      this.setProfileData(userData);
+      return userData;
     } catch (e) {
       console.error(e);
     }
@@ -77,6 +94,21 @@ export class UserStore {
         img
       });
       localStorage.setItem('token', token);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async updateMe(data) {
+    try {
+      let updatedData = {};
+      for (let key in data) {
+        if (data[key] !== this.profileData[key]) {
+          updatedData[key] = data[key];
+        }
+      }
+      await authService.updateMe(updatedData);
+      this.setProfileData(data);
     } catch (e) {
       console.error(e);
     }
