@@ -1,6 +1,6 @@
 import React from 'react';
+import { TextInput } from 'fgb-ui-components';
 import { Label } from '../Label';
-import { Text } from '../../../../components';
 
 export const InfoField = ({ field, isEdit, label }) => {
   return (
@@ -10,7 +10,7 @@ export const InfoField = ({ field, isEdit, label }) => {
           ?
           <Label title={label} value={field.value} />
           :
-          <Text label={label} {...field} />
+          <TextInput label={label} {...field} />
       }
     </>
   );

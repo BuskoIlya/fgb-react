@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Error from './components/error/Error';
-import { Layout } from './components';
+import Error from '../components/error/Error';
+import { Layout } from '../components';
 
 import {
   Book,
@@ -26,9 +26,9 @@ import {
   Tournaments,
   WAGC,
   WelcomeToGo
-} from './pages';
+} from '../pages';
 
-function FGBRoutes() {
+export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -80,6 +80,4 @@ function FGBRoutes() {
       </Route>
     </Routes>
   );
-}
-
-export default FGBRoutes;
+};

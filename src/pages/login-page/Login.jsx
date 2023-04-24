@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Button } from 'fgb-ui-components';
-import { Text } from '../../components';
+import { Button, TextInput } from 'fgb-ui-components';
 
 import { LoginTitle } from './components';
 import { useLogin } from './hooks';
@@ -15,8 +14,8 @@ export const Login = () => {
       <LoginTitle className={css.title} toggle={toggle} switchToggle={switchToggle} />
       <form onSubmit={onSubmit} className={css.form}>
         <div className={css.fields}>
-          <Text variant="vertical" label="Логин (почта) :" name="email" {...email} />
-          <Text variant="vertical" label="Пароль :" name="password" {...password} />
+          <TextInput variant="vertical" label="Логин (почта) :" name="email" {...email} />
+          <TextInput variant="vertical" label="Пароль :" name="password" {...password} />
         </div>
         <Button color="blue" disabled={!isValid}>
           {toggle ? 'Войти' : 'Зарегистрироваться'}

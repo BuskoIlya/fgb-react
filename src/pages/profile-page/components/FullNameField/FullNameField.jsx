@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '../../../../components';
+import { TextInput } from 'fgb-ui-components';
 import css from './FullNameField.module.css';
 
 export const FullNameField = ({ isEdit, family, name, father }) => {
@@ -9,9 +9,9 @@ export const FullNameField = ({ isEdit, family, name, father }) => {
       {
         !isEdit ? <p className={css.text}>{fullName}</p> : (
           <div className={css.container}>
-            <Text {...family} />
-            <Text {...name} />
-            <Text {...father} />
+            <TextInput {...family} />
+            <TextInput {...name} />
+            <TextInput {...father} />
           </div>
         )
       }

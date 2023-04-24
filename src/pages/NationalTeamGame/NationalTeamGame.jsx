@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { LinkExternal, LinkInner } from 'fgb-ui-components';
+import { LinkExternal, LinkInner, Logo } from 'fgb-ui-components';
 
-import { LayoutTitleWithNoData, Logo } from '../../components';
+import { LayoutTitleWithNoData } from '../../components';
 import { ResultTable } from './ResultTable';
 import css from './NationalTeamGame.module.css';
 

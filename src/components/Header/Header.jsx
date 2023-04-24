@@ -1,5 +1,5 @@
 import { UserMenu } from '../UserMenu';
-import { Logo } from '../Logo';
+import { Logo } from 'fgb-ui-components';
 import css from './Header.module.css';
 
 export const Header = () => {

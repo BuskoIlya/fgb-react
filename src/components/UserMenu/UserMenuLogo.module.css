@@ -4,6 +4,7 @@
 }
 
 .letter {
+  height: 100%;
   font-size: 2rem;
   line-height: 1.8;
 }

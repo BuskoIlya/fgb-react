@@ -6,10 +6,6 @@ export { GroupTable } from './GroupTable';
 
 export { Header } from './Header';
 
-export {
-  Text
-} from './inputs';
-
 export { Layout } from './Layout';
 
 export { LayoutDropDown } from './LayoutDropDown';
@@ -20,11 +16,7 @@ export {
   LayoutWithNoData
 } from './LayoutsWithNoData';
 
-export { Logo } from './Logo';
-
 export { TDCountry } from './TDCountry';
-
-export { Tooltip } from './Tooltip';
 
 export { TournamentTable } from './TournamentTable';
 

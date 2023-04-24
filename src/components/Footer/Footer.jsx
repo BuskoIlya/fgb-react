@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from '../Logo';
+import { Logo } from 'fgb-ui-components';
 import css from './Footer.module.css';
 
 export const Footer = () => {

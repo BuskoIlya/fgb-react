@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { LayoutTitleWithNoData, Logo, TournamentTable } from '../../components';
+import { Logo } from 'fgb-ui-components';
+
+import { LayoutTitleWithNoData, TournamentTable } from '../../components';
 import css from './Tournament.module.css';
 
 import { getTournament } from '../../api';

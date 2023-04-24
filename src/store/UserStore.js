@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { authService } from '../api';
-import * as util from '../js/util';
+import * as util from '../utils';
 
 export class UserStore {
 
