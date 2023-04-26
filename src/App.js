@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { AppRouter } from './router';
-import { UserContext, UserStore } from './store';
-import './css/title.css';
+import { AppRouter } from '@router';
+import { UserContext, UserStore } from '@store';
+import '@css/title.css';
 
 const userStore = new UserStore();
 

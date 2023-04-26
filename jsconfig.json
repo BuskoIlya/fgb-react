@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@api": "api",
+      "@components": "components",
+      "@css": "css",
+      "@hooks": "hooks",
+      "@modules": "modules",
+      "@pages": "pages",
+      "@router": "router",
+      "@store": "store",
+      "@util": "util"
+    }
+  }
+}
